@@ -3,1097 +3,1263 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AMiR GAMiNG</title>
+<title>AMiR GAMiNG</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
 
-    <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(0,229,255,.08),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(128,0,255,.08),transparent 30%),
+        #050509;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
 
-        body {
-            font-family: "Vazirmatn", sans-serif;
-            background:
-                radial-gradient(circle at 15% 20%, rgba(0,229,255,.08), transparent 28%),
-                radial-gradient(circle at 85% 70%, rgba(128,0,255,.08), transparent 28%),
-                #050509;
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
 
-        #particles {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+/* PARTICLES */
 
-        /* ================= NAVBAR ================= */
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            background: rgba(5,5,9,.78);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(0,229,255,.12);
-            z-index: 100;
-        }
 
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 12px;
-            transition: .3s;
-        }
+/* NAVBAR */
 
-        nav a:hover {
-            color: #fff;
-            background: rgba(0,229,255,.08);
-            box-shadow: 0 0 20px rgba(0,229,255,.18);
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:70px;
 
-        .menu-button {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
 
-        /* ================= HERO ================= */
+    background:rgba(5,5,9,.82);
+    backdrop-filter:blur(15px);
 
-        .hero {
-            min-height: 88vh;
-            padding: 130px 20px 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+    border-bottom:1px solid rgba(0,229,255,.12);
 
-        .logo {
-            font-size: clamp(42px, 9vw, 95px);
-            font-weight: 900;
-            letter-spacing: 4px;
-            text-shadow:
-                0 0 8px #fff,
-                0 0 20px #00e5ff,
-                0 0 45px #8000ff;
-            animation: logoGlow 2s infinite alternate;
-        }
+    z-index:100;
+}
 
-        .subtitle {
-            margin-top: 22px;
-            color: #aaa;
-            font-size: clamp(16px, 3vw, 23px);
-        }
+nav a{
+    color:#ddd;
+    text-decoration:none;
 
-        .hero-line {
-            width: min(500px, 80vw);
-            height: 2px;
-            margin-top: 30px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #00e5ff,
-                #8000ff,
-                transparent
-            );
-            box-shadow: 0 0 15px rgba(0,229,255,.7);
-        }
+    padding:10px 18px;
 
-        /* ================= CONTENT ================= */
+    border-radius:12px;
 
-        .content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1150px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    transition:.3s;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 35px;
-            text-shadow: 0 0 20px rgba(0,229,255,.3);
-        }
+nav a:hover{
+    color:white;
+    background:rgba(0,229,255,.08);
 
-        /* ================= GAME CARDS ================= */
+    box-shadow:
+        0 0 20px rgba(0,229,255,.15);
 
-        .games {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+    transform:translateY(-2px);
+}
 
-        .game-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 22px;
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,.07),
-                rgba(255,255,255,.015)
-            );
-            border: 1px solid rgba(255,255,255,.09);
-            transition: .4s;
-        }
 
-        .game-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: rgba(0,229,255,.5);
-            box-shadow:
-                0 20px 50px rgba(0,0,0,.55),
-                0 0 35px rgba(0,229,255,.15);
-        }
+/* HERO */
 
-        .game-image {
-            width: 100%;
-            height: 210px;
-            object-fit: cover;
-            display: block;
-            transition: .5s;
-        }
+.hero{
+    position:relative;
+    z-index:2;
 
-        .game-card:hover .game-image {
-            transform: scale(1.08);
-        }
+    min-height:78vh;
 
-        .game-info {
-            padding: 24px;
-        }
+    padding:130px 20px 70px;
 
-        .game-info h3 {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-        .game-info p {
-            color: #999;
-            line-height: 1.9;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
+    text-align:center;
+}
 
-        /* ================= RATING ================= */
+.logo{
+    font-size:clamp(45px,8vw,90px);
 
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
+    font-weight:900;
 
-        .stars {
-            color: #ffd000;
-            letter-spacing: 2px;
-        }
+    letter-spacing:4px;
 
-        .rating-number {
-            color: #aaa;
-            font-size: 13px;
-        }
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #00e5ff,
+        0 0 55px #8000ff;
 
-        .game-button {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 12px;
-            background: rgba(0,229,255,.08);
-            border: 1px solid rgba(0,229,255,.3);
-            transition: .3s;
-        }
+    animation:glow 3s infinite alternate;
+}
 
-        .game-button:hover {
-            background: rgba(0,229,255,.17);
-            box-shadow: 0 0 22px rgba(0,229,255,.2);
-            transform: translateY(-2px);
-        }
+@keyframes glow{
 
-        /* ================= RECOMMENDED ================= */
+    from{
+        text-shadow:
+            0 0 10px white,
+            0 0 20px #00e5ff,
+            0 0 35px #8000ff;
+    }
 
-        .recommended {
-            margin-top: 90px;
-        }
+    to{
+        text-shadow:
+            0 0 15px white,
+            0 0 35px #00e5ff,
+            0 0 70px #8000ff;
+    }
 
-        .recommend-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
+}
 
-        .recommend-card {
-            overflow: hidden;
-            border-radius: 20px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.08);
-            transition: .35s;
-        }
+.hero p{
+    margin-top:18px;
+    color:#aaa;
 
-        .recommend-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(128,0,255,.5);
-            box-shadow: 0 0 30px rgba(128,0,255,.15);
-        }
+    font-size:
+        clamp(15px,2vw,20px);
+}
 
-        .recommend-card img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            display: block;
-        }
+.hero-button{
+    margin-top:30px;
 
-        .recommend-info {
-            padding: 18px;
-        }
+    padding:13px 28px;
 
-        .recommend-info h3 {
-            margin-bottom: 8px;
-        }
+    border-radius:14px;
 
-        .recommend-info p {
-            color: #999;
-            font-size: 13px;
-        }
+    color:white;
+    text-decoration:none;
 
-        /* ================= ABOUT ================= */
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,229,255,.14),
+            rgba(128,0,255,.14)
+        );
 
-        .about {
-            margin-top: 80px;
-            padding: 40px 30px;
-            text-align: center;
-            border-radius: 22px;
-            background: rgba(255,255,255,.04);
-            border: 1px solid rgba(255,255,255,.08);
-        }
+    border:
+        1px solid
+        rgba(0,229,255,.35);
 
-        .about h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
+    transition:.3s;
+}
 
-        .about p {
-            color: #aaa;
-            max-width: 800px;
-            margin: auto;
-            line-height: 2.2;
-        }
+.hero-button:hover{
+    transform:
+        translateY(-4px)
+        scale(1.03);
 
-        /* ================= FOOTER ================= */
+    box-shadow:
+        0 0 30px
+        rgba(0,229,255,.2);
+}
 
-        footer {
-            position: relative;
-            z-index: 2;
-            margin-top: 50px;
-            padding: 35px 20px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid rgba(255,255,255,.05);
-        }
 
-        /* ================= ANIMATIONS ================= */
+/* CONTENT */
 
-        @keyframes logoGlow {
+.content{
+    position:relative;
+    z-index:2;
 
-            from {
-                text-shadow:
-                    0 0 8px #fff,
-                    0 0 20px #00e5ff,
-                    0 0 40px #8000ff;
-            }
+    max-width:1200px;
 
-            to {
-                text-shadow:
-                    0 0 10px #fff,
-                    0 0 30px #00e5ff,
-                    0 0 65px #8000ff,
-                    0 0 90px rgba(128,0,255,.5);
-            }
-        }
+    margin:auto;
 
-        /* ================= MOBILE ================= */
+    padding:
+        30px 20px 80px;
+}
 
-        @media (max-width: 850px) {
+.section-title{
+    text-align:center;
 
-            nav {
-                justify-content: flex-end;
-                padding: 0 18px;
-            }
+    font-size:
+        clamp(28px,4vw,38px);
 
-            .menu-button {
-                display: block;
-            }
+    margin:
+        50px 0 30px;
 
-            nav .nav-links {
-                position: absolute;
-                top: 70px;
-                right: 15px;
-                left: 15px;
-                display: none;
-                flex-direction: column;
-                padding: 15px;
-                border-radius: 16px;
-                background: rgba(5,5,9,.95);
-                border: 1px solid rgba(0,229,255,.15);
-            }
+    text-shadow:
+        0 0 20px
+        rgba(0,229,255,.3);
+}
 
-            nav .nav-links.active {
-                display: flex;
-            }
 
-            .games,
-            .recommend-grid {
-                grid-template-columns: 1fr;
-            }
+/* GAME CARDS */
 
-            .game-image {
-                height: 230px;
-            }
-        }
+.games{
+    display:grid;
 
-    </style>
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.game-card{
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:.4s;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.25);
+}
+
+.game-card:hover{
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(0,229,255,.4);
+
+    box-shadow:
+        0 0 35px
+        rgba(0,229,255,.12),
+        0 20px 50px
+        rgba(0,0,0,.45);
+}
+
+.game-image{
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.game-card:hover .game-image{
+    transform:scale(1.06);
+}
+
+.game-body{
+    padding:25px;
+}
+
+.game-body h3{
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.game-body p{
+    color:#999;
+
+    line-height:1.9;
+
+    font-size:14px;
+
+    min-height:55px;
+}
+
+.game-info{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:18px;
+}
+
+.tag{
+    padding:6px 10px;
+
+    border-radius:9px;
+
+    font-size:12px;
+
+    color:#bbb;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.game-button{
+    display:block;
+
+    margin-top:20px;
+
+    padding:11px;
+
+    text-align:center;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    background:
+        rgba(0,229,255,.08);
+
+    border:
+        1px solid
+        rgba(0,229,255,.25);
+
+    transition:.3s;
+}
+
+.game-button:hover{
+    background:
+        rgba(0,229,255,.17);
+
+    box-shadow:
+        0 0 20px
+        rgba(0,229,255,.15);
+}
+
+
+/* RACING RATING */
+
+.rating{
+    margin-top:16px;
+
+    padding:10px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    background:
+        rgba(255,190,0,.06);
+
+    border:
+        1px solid
+        rgba(255,190,0,.18);
+}
+
+.rating-stars{
+    color:#ffd43b;
+
+    font-size:19px;
+
+    letter-spacing:2px;
+}
+
+.rating-number{
+    margin-top:4px;
+
+    font-size:13px;
+
+    color:#ccc;
+}
+
+
+/* FACTS */
+
+.facts{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.fact{
+    padding:25px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.fact:hover{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(128,0,255,.35);
+}
+
+.fact-icon{
+    font-size:35px;
+
+    margin-bottom:12px;
+}
+
+.fact h3{
+    margin-bottom:8px;
+}
+
+.fact p{
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* ABOUT */
+
+.about{
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    color:#aaa;
+
+    line-height:2.2;
+
+    text-align:center;
+}
+
+
+/* FOOTER */
+
+footer{
+    position:relative;
+
+    z-index:2;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:#666;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.05);
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .games{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .facts{
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    nav a{
+        font-size:12px;
+
+        padding:
+            8px 10px;
+    }
+
+    .games{
+        grid-template-columns:
+            1fr;
+    }
+
+    .game-image{
+        height:230px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-    <canvas id="particles"></canvas>
 
-    <!-- ================= NAVBAR ================= -->
+<canvas id="particles"></canvas>
 
-    <nav>
 
-        <button class="menu-button" id="menuButton">
-            ☰
-        </button>
+<!-- NAVBAR -->
 
-        <div class="nav-links" id="navLinks">
+<nav>
 
-            <a href="#home">🏠 خانه</a>
+    <a href="#home">
+        🏠 خانه
+    </a>
 
-            <a href="#games">🎮 بازی‌ها</a>
+    <a href="#games">
+        🎮 بازی‌ها
+    </a>
 
-            <a href="#recommended">🔥 پیشنهادی</a>
+    <a href="#about">
+        👤 درباره
+    </a>
 
-            <a href="#about">👤 درباره</a>
+</nav>
+
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <h1 class="logo">
+        AMiR GAMiNG
+    </h1>
+
+    <p>
+        دنیای گیمینگ من 🎮⚡
+    </p>
+
+    <a
+        href="#games"
+        class="hero-button"
+    >
+        🔥 مشاهده بازی‌ها
+    </a>
+
+</section>
+
+
+<!-- MAIN -->
+
+<main class="content">
+
+
+<h2
+    class="section-title"
+    id="games"
+>
+    🔥 بازی‌ها
+</h2>
+
+
+<div class="games">
+
+
+<!-- GTA -->
+
+<article class="game-card">
+
+    <img
+        src="images/gta.jpg"
+        alt="Grand Theft Auto V"
+        class="game-image"
+    >
+
+    <div class="game-body">
+
+        <h3>
+            🎮 GTA V
+        </h3>
+
+        <p>
+            جهان‌باز اکشن Rockstar
+            با داستان تک‌نفره و
+            GTA Online.
+        </p>
+
+        <div class="game-info">
+
+            <span class="tag">
+                Rockstar Games
+            </span>
+
+            <span class="tag">
+                2013
+            </span>
+
+            <span class="tag">
+                Metascore: 97
+            </span>
 
         </div>
 
-    </nav>
+        <a
+            href="gta.html"
+            class="game-button"
+        >
+            ورود به صفحه GTA V
+        </a>
+
+    </div>
+
+</article>
 
 
-    <!-- ================= HERO ================= -->
+<!-- MINECRAFT -->
 
-    <section class="hero" id="home">
+<article class="game-card">
 
-        <h1 class="logo">
-            AMiR GAMiNG
-        </h1>
+    <img
+        src="images/minecraft.jpg"
+        alt="Minecraft"
+        class="game-image"
+    >
 
-        <p class="subtitle">
-            دنیای گیمینگ من 🎮⚡
+    <div class="game-body">
+
+        <h3>
+            ⛏️ Minecraft
+        </h3>
+
+        <p>
+            بازی Sandbox ساخته
+            Mojang با ساخت‌وساز،
+            اکتشاف و حالت‌های مختلف.
         </p>
 
-        <div class="hero-line"></div>
+        <div class="game-info">
 
-    </section>
+            <span class="tag">
+                Mojang
+            </span>
 
+            <span class="tag">
+                2011
+            </span>
 
-    <!-- ================= MAIN ================= -->
+            <span class="tag">
+                Metascore: 93
+            </span>
 
-    <main class="content">
+        </div>
 
+        <a
+            href="minecraft.html"
+            class="game-button"
+        >
+            ورود به صفحه Minecraft
+        </a>
 
-        <!-- GAMES -->
+    </div>
 
-        <section id="games">
-
-            <h2 class="section-title">
-                🔥 بازی‌های من
-            </h2>
-
-            <div class="games">
-
-
-                <!-- GTA -->
-
-                <article class="game-card">
-
-                    <img
-                        src="images/gta.jpg"
-                        alt="GTA V"
-                        class="game-image"
-                    >
-
-                    <div class="game-info">
-
-                        <h3>
-                            🎮 GTA V
-                        </h3>
-
-                        <p>
-                            دنیای بزرگ و هیجان‌انگیز GTA
-                        </p>
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.8/5
-                            </span>
-
-                        </div>
-
-                        <a
-                            href="gta.html"
-                            class="game-button"
-                        >
-                            ورود به صفحه
-                        </a>
-
-                    </div>
-
-                </article>
+</article>
 
 
-                <!-- MINECRAFT -->
+<!-- RACING -->
 
-                <article class="game-card">
+<article class="game-card">
 
-                    <img
-                        src="images/minecraft.jpg"
-                        alt="Minecraft"
-                        class="game-image"
-                    >
+    <img
+        src="images/racing.jpg"
+        alt="Racing Games"
+        class="game-image"
+    >
 
-                    <div class="game-info">
+    <div class="game-body">
 
-                        <h3>
-                            ⛏️ Minecraft
-                        </h3>
+        <h3>
+            🏎️ Racing
+        </h3>
 
-                        <p>
-                            ساخت و ماجراجویی بی‌پایان
-                        </p>
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★★
-                            </span>
-
-                            <span class="rating-number">
-                                4.9/5
-                            </span>
-
-                        </div>
-
-                        <a
-                            href="minecraft.html"
-                            class="game-button"
-                        >
-                            ورود به صفحه
-                        </a>
-
-                    </div>
-
-                </article>
+        <p>
+            مجموعه‌ای از بازی‌های
+            مسابقه‌ای و رانندگی
+            معروف.
+        </p>
 
 
-                <!-- RACING -->
+        <div class="rating">
 
-                <article class="game-card">
-
-                    <img
-                        src="images/racing.jpg"
-                        alt="Racing"
-                        class="game-image"
-                    >
-
-                    <div class="game-info">
-
-                        <h3>
-                            🏎️ Racing
-                        </h3>
-
-                        <p>
-                            سرعت، رقابت و هیجان
-                        </p>
-
-                        <div class="rating">
-
-                            <span class="stars">
-                                ★★★★☆
-                            </span>
-
-                            <span class="rating-number">
-                                4.5/5
-                            </span>
-
-                        </div>
-
-                        <a
-                            href="racing.html"
-                            class="game-button"
-                        >
-                            ورود به صفحه
-                        </a>
-
-                    </div>
-
-                </article>
-
+            <div class="rating-stars">
+                ★★★★★
             </div>
 
-        </section>
-
-
-        <!-- ================= RECOMMENDED ================= -->
-
-        <section
-            class="recommended"
-            id="recommended"
-        >
-
-            <h2 class="section-title">
-                🕹️ بازی‌های پیشنهادی
-            </h2>
-
-            <div class="recommend-grid">
-
-
-                <article class="recommend-card">
-
-                    <img
-                        src="images/gta.jpg"
-                        alt="GTA"
-                    >
-
-                    <div class="recommend-info">
-
-                        <h3>
-                            🎮 GTA V
-                        </h3>
-
-                        <p>
-                            مناسب برای علاقه‌مندان
-                            به دنیای Open World
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="recommend-card">
-
-                    <img
-                        src="images/minecraft.jpg"
-                        alt="Minecraft"
-                    >
-
-                    <div class="recommend-info">
-
-                        <h3>
-                            ⛏️ Minecraft
-                        </h3>
-
-                        <p>
-                            ساخت، بقا و ماجراجویی
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="recommend-card">
-
-                    <img
-                        src="images/racing.jpg"
-                        alt="Racing"
-                    >
-
-                    <div class="recommend-info">
-
-                        <h3>
-                            🏎️ Racing
-                        </h3>
-
-                        <p>
-                            برای عاشقان سرعت و مسابقه
-                        </p>
-
-                    </div>
-
-                </article>
-
+            <div class="rating-number">
+                ⭐ 4.52 / 5
             </div>
 
-        </section>
+            <small style="color:#777;">
+                میانگین ۱۰ بازی برتر
+                Auto Racing در Metacritic
+            </small>
+
+        </div>
 
 
-        <!-- ================= ABOUT ================= -->
+        <div class="game-info">
 
-        <section
-            class="about"
-            id="about"
+            <span class="tag">
+                Racing
+            </span>
+
+            <span class="tag">
+                10 Games
+            </span>
+
+            <span class="tag">
+                Metacritic
+            </span>
+
+        </div>
+
+
+        <a
+            href="#"
+            class="game-button"
+            onclick="
+                alert(
+                    'صفحه Racing هنوز در حال ساخت است 🎮'
+                );
+                return false;
+            "
         >
+            به‌زودی
+        </a>
 
-            <h2>
-                👤 درباره AMiR GAMiNG
-            </h2>
+    </div>
 
-            <p>
-                به سایت AMiR GAMiNG خوش آمدید.
-                اینجا دنیای بازی‌ها، گیمینگ
-                و پروژه‌های من است. 🎮⚡
-            </p>
-
-        </section>
-
-    </main>
+</article>
 
 
-    <footer>
-        © 2026 AMiR GAMiNG
-    </footer>
+</div>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+<!-- VERIFIED INFORMATION -->
 
-    <script>
-
-        /* ================= MENU ================= */
-
-        const menuButton =
-            document.getElementById("menuButton");
-
-        const navLinks =
-            document.getElementById("navLinks");
+<h2 class="section-title">
+    📊 اطلاعات بررسی‌شده
+</h2>
 
 
-        menuButton.addEventListener(
-            "click",
-            function () {
+<div class="facts">
 
-                navLinks.classList.toggle("active");
+
+<div class="fact">
+
+    <div class="fact-icon">
+        🎮
+    </div>
+
+    <h3>
+        GTA V
+    </h3>
+
+    <p>
+
+        Metascore:
+        <strong>97/100</strong>
+
+        <br>
+
+        امتیاز منتقدان
+        در Metacritic.
+
+    </p>
+
+</div>
+
+
+<div class="fact">
+
+    <div class="fact-icon">
+        ⛏️
+    </div>
+
+    <h3>
+        Minecraft
+    </h3>
+
+    <p>
+
+        Metascore:
+        <strong>93/100</strong>
+
+        <br>
+
+        امتیاز منتقدان
+        در Metacritic.
+
+    </p>
+
+</div>
+
+
+<div class="fact">
+
+    <div class="fact-icon">
+        🏎️
+    </div>
+
+    <h3>
+        Racing
+    </h3>
+
+    <p>
+
+        میانگین ۱۰ بازی برتر
+        فهرست Auto Racing:
+
+        <br>
+
+        <strong>
+            90.4 / 100
+        </strong>
+
+        <br>
+
+        معادل:
+
+        <strong>
+            4.52 / 5 ⭐
+        </strong>
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+<!-- ABOUT -->
+
+<h2
+    class="section-title"
+    id="about"
+>
+    👤 درباره AMiR GAMiNG
+</h2>
+
+
+<div class="about">
+
+    به سایت AMiR GAMiNG خوش آمدید. 🎮⚡
+
+    <br>
+
+    اینجا دنیای بازی‌ها،
+    گیمینگ و پروژه‌های منه.
+
+    <br>
+
+    اطلاعات و امتیازهای نمایش‌داده‌شده
+    بر اساس منابع مشخص هستند و
+    امتیاز ساختگی برای بازی‌ها قرار نمی‌دهیم.
+
+</div>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 AMiR GAMiNG
+
+</footer>
+
+
+<!-- PARTICLES -->
+
+<script>
+
+const canvas =
+    document.getElementById(
+        "particles"
+    );
+
+const ctx =
+    canvas.getContext("2d");
+
+
+let particles = [];
+
+
+const mouse = {
+
+    x:null,
+
+    y:null,
+
+    radius:150
+
+};
+
+
+function resizeCanvas(){
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
+
+}
+
+
+resizeCanvas();
+
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+window.addEventListener(
+    "mousemove",
+    function(event){
+
+        mouse.x =
+            event.clientX;
+
+        mouse.y =
+            event.clientY;
+
+    }
+);
+
+
+window.addEventListener(
+    "mouseleave",
+    function(){
+
+        mouse.x=null;
+
+        mouse.y=null;
+
+    }
+);
+
+
+for(
+    let i=0;
+    i<100;
+    i++
+){
+
+    particles.push({
+
+        x:
+            Math.random()
+            *canvas.width,
+
+        y:
+            Math.random()
+            *canvas.height,
+
+        size:
+            Math.random()
+            *2.5+.7,
+
+        speedX:
+            (Math.random()-.5)
+            *.7,
+
+        speedY:
+            (Math.random()-.5)
+            *.7
+
+    });
+
+}
+
+
+function animateParticles(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    particles.forEach(
+        function(p){
+
+            p.x+=p.speedX;
+
+            p.y+=p.speedY;
+
+
+            if(
+                p.x<0 ||
+                p.x>canvas.width
+            ){
+
+                p.speedX*=-1;
 
             }
-        );
 
 
-        document.querySelectorAll(
-            ".nav-links a"
-        ).forEach(function(link) {
+            if(
+                p.y<0 ||
+                p.y>canvas.height
+            ){
 
-            link.addEventListener(
-                "click",
-                function() {
+                p.speedY*=-1;
 
-                    navLinks.classList.remove(
-                        "active"
+            }
+
+
+            if(
+                mouse.x!==null &&
+                mouse.y!==null
+            ){
+
+                const dx =
+                    p.x-mouse.x;
+
+                const dy =
+                    p.y-mouse.y;
+
+                const distance =
+                    Math.sqrt(
+                        dx*dx+
+                        dy*dy
                     );
 
+
+                if(
+                    distance<
+                    mouse.radius &&
+                    distance>0
+                ){
+
+                    const force =
+                        (
+                            mouse.radius-
+                            distance
+                        )/
+                        mouse.radius;
+
+
+                    p.x+=
+                        (dx/distance)*
+                        force*2;
+
+                    p.y+=
+                        (dy/distance)*
+                        force*2;
+
                 }
+
+            }
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                p.x,
+                p.y,
+                p.size,
+                0,
+                Math.PI*2
             );
 
-        });
+            ctx.fillStyle=
+                "rgba(0,229,255,.85)";
+
+            ctx.shadowBlur=10;
+
+            ctx.shadowColor=
+                "#00e5ff";
+
+            ctx.fill();
+
+            ctx.shadowBlur=0;
+
+        }
+    );
 
 
-        /* ================= PARTICLES ================= */
+    /* PARTICLE LINES */
 
-        const canvas =
-            document.getElementById("particles");
+    for(
+        let i=0;
+        i<particles.length;
+        i++
+    ){
 
-        const ctx =
-            canvas.getContext("2d");
+        for(
+            let j=i+1;
+            j<particles.length;
+            j++
+        ){
+
+            const dx =
+                particles[i].x-
+                particles[j].x;
+
+            const dy =
+                particles[i].y-
+                particles[j].y;
+
+            const distance =
+                Math.sqrt(
+                    dx*dx+
+                    dy*dy
+                );
 
 
-        let particles = [];
+            if(
+                distance<90
+            ){
 
+                ctx.beginPath();
 
-        const mouse = {
+                ctx.moveTo(
+                    particles[i].x,
+                    particles[i].y
+                );
 
-            x: null,
+                ctx.lineTo(
+                    particles[j].x,
+                    particles[j].y
+                );
 
-            y: null,
+                ctx.strokeStyle=
+                    "rgba(128,0,255,"+
+                    (
+                        1-distance/90
+                    )+
+                    ")";
 
-            radius: 150
+                ctx.lineWidth=.7;
 
-        };
+                ctx.stroke();
 
-
-        function resizeCanvas() {
-
-            canvas.width =
-                window.innerWidth;
-
-            canvas.height =
-                window.innerHeight;
+            }
 
         }
 
-
-        resizeCanvas();
-
-
-        window.addEventListener(
-            "resize",
-            resizeCanvas
-        );
+    }
 
 
-        window.addEventListener(
-            "mousemove",
-            function(event) {
+    /* MOUSE LINES */
 
-                mouse.x =
-                    event.clientX;
+    if(
+        mouse.x!==null &&
+        mouse.y!==null
+    ){
 
-                mouse.y =
-                    event.clientY;
+        particles.forEach(
+            function(p){
 
-            }
-        );
+                const dx =
+                    p.x-mouse.x;
 
+                const dy =
+                    p.y-mouse.y;
 
-        window.addEventListener(
-            "mouseleave",
-            function() {
-
-                mouse.x = null;
-
-                mouse.y = null;
-
-            }
-        );
+                const distance =
+                    Math.sqrt(
+                        dx*dx+
+                        dy*dy
+                    );
 
 
-        const particleCount =
-            window.innerWidth < 700
-                ? 60
-                : 110;
-
-
-        for (
-            let i = 0;
-            i < particleCount;
-            i++
-        ) {
-
-            particles.push({
-
-                x:
-                    Math.random()
-                    * canvas.width,
-
-                y:
-                    Math.random()
-                    * canvas.height,
-
-                size:
-                    Math.random()
-                    * 2.5 + .7,
-
-                speedX:
-                    (Math.random() - .5)
-                    * .7,
-
-                speedY:
-                    (Math.random() - .5)
-                    * .7
-
-            });
-
-        }
-
-
-        function animateParticles() {
-
-            ctx.clearRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
-
-
-            particles.forEach(
-                function(p) {
-
-                    p.x += p.speedX;
-
-                    p.y += p.speedY;
-
-
-                    if (
-                        p.x < 0 ||
-                        p.x > canvas.width
-                    ) {
-
-                        p.speedX *= -1;
-
-                    }
-
-
-                    if (
-                        p.y < 0 ||
-                        p.y > canvas.height
-                    ) {
-
-                        p.speedY *= -1;
-
-                    }
-
-
-                    /* MOUSE REACTION */
-
-                    if (
-                        mouse.x !== null &&
-                        mouse.y !== null
-                    ) {
-
-                        const dx =
-                            p.x - mouse.x;
-
-                        const dy =
-                            p.y - mouse.y;
-
-                        const distance =
-                            Math.sqrt(
-                                dx * dx +
-                                dy * dy
-                            );
-
-
-                        if (
-                            distance <
-                            mouse.radius &&
-                            distance > 0
-                        ) {
-
-                            const force =
-                                (
-                                    mouse.radius -
-                                    distance
-                                ) /
-                                mouse.radius;
-
-
-                            p.x +=
-                                (dx / distance)
-                                * force
-                                * 2;
-
-
-                            p.y +=
-                                (dy / distance)
-                                * force
-                                * 2;
-
-                        }
-
-                    }
-
-
-                    /* DRAW PARTICLE */
+                if(
+                    distance<
+                    mouse.radius
+                ){
 
                     ctx.beginPath();
 
-                    ctx.arc(
+                    ctx.moveTo(
                         p.x,
-                        p.y,
-                        p.size,
-                        0,
-                        Math.PI * 2
+                        p.y
                     );
 
-                    ctx.fillStyle =
-                        "rgba(0,229,255,.85)";
+                    ctx.lineTo(
+                        mouse.x,
+                        mouse.y
+                    );
 
-                    ctx.shadowBlur = 10;
-
-                    ctx.shadowColor =
-                        "#00e5ff";
-
-                    ctx.fill();
-
-                    ctx.shadowBlur = 0;
-
-                }
-            );
-
-
-            /* LINES BETWEEN PARTICLES */
-
-            for (
-                let i = 0;
-                i < particles.length;
-                i++
-            ) {
-
-                for (
-                    let j = i + 1;
-                    j < particles.length;
-                    j++
-                ) {
-
-                    const dx =
-                        particles[i].x -
-                        particles[j].x;
-
-                    const dy =
-                        particles[i].y -
-                        particles[j].y;
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
-
-
-                    if (
-                        distance < 90
-                    ) {
-
-                        ctx.beginPath();
-
-                        ctx.moveTo(
-                            particles[i].x,
-                            particles[i].y
-                        );
-
-                        ctx.lineTo(
-                            particles[j].x,
-                            particles[j].y
-                        );
-
-                        ctx.strokeStyle =
-                            "rgba(128,0,255," +
-                            (
-                                1 -
-                                distance / 90
-                            ) +
-                            ")";
-
-                        ctx.lineWidth = .7;
-
-                        ctx.stroke();
-
-                    }
-
-                }
-
-            }
-
-
-            /* LINES TO MOUSE */
-
-            if (
-                mouse.x !== null &&
-                mouse.y !== null
-            ) {
-
-                particles.forEach(
-                    function(p) {
-
-                        const dx =
-                            p.x - mouse.x;
-
-                        const dy =
-                            p.y - mouse.y;
-
-                        const distance =
-                            Math.sqrt(
-                                dx * dx +
-                                dy * dy
-                            );
-
-
-                        if (
-                            distance <
+                    ctx.strokeStyle=
+                        "rgba(0,229,255,"+
+                        (
+                            1-
+                            distance/
                             mouse.radius
-                        ) {
+                        )+
+                        ")";
 
-                            ctx.beginPath();
+                    ctx.lineWidth=1;
 
-                            ctx.moveTo(
-                                p.x,
-                                p.y
-                            );
+                    ctx.stroke();
 
-                            ctx.lineTo(
-                                mouse.x,
-                                mouse.y
-                            );
-
-                            ctx.strokeStyle =
-                                "rgba(0,229,255," +
-                                (
-                                    1 -
-                                    distance /
-                                    mouse.radius
-                                ) +
-                                ")";
-
-                            ctx.lineWidth = 1;
-
-                            ctx.stroke();
-
-                        }
-
-                    }
-                );
+                }
 
             }
+        );
+
+    }
 
 
-            requestAnimationFrame(
-                animateParticles
-            );
+    requestAnimationFrame(
+        animateParticles
+    );
 
-        }
+}
 
 
-        animateParticles();
+animateParticles();
 
-    </script>
+</script>
+
 
 </body>
 
