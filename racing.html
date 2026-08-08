@@ -3,114 +3,597 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Racing | AMiR GAMiNG</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>AMiR GAMiNG | Racing</title>
 
-<style>
+    <link
+        rel="icon"
+        type="image/png"
+        href="icon.png"
+    >
 
-*{
-box-sizing:border-box;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-body{
-margin:0;
-font-family:Vazirmatn,sans-serif;
-background:#050505;
-color:white;
-text-align:center;
-}
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-padding:30px;
-}
+    <link
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
 
-.hero img{
-width:90%;
-max-width:900px;
-height:400px;
-object-fit:cover;
-border-radius:25px;
-box-shadow:0 0 40px rgba(255,0,80,.5);
-}
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
 
-h1{
-font-size:55px;
-margin-top:30px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
 
-h2{
-color:#ff0055;
-}
+        body {
+
+            font-family:
+                "Vazirmatn",
+                sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255, 50, 50, 0.10),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(255, 140, 0, 0.08),
+                    transparent 30%
+                ),
+
+                #070506;
+
+            color: white;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
 
 
-p{
-max-width:800px;
-color:#aaa;
-font-size:20px;
-line-height:2;
-}
+        /* =====================
+           PARTICLES
+        ===================== */
+
+        #particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            z-index: 1;
+        }
 
 
-.features{
-margin-top:30px;
-}
+        /* =====================
+           NAV
+        ===================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 18px;
+
+            background:
+                rgba(7,5,6,0.78);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-bottom:
+                1px solid
+                rgba(255,70,40,0.14);
+
+            z-index: 100;
+        }
 
 
-.features div{
+        nav a {
 
-background:#151515;
-margin:15px auto;
-padding:15px;
-border-radius:15px;
-max-width:500px;
-transition:.3s;
+            color: #ddd;
 
-}
+            text-decoration: none;
 
+            padding:
+                10px 18px;
 
-.features div:hover{
+            border-radius: 12px;
 
-transform:scale(1.05);
-box-shadow:0 0 20px #ff0055;
-
-}
+            transition: 0.3s;
+        }
 
 
-.button{
+        nav a:hover {
 
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:white;
-color:black;
-text-decoration:none;
-border-radius:12px;
-font-weight:bold;
-transition:.3s;
+            color: white;
 
-}
+            background:
+                rgba(255,70,40,0.10);
+
+            box-shadow:
+                0 0 20px
+                rgba(255,70,40,0.18);
+        }
 
 
-.button:hover{
+        /* =====================
+           HERO
+        ===================== */
 
-transform:scale(1.1);
+        .hero {
 
-}
+            min-height: 88vh;
 
-</style>
+            padding:
+                140px 20px 80px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .racing-title {
+
+            font-size:
+                clamp(
+                    50px,
+                    10vw,
+                    110px
+                );
+
+            font-weight: 900;
+
+            font-style: italic;
+
+            letter-spacing: 4px;
+
+            color: white;
+
+            text-shadow:
+
+                0 0 8px white,
+
+                0 0 20px #ff3d00,
+
+                0 0 45px #ff1744,
+
+                0 0 80px
+                rgba(255,23,68,0.6);
+
+            animation:
+                racingGlow 1.8s
+                ease-in-out
+                infinite alternate;
+        }
+
+
+        .racing-subtitle {
+
+            margin-top: 25px;
+
+            color: #aaa;
+
+            font-size:
+                clamp(
+                    16px,
+                    3vw,
+                    22px
+                );
+        }
+
+
+        .speed-line {
+
+            width:
+                min(500px, 80vw);
+
+            height: 2px;
+
+            margin-top: 30px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #ff3d00,
+                    #ff1744,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 15px
+                rgba(255,60,0,0.8);
+
+            animation:
+                speedLine 1.2s
+                infinite;
+        }
+
+
+        .back-button {
+
+            margin-top: 35px;
+
+            padding:
+                13px 25px;
+
+            border-radius: 13px;
+
+            text-decoration: none;
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(255,70,40,0.5);
+
+            background:
+                rgba(255,70,40,0.07);
+
+            transition: 0.3s;
+        }
+
+
+        .back-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+                rgba(255,70,40,0.15);
+
+            box-shadow:
+                0 0 25px
+                rgba(255,70,40,0.25);
+        }
+
+
+        /* =====================
+           CONTENT
+        ===================== */
+
+        .content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width:
+                1100px;
+
+            margin: auto;
+
+            padding:
+                70px 20px;
+        }
+
+
+        .racing-image {
+
+            width: 100%;
+
+            max-height:
+                470px;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius:
+                22px;
+
+            background: #111;
+
+            border:
+                1px solid
+                rgba(255,70,40,0.2);
+
+            box-shadow:
+
+                0 20px 60px
+                rgba(0,0,0,0.5),
+
+                0 0 30px
+                rgba(255,50,20,0.08);
+        }
+
+
+        .description {
+
+            margin-top: 40px;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .description h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .description h2 span {
+
+            color: #ff4d2e;
+        }
+
+
+        .description p {
+
+            color: #aaa;
+
+            line-height: 2.2;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================
+           FEATURES
+        ===================== */
+
+        .features {
+
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .feature {
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.015)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .feature:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(255,70,40,0.45);
+
+            box-shadow:
+
+                0 15px 40px
+                rgba(0,0,0,0.4),
+
+                0 0 25px
+                rgba(255,60,20,0.10);
+        }
+
+
+        .feature h3 {
+
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .feature p {
+
+            color: #999;
+
+            line-height: 1.9;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================
+           FOOTER
+        ===================== */
+
+        footer {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #666;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.05);
+        }
+
+
+        /* =====================
+           ANIMATIONS
+        ===================== */
+
+        @keyframes racingGlow {
+
+            from {
+
+                transform:
+                    scale(1)
+                    skewX(-2deg);
+
+                text-shadow:
+
+                    0 0 8px white,
+
+                    0 0 20px #ff3d00,
+
+                    0 0 40px #ff1744;
+            }
+
+
+            to {
+
+                transform:
+                    scale(1.02)
+                    skewX(-2deg);
+
+                text-shadow:
+
+                    0 0 10px white,
+
+                    0 0 30px #ff3d00,
+
+                    0 0 65px #ff1744,
+
+                    0 0 90px
+                    rgba(255,23,68,0.5);
+            }
+        }
+
+
+        @keyframes speedLine {
+
+            0% {
+
+                transform:
+                    scaleX(0.2);
+
+                opacity: 0.3;
+            }
+
+
+            50% {
+
+                transform:
+                    scaleX(1);
+
+                opacity: 1;
+            }
+
+
+            100% {
+
+                transform:
+                    scaleX(0.2);
+
+                opacity: 0.3;
+            }
+        }
+
+
+        /* =====================
+           MOBILE
+        ===================== */
+
+        @media (max-width: 800px) {
+
+            .features {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            nav {
+
+                padding:
+                    12px 8px;
+            }
+
+
+            nav a {
+
+                padding:
+                    8px 10px;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -118,58 +601,516 @@ transform:scale(1.1);
 <body>
 
 
-<section class="hero">
+    <canvas id="particles"></canvas>
 
 
-<img src="images/racing.jpg">
+    <nav>
+
+        <a href="index.html">
+            🏠 خانه
+        </a>
+
+        <a href="#racing">
+            🏎️ Racing
+        </a>
+
+    </nav>
 
 
-<h1>
-🏎️ Racing
-</h1>
+    <section
+        class="hero"
+        id="racing"
+    >
+
+        <div class="racing-title">
+
+            RACING
+
+        </div>
 
 
-<h2>
-AMiR GAMiNG
-</h2>
+        <p class="racing-subtitle">
+
+            سرعت، رقابت و آدرنالین 🏎️💨
+
+        </p>
 
 
-<p>
-
-بازی‌های مسابقه‌ای دنیایی از سرعت، رقابت و هیجان هستند.
-ماشین‌های قدرتمند را کنترل کن و در مسیرهای مختلف
-برای رسیدن به مقام اول تلاش کن.
-
-</p>
+        <div class="speed-line"></div>
 
 
-<div class="features">
+        <a
+            href="index.html"
+            class="back-button"
+        >
 
-<div>
-🏁 مسابقات سرعتی
-</div>
+            ← برگشت به AMiR GAMiNG
 
-<div>
-🚘 ماشین‌های قدرتمند
-</div>
+        </a>
 
-<div>
-🔥 هیجان و رقابت
-</div>
-
-<div>
-🌍 مسیرهای مختلف
-</div>
-
-</div>
+    </section>
 
 
-<a class="button" href="index.html">
-🏠 برگشت به خانه
-</a>
+    <main class="content">
 
 
-</section>
+        <img
+            src="images/racing.jpg"
+            alt="Racing"
+            class="racing-image"
+        >
+
+
+        <section class="description">
+
+            <h2>
+
+                🏎️ دنیای
+                <span>Racing</span>
+
+            </h2>
+
+
+            <p>
+
+                آماده‌ای برای سرعت بالا؟
+
+                در دنیای Racing وارد مسابقه شو،
+                مسیرهای مختلف را تجربه کن،
+                با رقبایت مسابقه بده و برای
+                رسیدن به خط پایان تلاش کن.
+
+                اینجا سرعت حرف اول را می‌زند! 🔥
+
+            </p>
+
+        </section>
+
+
+        <section class="features">
+
+
+            <div class="feature">
+
+                <h3>
+                    🏁 مسابقه
+                </h3>
+
+                <p>
+
+                    وارد مسابقه شو و برای
+                    رسیدن به مقام اول رقابت کن.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🚗 ماشین‌ها
+                </h3>
+
+                <p>
+
+                    ماشین‌های مختلف و سریع را
+                    برای مسابقه انتخاب کن.
+
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    ⚡ سرعت
+                </h3>
+
+                <p>
+
+                    سرعت را بالا ببر و با
+                    حداکثر قدرت به خط پایان برس.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+
+        © 2026 AMiR GAMiNG
+
+    </footer>
+
+
+    <script>
+
+
+        const canvas =
+            document.getElementById(
+                "particles"
+            );
+
+
+        const ctx =
+            canvas.getContext("2d");
+
+
+        let particles = [];
+
+
+        const mouse = {
+
+            x: null,
+
+            y: null,
+
+            radius: 150
+
+        };
+
+
+        function resizeCanvas() {
+
+            canvas.width =
+                window.innerWidth;
+
+            canvas.height =
+                window.innerHeight;
+
+        }
+
+
+        resizeCanvas();
+
+
+        window.addEventListener(
+            "resize",
+            resizeCanvas
+        );
+
+
+        window.addEventListener(
+            "mousemove",
+            function(e) {
+
+                mouse.x =
+                    e.clientX;
+
+                mouse.y =
+                    e.clientY;
+
+            }
+        );
+
+
+        window.addEventListener(
+            "mouseleave",
+            function() {
+
+                mouse.x = null;
+
+                mouse.y = null;
+
+            }
+        );
+
+
+        const count =
+            window.innerWidth < 700
+                ? 60
+                : 100;
+
+
+        for (
+            let i = 0;
+            i < count;
+            i++
+        ) {
+
+            particles.push({
+
+                x:
+                    Math.random()
+                    * canvas.width,
+
+                y:
+                    Math.random()
+                    * canvas.height,
+
+                size:
+                    Math.random()
+                    * 2.5 + 0.7,
+
+                speedX:
+                    (Math.random() - 0.5)
+                    * 0.8,
+
+                speedY:
+                    (Math.random() - 0.5)
+                    * 0.8
+
+            });
+
+        }
+
+
+        function animate() {
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            for (const p of particles) {
+
+                p.x += p.speedX;
+
+                p.y += p.speedY;
+
+
+                if (
+                    p.x < 0 ||
+                    p.x > canvas.width
+                ) {
+
+                    p.speedX *= -1;
+
+                }
+
+
+                if (
+                    p.y < 0 ||
+                    p.y > canvas.height
+                ) {
+
+                    p.speedY *= -1;
+
+                }
+
+
+                if (
+                    mouse.x !== null &&
+                    mouse.y !== null
+                ) {
+
+                    const dx =
+                        p.x - mouse.x;
+
+                    const dy =
+                        p.y - mouse.y;
+
+                    const distance =
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+
+
+                    if (
+                        distance <
+                        mouse.radius &&
+                        distance > 0
+                    ) {
+
+                        const force =
+                            (
+                                mouse.radius -
+                                distance
+                            ) /
+                            mouse.radius;
+
+
+                        p.x +=
+                            (
+                                dx /
+                                distance
+                            ) *
+                            force *
+                            2;
+
+
+                        p.y +=
+                            (
+                                dy /
+                                distance
+                            ) *
+                            force *
+                            2;
+
+                    }
+
+                }
+
+
+                ctx.beginPath();
+
+                ctx.arc(
+                    p.x,
+                    p.y,
+                    p.size,
+                    0,
+                    Math.PI * 2
+                );
+
+                ctx.fillStyle =
+                    "rgba(255,70,40,0.85)";
+
+                ctx.shadowBlur = 10;
+
+                ctx.shadowColor =
+                    "#ff3d00";
+
+                ctx.fill();
+
+                ctx.shadowBlur = 0;
+
+            }
+
+
+            /* خطوط بین ذرات */
+
+            for (
+                let i = 0;
+                i < particles.length;
+                i++
+            ) {
+
+                for (
+                    let j = i + 1;
+                    j < particles.length;
+                    j++
+                ) {
+
+                    const dx =
+                        particles[i].x -
+                        particles[j].x;
+
+                    const dy =
+                        particles[i].y -
+                        particles[j].y;
+
+                    const distance =
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+
+
+                    if (distance < 90) {
+
+                        ctx.beginPath();
+
+                        ctx.moveTo(
+                            particles[i].x,
+                            particles[i].y
+                        );
+
+                        ctx.lineTo(
+                            particles[j].x,
+                            particles[j].y
+                        );
+
+                        ctx.strokeStyle =
+                            "rgba(255,70,40," +
+                            (
+                                1 -
+                                distance / 90
+                            ) +
+                            ")";
+
+                        ctx.lineWidth = 0.7;
+
+                        ctx.stroke();
+
+                    }
+
+                }
+
+            }
+
+
+            /* خطوط موس */
+
+            if (
+                mouse.x !== null &&
+                mouse.y !== null
+            ) {
+
+                for (const p of particles) {
+
+                    const dx =
+                        p.x - mouse.x;
+
+                    const dy =
+                        p.y - mouse.y;
+
+                    const distance =
+                        Math.sqrt(
+                            dx * dx +
+                            dy * dy
+                        );
+
+
+                    if (
+                        distance <
+                        mouse.radius
+                    ) {
+
+                        ctx.beginPath();
+
+                        ctx.moveTo(
+                            p.x,
+                            p.y
+                        );
+
+                        ctx.lineTo(
+                            mouse.x,
+                            mouse.y
+                        );
+
+                        ctx.strokeStyle =
+                            "rgba(255,120,40," +
+                            (
+                                1 -
+                                distance /
+                                mouse.radius
+                            ) +
+                            ")";
+
+                        ctx.lineWidth = 1;
+
+                        ctx.stroke();
+
+                    }
+
+                }
+
+            }
+
+
+            requestAnimationFrame(
+                animate
+            );
+
+        }
+
+
+        animate();
+
+
+    </script>
 
 
 </body>
