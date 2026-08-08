@@ -11,7 +11,6 @@
     <title>GTA V | AMiR GAMiNG</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
@@ -32,25 +31,19 @@
         }
 
         body {
-
-            font-family:
-                "Vazirmatn",
-                sans-serif;
+            font-family: "Vazirmatn", sans-serif;
 
             background:
-
                 radial-gradient(
-                    circle at 20% 20%,
+                    circle at 15% 20%,
                     rgba(0,229,255,.08),
                     transparent 30%
                 ),
-
                 radial-gradient(
-                    circle at 80% 70%,
+                    circle at 85% 70%,
                     rgba(128,0,255,.08),
                     transparent 30%
                 ),
-
                 #050509;
 
             color: white;
@@ -60,13 +53,7 @@
             overflow-x: hidden;
         }
 
-
-        /* =========================
-           PARTICLES
-        ========================== */
-
         #particles {
-
             position: fixed;
 
             inset: 0;
@@ -81,32 +68,27 @@
 
 
         /* =========================
-           NAV
+           NAVBAR
         ========================== */
 
         nav {
-
             position: fixed;
 
             top: 0;
-
             left: 0;
-
             right: 0;
 
             height: 70px;
 
             display: flex;
 
+            justify-content: center;
             align-items: center;
 
-            justify-content: center;
-
             background:
-                rgba(5,5,9,.8);
+                rgba(5,5,9,.82);
 
-            backdrop-filter:
-                blur(15px);
+            backdrop-filter: blur(15px);
 
             border-bottom:
                 1px solid
@@ -115,24 +97,19 @@
             z-index: 100;
         }
 
-
         nav a {
-
             color: #ddd;
 
             text-decoration: none;
 
-            padding:
-                10px 20px;
+            padding: 10px 20px;
 
             border-radius: 12px;
 
             transition: .3s;
         }
 
-
         nav a:hover {
-
             color: white;
 
             background:
@@ -141,6 +118,9 @@
             box-shadow:
                 0 0 20px
                 rgba(0,229,255,.18);
+
+            transform:
+                translateY(-2px);
         }
 
 
@@ -149,35 +129,29 @@
         ========================== */
 
         .hero {
-
             position: relative;
 
             z-index: 2;
 
-            min-height: 75vh;
+            min-height: 80vh;
 
             padding:
-                120px 20px 50px;
+                120px 20px 60px;
 
             display: flex;
 
             justify-content: center;
-
             align-items: center;
 
-            text-align: center;
-
             flex-direction: column;
+
+            text-align: center;
         }
 
-
         .hero-image {
+            width: min(1050px, 95vw);
 
-            width:
-                min(1000px, 95vw);
-
-            height:
-                min(480px, 55vw);
+            height: min(520px, 58vw);
 
             min-height: 280px;
 
@@ -190,59 +164,48 @@
                 rgba(0,229,255,.25);
 
             box-shadow:
-
                 0 0 40px
                 rgba(0,229,255,.12),
-
                 0 25px 70px
-                rgba(0,0,0,.5);
+                rgba(0,0,0,.55);
 
             transition:
                 .5s;
         }
 
-
         .hero-image:hover {
-
             transform:
                 scale(1.015);
 
             box-shadow:
-
                 0 0 55px
-                rgba(0,229,255,.2),
-
+                rgba(0,229,255,.22),
                 0 25px 80px
-                rgba(0,0,0,.6);
+                rgba(0,0,0,.65);
         }
 
-
         .title {
-
             margin-top: 35px;
 
             font-size:
-                clamp(40px,7vw,75px);
+                clamp(45px, 8vw, 85px);
 
             font-weight: 900;
 
+            letter-spacing: 3px;
+
             text-shadow:
-
                 0 0 10px white,
-
                 0 0 25px #00e5ff,
-
-                0 0 50px #8000ff;
+                0 0 55px #8000ff;
         }
 
-
         .description {
+            margin-top: 18px;
 
-            margin-top: 15px;
+            max-width: 800px;
 
             color: #aaa;
-
-            max-width: 750px;
 
             line-height: 2;
 
@@ -255,10 +218,11 @@
         ========================== */
 
         .content {
-
             position: relative;
 
             z-index: 2;
+
+            width: 100%;
 
             max-width: 1100px;
 
@@ -268,15 +232,13 @@
                 40px 20px 80px;
         }
 
-
         .section-title {
-
             text-align: center;
 
             font-size: 32px;
 
             margin:
-                50px 0 30px;
+                55px 0 30px;
 
             text-shadow:
                 0 0 20px
@@ -285,22 +247,19 @@
 
 
         /* =========================
-           INFO
+           GAME INFO
         ========================== */
 
         .info-grid {
-
             display: grid;
 
             grid-template-columns:
-                repeat(4,1fr);
+                repeat(4, 1fr);
 
             gap: 18px;
         }
 
-
         .info-box {
-
             padding: 25px;
 
             text-align: center;
@@ -314,14 +273,13 @@
                 1px solid
                 rgba(255,255,255,.08);
 
-            transition: .3s;
+            transition:
+                .3s;
         }
 
-
         .info-box:hover {
-
             transform:
-                translateY(-6px);
+                translateY(-7px);
 
             border-color:
                 rgba(0,229,255,.4);
@@ -331,23 +289,17 @@
                 rgba(0,229,255,.1);
         }
 
-
         .info-icon {
+            font-size: 34px;
 
-            font-size: 35px;
-
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
-
         .info-box h3 {
-
             margin-bottom: 8px;
         }
 
-
         .info-box p {
-
             color: #999;
 
             font-size: 14px;
@@ -355,13 +307,10 @@
 
 
         /* =========================
-           RATING
+           GAME DESCRIPTION
         ========================== */
 
-        .rating-box {
-
-            text-align: center;
-
+        .description-box {
             padding: 30px;
 
             border-radius: 20px;
@@ -372,33 +321,94 @@
             border:
                 1px solid
                 rgba(255,255,255,.08);
-        }
-
-
-        .stars {
-
-            color: #ffd000;
-
-            font-size: 30px;
-
-            letter-spacing: 4px;
-        }
-
-
-        .score {
 
             color: #aaa;
 
-            margin-top: 10px;
+            line-height: 2.2;
+
+            text-align: right;
         }
 
 
         /* =========================
-           REQUIREMENTS
+           FEATURES
         ========================== */
 
-        .requirements {
+        .features {
+            display: grid;
 
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .feature {
+            padding: 25px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            transition: .3s;
+        }
+
+        .feature:hover {
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(128,0,255,.45);
+
+            box-shadow:
+                0 0 25px
+                rgba(128,0,255,.12);
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #999;
+
+            line-height: 1.9;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           SYSTEM REQUIREMENTS
+        ========================== */
+
+        .notice {
+            margin-bottom: 20px;
+
+            padding: 18px 22px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,190,0,.06);
+
+            border:
+                1px solid
+                rgba(255,190,0,.2);
+
+            color: #bbb;
+
+            line-height: 1.9;
+
+            font-size: 13px;
+        }
+
+        .requirements {
             display: grid;
 
             grid-template-columns:
@@ -407,9 +417,7 @@
             gap: 20px;
         }
 
-
         .requirement-box {
-
             padding: 30px;
 
             border-radius: 20px;
@@ -422,17 +430,13 @@
                 rgba(255,255,255,.08);
         }
 
-
         .requirement-box h3 {
-
             margin-bottom: 20px;
 
             font-size: 22px;
         }
 
-
         .requirement-box ul {
-
             list-style: none;
 
             color: #aaa;
@@ -440,14 +444,44 @@
             line-height: 2.3;
         }
 
+        .requirement-box li {
+            border-bottom:
+                1px solid
+                rgba(255,255,255,.04);
+
+            padding: 4px 0;
+        }
 
         .requirement-box li::before {
+            content: "▸ ";
 
-            content:
-                "▸ ";
+            color: #00e5ff;
+        }
 
-            color:
-                #00e5ff;
+
+        /* =========================
+           OFFICIAL SOURCE
+        ========================== */
+
+        .source-box {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(0,229,255,.04);
+
+            border:
+                1px solid
+                rgba(0,229,255,.12);
+
+            text-align: center;
+
+            color: #aaa;
+
+            line-height: 1.9;
         }
 
 
@@ -456,24 +490,23 @@
         ========================== */
 
         .buttons {
-
             display: flex;
 
             justify-content: center;
 
             gap: 15px;
 
-            margin-top: 40px;
+            margin-top: 45px;
 
             flex-wrap: wrap;
         }
 
-
         .button {
-
-            text-decoration: none;
+            display: inline-block;
 
             color: white;
+
+            text-decoration: none;
 
             padding:
                 13px 25px;
@@ -490,9 +523,7 @@
             transition: .3s;
         }
 
-
         .button:hover {
-
             background:
                 rgba(0,229,255,.18);
 
@@ -510,7 +541,6 @@
         ========================== */
 
         footer {
-
             position: relative;
 
             z-index: 2;
@@ -534,45 +564,42 @@
         @media (max-width: 800px) {
 
             .info-grid {
-
                 grid-template-columns:
-                    1fr 1fr;
+                    repeat(2, 1fr);
             }
 
-
-            .requirements {
-
+            .features {
                 grid-template-columns:
                     1fr;
             }
 
-
-            .hero-image {
-
-                height:
-                    300px;
+            .requirements {
+                grid-template-columns:
+                    1fr;
             }
 
+            .hero-image {
+                height: 300px;
+            }
         }
-
 
         @media (max-width: 500px) {
 
             .info-grid {
-
                 grid-template-columns:
                     1fr;
             }
 
-
             nav a {
-
                 font-size: 13px;
 
                 padding:
                     8px 12px;
             }
 
+            .hero-image {
+                min-height: 220px;
+            }
         }
 
     </style>
@@ -586,7 +613,9 @@
     <canvas id="particles"></canvas>
 
 
-    <!-- NAV -->
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
     <nav>
 
@@ -597,14 +626,16 @@
     </nav>
 
 
-    <!-- HERO -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="hero">
 
 
         <img
             src="images/gta.jpg"
-            alt="GTA V"
+            alt="Grand Theft Auto V"
             class="hero-image"
         >
 
@@ -616,10 +647,10 @@
 
         <p class="description">
 
-            وارد دنیای عظیم و پرهیجان
-            Grand Theft Auto V شوید؛
-            شهری پر از مأموریت، رانندگی،
-            ماجراجویی و اتفاقات مختلف.
+            Grand Theft Auto V دنیای
+            Los Santos و Blaine County را
+            در قالب یک بازی جهان‌باز ارائه می‌کند
+            و شامل Story Mode و GTA Online است.
 
         </p>
 
@@ -627,12 +658,14 @@
     </section>
 
 
-    <!-- CONTENT -->
+    <!-- =========================
+         MAIN
+    ========================== -->
 
     <main class="content">
 
 
-        <!-- INFO -->
+        <!-- GAME INFO -->
 
         <h2 class="section-title">
             🎮 اطلاعات بازی
@@ -666,11 +699,11 @@
                 </div>
 
                 <h3>
-                    انتشار
+                    انتشار اولیه
                 </h3>
 
                 <p>
-                    2013
+                    17 سپتامبر 2013
                 </p>
 
             </div>
@@ -679,7 +712,7 @@
             <div class="info-box">
 
                 <div class="info-icon">
-                    🎭
+                    🌎
                 </div>
 
                 <h3>
@@ -696,15 +729,15 @@
             <div class="info-box">
 
                 <div class="info-icon">
-                    ⭐
+                    👥
                 </div>
 
                 <h3>
-                    امتیاز
+                    بخش آنلاین
                 </h3>
 
                 <p>
-                    4.8 / 5
+                    GTA Online
                 </p>
 
             </div>
@@ -713,46 +746,125 @@
         </div>
 
 
-        <!-- RATING -->
+        <!-- DESCRIPTION -->
 
         <h2 class="section-title">
-            ⭐ امتیاز AMiR GAMiNG
+            📖 درباره بازی
         </h2>
 
 
-        <div class="rating-box">
+        <div class="description-box">
 
-            <div class="stars">
-                ★★★★★
-            </div>
+            در GTA V بازیکن وارد دنیای
+            Los Santos و Blaine County می‌شود.
+            داستان بازی سه شخصیت اصلی را دنبال می‌کند
+            که در دنیای جرم و ماجراجویی‌های مختلف
+            درگیر می‌شوند.
 
-            <div class="score">
-                4.8 از 5
-            </div>
+            <br><br>
+
+            در کنار Story Mode،
+            GTA Online یک دنیای آنلاین
+            پویا و در حال توسعه ارائه می‌دهد.
 
         </div>
 
 
-        <!-- REQUIREMENTS -->
+        <!-- FEATURES -->
 
         <h2 class="section-title">
-            💻 سیستم موردنیاز
+            ⚡ ویژگی‌ها
         </h2>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <h3>
+                    🌎 جهان‌باز
+                </h3>
+
+                <p>
+                    امکان گشت‌وگذار در
+                    Los Santos و Blaine County
+                    و تجربه فعالیت‌های مختلف.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🎬 Story Mode
+                </h3>
+
+                <p>
+                    بخش داستانی بازی با
+                    سه شخصیت اصلی و مأموریت‌های
+                    مختلف.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <h3>
+                    🌐 GTA Online
+                </h3>
+
+                <p>
+                    دنیای آنلاین مستقل و
+                    در حال توسعه با فعالیت‌ها
+                    و محتوای متعدد.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- SYSTEM REQUIREMENTS -->
+
+        <h2 class="section-title">
+            💻 سیستم موردنیاز PC
+        </h2>
+
+
+        <div class="notice">
+
+            توجه: مشخصات زیر، مشخصات رسمی منتشرشده
+            توسط Rockstar برای نسخه اولیه PC هستند.
+            نسخه ارتقایافته PC که در سال 2025 منتشر شد
+            می‌تواند نیازمندی‌ها و قابلیت‌های متفاوتی داشته باشد.
+
+        </div>
 
 
         <div class="requirements">
 
 
+            <!-- MINIMUM -->
+
             <div class="requirement-box">
 
                 <h3>
-                    حداقل سیستم
+                    🔹 حداقل
                 </h3>
 
                 <ul>
 
                     <li>
+                        OS: Windows 7 / 8 / 8.1 - 64 Bit
+                    </li>
+
+                    <li>
                         CPU: Intel Core 2 Quad Q6600
+                        یا AMD Phenom 9850
                     </li>
 
                     <li>
@@ -760,11 +872,16 @@
                     </li>
 
                     <li>
-                        GPU: NVIDIA 9800 GT
+                        GPU: NVIDIA 9800 GT 1GB
+                        یا AMD HD 4870 1GB
                     </li>
 
                     <li>
-                        Storage: 72GB
+                        Storage: 65GB
+                    </li>
+
+                    <li>
+                        DirectX: 10 / 10.1 / 11
                     </li>
 
                 </ul>
@@ -772,16 +889,23 @@
             </div>
 
 
+            <!-- RECOMMENDED -->
+
             <div class="requirement-box">
 
                 <h3>
-                    سیستم پیشنهادی
+                    🔹 پیشنهادی
                 </h3>
 
                 <ul>
 
                     <li>
+                        OS: Windows 7 / 8 / 8.1 - 64 Bit
+                    </li>
+
+                    <li>
                         CPU: Intel Core i5 3470
+                        یا AMD FX-8350
                     </li>
 
                     <li>
@@ -789,11 +913,16 @@
                     </li>
 
                     <li>
-                        GPU: GTX 660
+                        GPU: NVIDIA GTX 660 2GB
+                        یا AMD HD 7870 2GB
                     </li>
 
                     <li>
-                        Storage: 72GB
+                        Storage: 65GB
+                    </li>
+
+                    <li>
+                        DirectX: 10 / 10.1 / 11
                     </li>
 
                 </ul>
@@ -804,7 +933,21 @@
         </div>
 
 
-        <!-- BUTTONS -->
+        <div class="source-box">
+
+            📚 منبع اطلاعات سیستم موردنیاز:
+            Rockstar Games
+
+            <br>
+
+            مشخصات این بخش بر اساس
+            اعلام رسمی Rockstar برای نسخه PC
+            تهیه شده است.
+
+        </div>
+
+
+        <!-- BUTTON -->
 
         <div class="buttons">
 
@@ -812,7 +955,7 @@
                 href="index.html"
                 class="button"
             >
-                🔙 برگشت به خانه
+                🔙 برگشت به صفحه اصلی
             </a>
 
         </div>
@@ -821,7 +964,9 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -830,14 +975,14 @@
     </footer>
 
 
-    <!-- PARTICLES -->
+    <!-- =========================
+         PARTICLES
+    ========================== -->
 
     <script>
 
         const canvas =
-            document.getElementById(
-                "particles"
-            );
+            document.getElementById("particles");
 
         const ctx =
             canvas.getContext("2d");
@@ -949,11 +1094,9 @@
             particles.forEach(
                 function(p) {
 
-                    p.x +=
-                        p.speedX;
+                    p.x += p.speedX;
 
-                    p.y +=
-                        p.speedY;
+                    p.y += p.speedY;
 
 
                     if (
@@ -982,12 +1125,10 @@
                     ) {
 
                         const dx =
-                            p.x -
-                            mouse.x;
+                            p.x - mouse.x;
 
                         const dy =
-                            p.y -
-                            mouse.y;
+                            p.y - mouse.y;
 
                         const distance =
                             Math.sqrt(
@@ -1105,8 +1246,7 @@
                             ) +
                             ")";
 
-                        ctx.lineWidth =
-                            .7;
+                        ctx.lineWidth = .7;
 
                         ctx.stroke();
 
@@ -1128,12 +1268,10 @@
                     function(p) {
 
                         const dx =
-                            p.x -
-                            mouse.x;
+                            p.x - mouse.x;
 
                         const dy =
-                            p.y -
-                            mouse.y;
+                            p.y - mouse.y;
 
                         const distance =
                             Math.sqrt(
@@ -1168,8 +1306,7 @@
                                 ) +
                                 ")";
 
-                            ctx.lineWidth =
-                                1;
+                            ctx.lineWidth = 1;
 
                             ctx.stroke();
 
