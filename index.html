@@ -29,38 +29,112 @@ color:white;
 }
 
 
-/* نورهای متحرک */
+/* ===== Loading ===== */
+
+#loader{
+
+position:fixed;
+width:100%;
+height:100vh;
+background:#050505;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+z-index:9999;
+
+}
+
+
+.loader-logo{
+
+font-size:70px;
+font-weight:900;
+
+background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
+background-size:300%;
+
+-webkit-background-clip:text;
+color:transparent;
+
+animation:logo 4s infinite;
+
+}
+
+
+.loading{
+
+margin-top:40px;
+
+width:300px;
+height:10px;
+
+background:#222;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+
+.loading span{
+
+display:block;
+
+height:100%;
+width:0%;
+
+background:#00e5ff;
+
+animation:load 3s forwards;
+
+}
+
+
+.loading-text{
+
+margin-top:20px;
+color:#aaa;
+
+}
+
+
+@keyframes load{
+
+to{
+width:100%;
+}
+
+}
+
+
+/* ===== پس زمینه ===== */
+
 
 body::before{
 
 content:"";
 position:fixed;
+
 width:500px;
 height:500px;
+
 background:#00e5ff;
+
 filter:blur(170px);
+
 opacity:.15;
+
 top:-150px;
 right:-150px;
+
 animation:move 8s infinite alternate;
 
 }
 
-
-body::after{
-
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:#8000ff;
-filter:blur(170px);
-opacity:.15;
-bottom:-150px;
-left:-150px;
-animation:move2 10s infinite alternate;
-
-}
 
 
 @keyframes move{
@@ -76,29 +150,23 @@ transform:translate(-100px,150px);
 }
 
 
-@keyframes move2{
-
-from{
-transform:translate(0);
-}
-
-to{
-transform:translate(120px,-100px);
-}
-
-}
 
 
+/* ===== منو ===== */
 
-/* منو */
 
 nav{
 
 background:#111;
+
 padding:20px;
+
 text-align:center;
+
 position:sticky;
+
 top:0;
+
 z-index:10;
 
 }
@@ -107,23 +175,32 @@ z-index:10;
 nav a{
 
 color:white;
+
 text-decoration:none;
+
 margin:15px;
+
 font-weight:bold;
 
 }
 
 
 
-/* صفحه اول */
+/* ===== لوگو ===== */
+
 
 .hero{
 
 height:80vh;
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
+
 text-align:center;
 
 }
@@ -133,6 +210,7 @@ text-align:center;
 .logo{
 
 font-size:70px;
+
 font-weight:900;
 
 background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
@@ -140,6 +218,7 @@ background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
 background-size:300%;
 
 -webkit-background-clip:text;
+
 color:transparent;
 
 animation:logo 5s infinite;
@@ -165,18 +244,20 @@ background-position:300%;
 .hero p{
 
 font-size:22px;
+
 color:#aaa;
 
 }
 
 
 
+/* ===== کارت ها ===== */
 
-/* بازی ها */
 
 .games{
 
 padding:70px 20px;
+
 text-align:center;
 
 }
@@ -186,8 +267,11 @@ text-align:center;
 .cards{
 
 display:flex;
+
 flex-wrap:wrap;
+
 justify-content:center;
+
 gap:30px;
 
 }
@@ -197,9 +281,13 @@ gap:30px;
 .card{
 
 width:300px;
+
 background:#151515;
+
 padding:20px;
+
 border-radius:20px;
+
 transition:.4s;
 
 }
@@ -209,6 +297,7 @@ transition:.4s;
 .card:hover{
 
 transform:translateY(-15px);
+
 box-shadow:0 0 30px #00e5ff;
 
 }
@@ -218,25 +307,12 @@ box-shadow:0 0 30px #00e5ff;
 .game-image{
 
 width:100%;
+
 height:170px;
+
 object-fit:cover;
+
 border-radius:15px;
-
-}
-
-
-
-.card h2{
-
-font-size:30px;
-
-}
-
-
-
-.card p{
-
-color:#aaa;
 
 }
 
@@ -245,12 +321,19 @@ color:#aaa;
 .button{
 
 display:inline-block;
+
 background:white;
+
 color:black;
+
 padding:12px 25px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 font-weight:bold;
+
 margin-top:10px;
 
 }
@@ -259,29 +342,24 @@ margin-top:10px;
 
 /* درباره */
 
+
 .about{
 
 padding:70px 20px;
+
 background:#111;
+
 text-align:center;
 
 }
-
-
-
-.about p{
-
-color:#aaa;
-line-height:2;
-
-}
-
 
 
 footer{
 
 text-align:center;
+
 padding:30px;
+
 color:#777;
 
 }
@@ -289,11 +367,40 @@ color:#777;
 
 </style>
 
-
 </head>
 
 
+
 <body>
+
+
+<!-- لودینگ -->
+
+<div id="loader">
+
+<div class="loader-logo">
+
+AMiR GAMiNG
+
+</div>
+
+
+<div class="loading">
+
+<span></span>
+
+</div>
+
+
+<div class="loading-text">
+
+در حال ورود به دنیای گیمینگ...
+
+</div>
+
+</div>
+
+
 
 
 <nav>
@@ -305,6 +412,7 @@ color:#777;
 <a href="#about">👤 درباره</a>
 
 </nav>
+
 
 
 
@@ -340,95 +448,54 @@ AMiR GAMiNG
 </h1>
 
 
-
 <div class="cards">
 
 
-
 <div class="card">
-
 
 <img src="images/gta.jpg" class="game-image">
 
+<h2>🎮 GTA V</h2>
 
-<h2>
-🎮 GTA V
-</h2>
+<p>دنیای بزرگ و هیجان انگیز GTA</p>
 
-
-<p>
-دنیای بزرگ و هیجان انگیز GTA
-</p>
-
-
-<a class="button" href="gta.html">
-ورود
-</a>
-
+<a class="button" href="gta.html">ورود</a>
 
 </div>
 
 
 
-
 <div class="card">
-
 
 <img src="images/minecraft.jpg" class="game-image">
 
+<h2>⛏️ Minecraft</h2>
 
-<h2>
-⛏️ Minecraft
-</h2>
+<p>ساخت و ماجراجویی بی پایان</p>
 
-
-<p>
-ساخت و ماجراجویی بی پایان
-</p>
-
-
-<a class="button" href="minecraft.html">
-ورود
-</a>
-
+<a class="button" href="minecraft.html">ورود</a>
 
 </div>
-
-
 
 
 
 <div class="card">
 
-
 <img src="images/racing.jpg" class="game-image">
 
+<h2>🏎️ Racing</h2>
 
-<h2>
-🏎️ Racing
-</h2>
+<p>سرعت و رقابت</p>
 
-
-<p>
-سرعت و رقابت
-</p>
-
-
-<a class="button" href="racing.html">
-ورود
-</a>
-
+<a class="button" href="racing.html">ورود</a>
 
 </div>
-
-
 
 
 </div>
 
 
 </section>
-
 
 
 
@@ -437,19 +504,23 @@ AMiR GAMiNG
 
 
 <h1>
+
 👤 درباره AMiR GAMiNG
+
 </h1>
 
 
 <p>
 
 به سایت AMiR GAMiNG خوش آمدید.
-اینجا دنیای بازی‌ها، گیمینگ و پروژه‌های من است.
+
+اینجا دنیای بازی‌ها و گیمینگ است.
 
 </p>
 
 
 </section>
+
 
 
 
@@ -459,6 +530,22 @@ AMiR GAMiNG
 
 </footer>
 
+
+
+
+<script>
+
+window.onload=function(){
+
+setTimeout(function(){
+
+document.getElementById("loader").style.display="none";
+
+},3000);
+
+}
+
+</script>
 
 
 </body>
