@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -26,17 +27,13 @@ html{
 body{
     font-family:"Vazirmatn",sans-serif;
     background:
-        radial-gradient(circle at 15% 10%,rgba(0,220,90,.10),transparent 28%),
-        radial-gradient(circle at 85% 35%,rgba(120,0,255,.10),transparent 30%),
-        radial-gradient(circle at 50% 90%,rgba(0,180,255,.07),transparent 30%),
-        #050806;
+        radial-gradient(circle at 15% 15%,rgba(0,255,120,.08),transparent 30%),
+        radial-gradient(circle at 85% 65%,rgba(80,80,255,.10),transparent 30%),
+        #050805;
     color:white;
     min-height:100vh;
     overflow-x:hidden;
 }
-
-
-/* ================= PARTICLES ================= */
 
 #particles{
     position:fixed;
@@ -47,8 +44,7 @@ body{
     z-index:1;
 }
 
-
-/* ================= NAVBAR ================= */
+/* ================= NAV ================= */
 
 nav{
     position:fixed;
@@ -60,26 +56,21 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
+    gap:8px;
 
-    background:rgba(4,8,5,.82);
+    background:rgba(5,8,5,.82);
     backdrop-filter:blur(16px);
 
-    border-bottom:1px solid rgba(80,255,120,.13);
+    border-bottom:1px solid rgba(80,255,120,.15);
 
     z-index:100;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:8px;
 }
 
 nav a{
     color:#ccc;
     text-decoration:none;
 
-    padding:10px 17px;
+    padding:10px 16px;
 
     border-radius:12px;
 
@@ -87,34 +78,21 @@ nav a{
 }
 
 nav a:hover{
-    color:#fff;
+    color:white;
 
-    background:rgba(70,255,100,.08);
+    background:rgba(80,255,120,.08);
 
     box-shadow:
-        0 0 20px rgba(70,255,100,.13);
+        0 0 20px
+        rgba(80,255,120,.15);
 
     transform:translateY(-2px);
 }
 
-.menu-button{
-    display:none;
-
-    background:none;
-    border:none;
-
-    color:white;
-
-    font-size:28px;
-
-    cursor:pointer;
-}
-
-
 /* ================= HERO ================= */
 
 .hero{
-    min-height:90vh;
+    min-height:88vh;
 
     padding:130px 20px 70px;
 
@@ -127,41 +105,57 @@ nav a:hover{
     text-align:center;
 
     position:relative;
+
     z-index:2;
 }
 
-.minecraft-logo{
-    font-size:clamp(48px,9vw,100px);
+.logo{
+    font-size:
+        clamp(45px,9vw,95px);
 
     font-weight:900;
 
-    letter-spacing:2px;
-
-    color:#fff;
+    letter-spacing:3px;
 
     text-shadow:
-        0 5px 0 #222,
-        0 0 10px rgba(255,255,255,.4),
-        0 0 25px rgba(0,255,100,.25);
+        0 0 8px white,
+        0 0 20px #55ff55,
+        0 0 45px #00aa44;
 
     animation:
-        minecraftGlow 3s infinite alternate;
+        logoGlow 2.5s infinite alternate;
 }
 
-.minecraft-logo span{
-    color:#58ff72;
+@keyframes logoGlow{
+
+    from{
+        text-shadow:
+            0 0 8px white,
+            0 0 20px #55ff55,
+            0 0 40px #00aa44;
+    }
+
+    to{
+        text-shadow:
+            0 0 12px white,
+            0 0 30px #55ff55,
+            0 0 65px #00ff66;
+    }
+
 }
 
-.hero-subtitle{
+.subtitle{
     margin-top:20px;
 
     color:#aaa;
 
-    font-size:clamp(16px,3vw,22px);
+    font-size:
+        clamp(16px,3vw,22px);
 }
 
 .hero-line{
-    width:min(550px,82vw);
+    width:
+        min(520px,80vw);
 
     height:2px;
 
@@ -171,244 +165,158 @@ nav a:hover{
         linear-gradient(
             90deg,
             transparent,
-            #35ff65,
-            #00cfff,
-            #9b35ff,
+            #55ff55,
+            #00cc66,
             transparent
         );
 
     box-shadow:
-        0 0 18px rgba(50,255,100,.5);
+        0 0 15px
+        rgba(80,255,120,.7);
 }
-
-
-/* ================= MUSIC ================= */
-
-.music-box{
-    margin-top:30px;
-
-    padding:14px 18px;
-
-    display:flex;
-    align-items:center;
-
-    gap:12px;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.045);
-
-    border:1px solid rgba(80,255,120,.18);
-
-    box-shadow:
-        0 0 25px rgba(0,255,100,.06);
-}
-
-.music-button{
-    border:none;
-
-    padding:10px 18px;
-
-    border-radius:11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(40,255,90,.14),
-            rgba(0,200,255,.10)
-        );
-
-    color:white;
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-    border:1px solid rgba(70,255,100,.25);
-
-    transition:.3s;
-}
-
-.music-button:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 0 20px rgba(70,255,100,.18);
-}
-
-.music-status{
-    color:#999;
-
-    font-size:13px;
-}
-
 
 /* ================= CONTENT ================= */
 
 .content{
     position:relative;
+
     z-index:2;
 
-    width:100%;
     max-width:1200px;
 
     margin:auto;
 
-    padding:50px 20px 80px;
+    padding:
+        40px 20px 80px;
 }
 
 .section-title{
     text-align:center;
 
-    font-size:clamp(28px,5vw,38px);
+    font-size:34px;
 
     margin:
-        70px 0 35px;
+        70px 0 30px;
 
     text-shadow:
-        0 0 20px rgba(80,255,120,.25);
+        0 0 20px
+        rgba(80,255,120,.35);
 }
-
 
 /* ================= INTRO ================= */
 
 .intro{
-    padding:35px 30px;
+    padding:30px;
 
     border-radius:22px;
 
     background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.015)
-        );
+        rgba(255,255,255,.035);
 
     border:
-        1px solid rgba(255,255,255,.08);
-
-    line-height:2.3;
+        1px solid
+        rgba(80,255,120,.15);
 
     color:#aaa;
+
+    line-height:2.2;
 
     text-align:center;
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.25);
+        0 15px 40px
+        rgba(0,0,0,.25);
 }
 
 .intro strong{
-    color:#fff;
+    color:#eee;
 }
 
+/* ================= DIMENSIONS ================= */
 
-/* ================= WORLDS ================= */
-
-.world-grid{
+.dimensions{
     display:grid;
 
     grid-template-columns:
         repeat(3,1fr);
 
-    gap:22px;
+    gap:25px;
 }
 
-.world-card{
-    padding:30px;
+.dimension-card{
+    overflow:hidden;
 
-    min-height:210px;
-
-    border-radius:20px;
-
-    text-align:center;
+    border-radius:22px;
 
     background:
         rgba(255,255,255,.04);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
     transition:.4s;
-
-    position:relative;
-
-    overflow:hidden;
 }
 
-.world-card::before{
-    content:"";
-
-    position:absolute;
-
-    width:150px;
-    height:150px;
-
-    border-radius:50%;
-
-    filter:blur(55px);
-
-    opacity:.22;
-
-    top:-70px;
-    right:-60px;
-}
-
-.overworld::before{
-    background:#32ff58;
-}
-
-.nether::before{
-    background:#ff3200;
-}
-
-.end::before{
-    background:#a800ff;
-}
-
-.world-card:hover{
-    transform:translateY(-8px);
+.dimension-card:hover{
+    transform:
+        translateY(-10px);
 
     border-color:
-        rgba(100,255,120,.35);
+        rgba(80,255,120,.45);
 
     box-shadow:
-        0 0 30px rgba(0,255,100,.10);
+        0 0 35px
+        rgba(80,255,120,.12);
 }
 
-.world-icon{
-    font-size:50px;
+.dimension-card img{
+    width:100%;
 
-    margin-bottom:15px;
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
 }
 
-.world-card h3{
+.dimension-card:hover img{
+    transform:scale(1.06);
+}
+
+.dimension-body{
+    padding:22px;
+}
+
+.dimension-body h3{
     font-size:24px;
 
     margin-bottom:10px;
 }
 
-.world-card p{
+.dimension-body p{
     color:#999;
 
-    font-size:14px;
-
     line-height:1.9;
+
+    font-size:14px;
 }
 
+/* ================= ITEMS ================= */
 
-/* ================= BOSSES ================= */
-
-.boss-grid{
+.items{
     display:grid;
 
     grid-template-columns:
         repeat(4,1fr);
 
-    gap:18px;
+    gap:20px;
 }
 
-.boss-card{
-    padding:25px 18px;
+.item-card{
+    padding:20px;
 
     text-align:center;
 
@@ -418,31 +326,185 @@ nav a:hover{
         rgba(255,255,255,.04);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(255,255,255,.08);
 
-    transition:.4s;
+    transition:.35s;
 }
 
-.boss-card:hover{
+.item-card:hover{
     transform:
-        translateY(-9px)
-        scale(1.02);
+        translateY(-8px);
 
     border-color:
-        rgba(150,80,255,.4);
+        rgba(0,255,120,.45);
 
     box-shadow:
-        0 0 30px rgba(130,0,255,.12);
+        0 0 30px
+        rgba(0,255,120,.12);
 }
 
-.boss-icon{
-    font-size:55px;
+.item-card img{
+    width:100%;
 
-    margin-bottom:12px;
+    height:180px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+    filter:
+        drop-shadow(
+            0 0 12px
+            rgba(80,255,120,.18)
+        );
+}
+
+.item-card h3{
+    margin-top:12px;
+
+    font-size:19px;
+}
+
+.item-card p{
+    margin-top:8px;
+
+    color:#888;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+/* ================= MOBS ================= */
+
+.mobs{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+}
+
+.mob-card{
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.mob-card:hover{
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(128,80,255,.5);
+
+    box-shadow:
+        0 0 30px
+        rgba(128,80,255,.15);
+}
+
+.mob-card img{
+    width:100%;
+
+    height:200px;
+
+    object-fit:contain;
+
+    display:block;
+
+    margin:auto;
+
+    filter:
+        drop-shadow(
+            0 0 14px
+            rgba(128,80,255,.18)
+        );
+}
+
+.mob-card h3{
+    margin-top:12px;
+
+    font-size:19px;
+}
+
+.mob-card p{
+    color:#888;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    margin-top:7px;
+}
+
+/* ================= BOSSES ================= */
+
+.boss-section{
+    padding:30px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(80,0,120,.12),
+            rgba(0,80,50,.08)
+        );
+
+    border:
+        1px solid
+        rgba(128,80,255,.18);
+}
+
+.boss-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.boss-card{
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+}
+
+.boss-card img{
+    width:100%;
+
+    height:190px;
+
+    object-fit:contain;
 }
 
 .boss-card h3{
-    margin-bottom:8px;
+    margin-top:10px;
 }
 
 .boss-card p{
@@ -450,111 +512,55 @@ nav a:hover{
 
     font-size:13px;
 
-    line-height:1.8;
-}
-
-
-/* ================= ITEMS ================= */
-
-.item-grid{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-}
-
-.item-card{
-    padding:25px 18px;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.055),
-            rgba(255,255,255,.015)
-        );
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    transition:.35s;
-}
-
-.item-card:hover{
-    transform:translateY(-7px);
-
-    border-color:
-        rgba(0,220,255,.35);
-
-    box-shadow:
-        0 0 25px rgba(0,200,255,.10);
-}
-
-.item-icon{
-    font-size:48px;
-
-    margin-bottom:12px;
-}
-
-.item-card h3{
-    margin-bottom:8px;
-}
-
-.item-card p{
-    color:#999;
-
-    font-size:13px;
+    margin-top:7px;
 
     line-height:1.8;
 }
 
+/* ================= END ================= */
 
-/* ================= FEATURE ================= */
-
-.feature{
+.end-special{
     margin-top:70px;
 
-    padding:40px 30px;
+    padding:35px;
 
     border-radius:24px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(0,255,100,.055),
-            rgba(120,0,255,.055),
-            rgba(0,180,255,.04)
+        radial-gradient(
+            circle at center,
+            rgba(128,0,255,.16),
+            rgba(0,0,0,.2)
         );
 
     border:
-        1px solid rgba(100,255,130,.12);
+        1px solid
+        rgba(160,80,255,.25);
 
     text-align:center;
+}
+
+.end-special h2{
+    font-size:30px;
+
+    margin-bottom:18px;
+
+    color:#eee;
+
+    text-shadow:
+        0 0 20px
+        #8f4cff;
+}
+
+.end-special p{
+    color:#aaa;
 
     line-height:2.3;
+
+    max-width:900px;
+
+    margin:auto;
 }
-
-.feature h2{
-    margin-bottom:15px;
-
-    font-size:30px;
-}
-
-.feature p{
-    color:#aaa;
-}
-
-.highlight{
-    color:#6aff82;
-
-    font-weight:800;
-}
-
 
 /* ================= FACTS ================= */
 
@@ -562,29 +568,31 @@ nav a:hover{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(3,1fr);
 
-    gap:18px;
+    gap:20px;
 }
 
 .fact{
-    padding:24px;
+    padding:25px;
 
     text-align:center;
 
-    border-radius:18px;
+    border-radius:20px;
 
     background:
         rgba(255,255,255,.035);
 
     border:
-        1px solid rgba(255,255,255,.07);
+        1px solid
+        rgba(255,255,255,.07);
 
     transition:.3s;
 }
 
 .fact:hover{
-    transform:translateY(-5px);
+    transform:
+        translateY(-6px);
 
     border-color:
         rgba(80,255,120,.3);
@@ -593,7 +601,7 @@ nav a:hover{
 .fact-icon{
     font-size:35px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
 .fact h3{
@@ -603,18 +611,53 @@ nav a:hover{
 .fact p{
     color:#999;
 
-    font-size:13px;
+    line-height:1.9;
 
-    line-height:1.8;
+    font-size:13px;
 }
 
+/* ================= GALLERY ================= */
 
-/* ================= ABOUT ================= */
+.gallery{
+    display:grid;
 
-.about{
-    margin-top:70px;
+    grid-template-columns:
+        repeat(3,1fr);
 
-    padding:40px 30px;
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:
+        scale(1.03);
+
+    box-shadow:
+        0 0 30px
+        rgba(80,255,120,.12);
+}
+
+/* ================= MUSIC ================= */
+
+.music{
+    margin-top:60px;
+
+    padding:30px;
 
     text-align:center;
 
@@ -624,25 +667,24 @@ nav a:hover{
         rgba(255,255,255,.04);
 
     border:
-        1px solid rgba(255,255,255,.08);
+        1px solid
+        rgba(80,255,120,.15);
 }
 
-.about h2{
-    font-size:30px;
+.music h2{
+    margin-bottom:15px;
+}
+
+.music p{
+    color:#888;
 
     margin-bottom:18px;
 }
 
-.about p{
-    color:#aaa;
-
-    max-width:800px;
-
-    margin:auto;
-
-    line-height:2.2;
+audio{
+    width:
+        min(600px,100%);
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -651,156 +693,82 @@ footer{
 
     z-index:2;
 
-    margin-top:30px;
-
-    padding:35px 20px;
+    padding:35px;
 
     text-align:center;
 
     color:#666;
 
     border-top:
-        1px solid rgba(255,255,255,.05);
+        1px solid
+        rgba(255,255,255,.05);
 }
 
-
-/* ================= ANIMATION ================= */
-
-@keyframes minecraftGlow{
-
-    from{
-        text-shadow:
-            0 5px 0 #222,
-            0 0 8px rgba(255,255,255,.4),
-            0 0 20px rgba(0,255,100,.15);
-    }
-
-    to{
-        text-shadow:
-            0 5px 0 #222,
-            0 0 12px rgba(255,255,255,.5),
-            0 0 35px rgba(0,255,100,.3),
-            0 0 55px rgba(120,0,255,.15);
-    }
-
-}
-
-
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
 
-    .boss-grid,
-    .item-grid{
+    .dimensions{
+        grid-template-columns:1fr;
+    }
+
+    .items,
+    .mobs,
+    .boss-grid{
         grid-template-columns:
             repeat(2,1fr);
     }
 
-    .world-grid,
-    .facts{
-        grid-template-columns:
-            1fr;
-    }
-
-}
-
-@media(max-width:700px){
-
-    nav{
-        justify-content:flex-end;
-
-        padding:0 18px;
-    }
-
-    .menu-button{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-
-        top:70px;
-
-        right:15px;
-        left:15px;
-
-        display:none;
-
-        flex-direction:column;
-
-        padding:15px;
-
-        border-radius:16px;
-
-        background:
-            rgba(4,8,5,.97);
-
-        border:
-            1px solid rgba(80,255,120,.15);
-    }
-
-    .nav-links.active{
-        display:flex;
+    .facts,
+    .gallery{
+        grid-template-columns:1fr;
     }
 
 }
 
 @media(max-width:550px){
 
-    .boss-grid,
-    .item-grid{
+    nav{
+        gap:2px;
+    }
+
+    nav a{
+        font-size:11px;
+
+        padding:
+            8px;
+    }
+
+    .items,
+    .mobs,
+    .boss-grid{
         grid-template-columns:1fr;
     }
 
-    .music-box{
-        flex-direction:column;
+    .dimension-card img{
+        height:230px;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <canvas id="particles"></canvas>
 
-
-<!-- ================= NAVBAR ================= -->
+<!-- ================= NAV ================= -->
 
 <nav>
 
-<button
-    class="menu-button"
-    id="menuButton"
->
-    ☰
-</button>
-
-<div
-    class="nav-links"
-    id="navLinks"
->
-
 <a href="#home">🏠 خانه</a>
-
-<a href="#intro">🎮 معرفی</a>
-
-<a href="#worlds">🌍 دنیاها</a>
-
-<a href="#bosses">👹 باس‌ها</a>
-
+<a href="#dimensions">🌍 سرزمین‌ها</a>
 <a href="#items">💎 آیتم‌ها</a>
-
-<a href="#about">👤 درباره</a>
-
-</div>
+<a href="#mobs">👾 ماب‌ها</a>
+<a href="#facts">📖 فکت‌ها</a>
 
 </nav>
-
 
 <!-- ================= HERO ================= -->
 
@@ -809,617 +777,567 @@ footer{
     id="home"
 >
 
-<h1 class="minecraft-logo">
-    MINECRAFT
+<h1 class="logo">
+Minecraft
 </h1>
 
-<p class="hero-subtitle">
-    دنیایی که تنها محدودیتش تخیل توست ⛏️🌍
+<p class="subtitle">
+⛏️ دنیای بی‌پایان ساخت، بقا و ماجراجویی
 </p>
 
 <div class="hero-line"></div>
 
-
-<div class="music-box">
-
-<button
-    class="music-button"
-    id="musicButton"
->
-    🎵 پخش موسیقی Minecraft
-</button>
-
-<span
-    class="music-status"
-    id="musicStatus"
->
-    موسیقی خاموش است
-</span>
-
-</div>
-
-
-<audio
-    id="minecraftMusic"
-    loop
->
-
-<source
-    src="minecraft.mp3"
-    type="audio/mpeg"
->
-
-</audio>
-
 </section>
-
 
 <!-- ================= MAIN ================= -->
 
 <main class="content">
 
-
 <!-- INTRO -->
-
-<section id="intro">
-
-<h2 class="section-title">
-    ⛏️ درباره Minecraft
-</h2>
-
-<div class="intro">
-
-<p>
-
-<strong>Minecraft</strong>
-یکی از مشهورترین بازی‌های Sandbox تاریخ است؛
-دنیایی عظیم که بازیکن می‌تواند در آن
-ساخت‌وساز کند، منابع جمع‌آوری کند،
-به ماجراجویی برود و با موجودات مختلف مبارزه کند.
-
-<br><br>
-
-در Minecraft تقریباً هر چیزی که می‌بینی
-می‌تواند بخشی از یک ماجراجویی بزرگ باشد.
-از ساخت یک خانه ساده گرفته تا ساخت سازه‌های عظیم
-و سفر به خطرناک‌ترین نقاط جهان.
-
-</p>
-
-</div>
-
-</section>
-
-
-<!-- WORLDS -->
-
-<section id="worlds">
-
-<h2 class="section-title">
-    🌍 سرزمین‌های Minecraft
-</h2>
-
-<div class="world-grid">
-
-
-<div class="world-card overworld">
-
-<div class="world-icon">
-    🌳
-</div>
-
-<h3>
-    Overworld
-</h3>
-
-<p>
-دنیای اصلی Minecraft؛
-پر از جنگل، کوه، اقیانوس،
-روستاها، غارها و موجودات مختلف.
-</p>
-
-</div>
-
-
-<div class="world-card nether">
-
-<div class="world-icon">
-    🔥
-</div>
-
-<h3>
-    Nether
-</h3>
-
-<p>
-سرزمینی خطرناک و آتشین
-که مملو از Lava، قلعه‌های Nether
-و موجودات خطرناک است.
-</p>
-
-</div>
-
-
-<div class="world-card end">
-
-<div class="world-icon">
-    🟣
-</div>
-
-<h3>
-    The End
-</h3>
-
-<p>
-یکی از مهم‌ترین سرزمین‌های بازی؛
-محل نبرد با Ender Dragon
-و پیدا کردن Elytra.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- END FEATURE -->
-
-<section class="feature">
-
-<h2>
-    🟣 The End
-</h2>
-
-<p>
-
-<strong class="highlight">
-The End
-</strong>
-یکی از مهم‌ترین سرزمین‌های بازی محسوب می‌شود.
-
-<br>
-
-در این سرزمین
-<strong class="highlight">
-Ender Dragon
-</strong>
-قرار دارد و پس از پیشروی در این دنیا،
-بازیکن می‌تواند به شهرهای End برسد.
-
-<br><br>
-
-یکی از مهم‌ترین آیتم‌های بازی،
-<strong class="highlight">
-Elytra
-</strong>
-نام دارد که امکان پرواز و حرکت سریع در جهان را فراهم می‌کند.
-
-<br><br>
-
-همچنین
-<strong class="highlight">
-Dragon Egg
-</strong>
-یکی از خاص‌ترین آیتم‌های Minecraft است
-که پس از شکست Ender Dragon به‌دست می‌آید
-و در حالت عادی تنها یک نمونه از آن
-در جهان اصلی تولید می‌شود.
-
-</p>
-
-</section>
-
-
-<!-- BOSSES -->
-
-<section id="bosses">
-
-<h2 class="section-title">
-    👹 موجودات و باس‌های قدرتمند
-</h2>
-
-<div class="boss-grid">
-
-
-<div class="boss-card">
-
-<div class="boss-icon">
-    🐉
-</div>
-
-<h3>
-    Ender Dragon
-</h3>
-
-<p>
-باس اصلی The End و
-یکی از بزرگ‌ترین دشمنان بازی.
-</p>
-
-</div>
-
-
-<div class="boss-card">
-
-<div class="boss-icon">
-    💀
-</div>
-
-<h3>
-    Wither
-</h3>
-
-<p>
-یک باس قدرتمند که
-بازیکن می‌تواند آن را احضار کند.
-</p>
-
-</div>
-
-
-<div class="boss-card">
-
-<div class="boss-icon">
-    👁️
-</div>
-
-<h3>
-    Warden
-</h3>
-
-<p>
-موجودی بسیار قدرتمند
-در Deep Dark که با صدا واکنش نشان می‌دهد.
-</p>
-
-</div>
-
-
-<div class="boss-card">
-
-<div class="boss-icon">
-    🌊
-</div>
-
-<h3>
-    Elder Guardian
-</h3>
-
-<p>
-موجود قدرتمند اقیانوسی
-که در Ocean Monument زندگی می‌کند.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ITEMS -->
-
-<section id="items">
-
-<h2 class="section-title">
-    💎 آیتم‌های مهم
-</h2>
-
-<div class="item-grid">
-
-
-<div class="item-card">
-
-<div class="item-icon">
-    🪽
-</div>
-
-<h3>
-    Elytra
-</h3>
-
-<p>
-یکی از ارزشمندترین تجهیزات بازی
-برای پرواز در آسمان.
-</p>
-
-</div>
-
-
-<div class="item-card">
-
-<div class="item-icon">
-    🥚
-</div>
-
-<h3>
-    Dragon Egg
-</h3>
-
-<p>
-تخم Ender Dragon؛
-یکی از خاص‌ترین آیتم‌های بازی.
-</p>
-
-</div>
-
-
-<div class="item-card">
-
-<div class="item-icon">
-    ⭐
-</div>
-
-<h3>
-    Nether Star
-</h3>
-
-<p>
-آیتمی کمیاب که از شکست Wither
-به‌دست می‌آید و برای Beacon استفاده می‌شود.
-</p>
-
-</div>
-
-
-<div class="item-card">
-
-<div class="item-icon">
-    🧿
-</div>
-
-<h3>
-    Totem of Undying
-</h3>
-
-<p>
-آیتمی ویژه که می‌تواند
-بازیکن را از مرگ نجات دهد.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- FACTS -->
 
 <section>
 
 <h2 class="section-title">
-    📊 اطلاعات Minecraft
+🎮 درباره Minecraft
+</h2>
+
+<div class="intro">
+
+Minecraft یکی از معروف‌ترین بازی‌های Sandbox تاریخ است؛
+دنیایی که در آن می‌توانی بسازی، اکتشاف کنی، بجنگی و زنده بمانی.
+
+<br>
+
+در Minecraft سه دایمنشن اصلی وجود دارد:
+<strong>
+Overworld، Nether و The End
+</strong>.
+
+<br>
+
+یکی از مهم‌ترین سرزمین‌های بازی،
+<strong>The End</strong>
+محسوب می‌شود.
+
+در این سرزمین یکی از مهم‌ترین آیتم‌های بازی یعنی
+<strong>Elytra</strong>
+قرار دارد که به بازیکن امکان پرواز و سر خوردن در هوا را می‌دهد.
+
+<br>
+
+همچنین باارزش‌ترین آیتم داخل The End،
+<strong>Dragon Egg</strong>
+است که تنها یکی از آن در کل جهان وجود دارد.
+
+</div>
+
+</section>
+
+<!-- ================= DIMENSIONS ================= -->
+
+<section id="dimensions">
+
+<h2 class="section-title">
+🌍 دایمنشن‌های Minecraft
+</h2>
+
+<div class="dimensions">
+
+<article class="dimension-card">
+
+<img
+    src="images/overworld.jpg"
+    alt="Minecraft Overworld"
+>
+
+<div class="dimension-body">
+
+<h3>
+🌳 Overworld
+</h3>
+
+<p>
+دنیای اصلی Minecraft؛
+پر از جنگل، کوه، اقیانوس، روستا
+و موجودات مختلف.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="dimension-card">
+
+<img
+    src="images/nether.jpg"
+    alt="Minecraft Nether"
+>
+
+<div class="dimension-body">
+
+<h3>
+🔥 Nether
+</h3>
+
+<p>
+سرزمینی خطرناک پر از لاوا،
+قلعه‌های Nether و موجودات مرگبار.
+</p>
+
+</div>
+
+</article>
+
+
+<article class="dimension-card">
+
+<img
+    src="images/end.jpg"
+    alt="Minecraft The End"
+>
+
+<div class="dimension-body">
+
+<h3>
+🌌 The End
+</h3>
+
+<p>
+سرزمینی مرموز که خانه‌ی Ender Dragon
+و محل پیدا کردن Elytra است.
+</p>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- ================= ITEMS ================= -->
+
+<section id="items">
+
+<h2 class="section-title">
+💎 آیتم‌های مهم Minecraft
+</h2>
+
+<div class="items">
+
+<article class="item-card">
+
+<img
+    src="images/netherite.png"
+    alt="Netherite"
+>
+
+<h3>
+⬛ Netherite
+</h3>
+
+<p>
+یکی از قدرتمندترین و مقاوم‌ترین
+مواد بازی.
+</p>
+
+</article>
+
+
+<article class="item-card">
+
+<img
+    src="images/nether-star.png"
+    alt="Nether Star"
+>
+
+<h3>
+⭐ Nether Star
+</h3>
+
+<p>
+آیتمی بسیار کمیاب که از Wither
+به دست می‌آید.
+</p>
+
+</article>
+
+
+<article class="item-card">
+
+<img
+    src="images/totem.png"
+    alt="Totem of Undying"
+>
+
+<h3>
+🟡 Totem of Undying
+</h3>
+
+<p>
+می‌تواند بازیکن را از مرگ نجات دهد.
+</p>
+
+</article>
+
+
+<article class="item-card">
+
+<img
+    src="images/elytra.png"
+    alt="Elytra"
+>
+
+<h3>
+🪽 Elytra
+</h3>
+
+<p>
+یکی از مهم‌ترین آیتم‌های The End
+برای پرواز.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- ================= MOBS ================= -->
+
+<section id="mobs">
+
+<h2 class="section-title">
+👾 ماب‌های معروف
+</h2>
+
+<div class="mobs">
+
+<article class="mob-card">
+
+<img
+    src="images/zombie.png"
+    alt="Zombie"
+>
+
+<h3>
+🧟 Zombie
+</h3>
+
+<p>
+یکی از معروف‌ترین دشمنان Minecraft.
+</p>
+
+</article>
+
+
+<article class="mob-card">
+
+<img
+    src="images/elder-guardian.png"
+    alt="Elder Guardian"
+>
+
+<h3>
+🌊 Elder Guardian
+</h3>
+
+<p>
+محافظ خطرناک Ocean Monument.
+</p>
+
+</article>
+
+
+<article class="mob-card">
+
+<img
+    src="images/wither.png"
+    alt="Wither"
+>
+
+<h3>
+💀 Wither
+</h3>
+
+<p>
+یکی از قدرتمندترین باس‌های Minecraft.
+</p>
+
+</article>
+
+
+<article class="mob-card">
+
+<img
+    src="images/ender-dragon.png"
+    alt="Ender Dragon"
+>
+
+<h3>
+🐉 Ender Dragon
+</h3>
+
+<p>
+باس اصلی The End و یکی از
+مهم‌ترین دشمنان بازی.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+<!-- ================= BOSSES ================= -->
+
+<section>
+
+<h2 class="section-title">
+👑 باس‌های Minecraft
+</h2>
+
+<div class="boss-section">
+
+<div class="boss-grid">
+
+<article class="boss-card">
+
+<img
+    src="images/ender-dragon.png"
+    alt="Ender Dragon"
+>
+
+<h3>
+🐉 Ender Dragon
+</h3>
+
+<p>
+باس اصلی The End.
+</p>
+
+</article>
+
+
+<article class="boss-card">
+
+<img
+    src="images/wither.png"
+    alt="Wither"
+>
+
+<h3>
+💀 Wither
+</h3>
+
+<p>
+باس بسیار خطرناک با سه سر.
+</p>
+
+</article>
+
+
+<article class="boss-card">
+
+<img
+    src="images/elder-guardian.png"
+    alt="Elder Guardian"
+>
+
+<h3>
+🌊 Elder Guardian
+</h3>
+
+<p>
+محافظ Ocean Monument.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= THE END ================= -->
+
+<section class="end-special">
+
+<h2>
+🌌 The End
+</h2>
+
+<p>
+
+The End یکی از مهم‌ترین سرزمین‌های Minecraft محسوب می‌شود.
+
+<br>
+
+در این دایمنشن،
+<strong>Elytra</strong>
+یکی از مهم‌ترین آیتم‌های بازی قرار دارد.
+
+<br>
+
+همچنین
+<strong>Dragon Egg</strong>
+یکی از باارزش‌ترین آیتم‌های The End است
+و تنها یک عدد از آن در کل جهان به وجود می‌آید.
+
+</p>
+
+</section>
+
+<!-- ================= FACTS ================= -->
+
+<section id="facts">
+
+<h2 class="section-title">
+🏆 Minecraft Facts
 </h2>
 
 <div class="facts">
 
-
-<div class="fact">
+<article class="fact">
 
 <div class="fact-icon">
-    🏢
+🐉
 </div>
 
 <h3>
-    سازنده
+Ender Dragon
 </h3>
 
 <p>
-Mojang Studios
+شکست دادن Ender Dragon
+یکی از مهم‌ترین مراحل پیشرفت
+در بازی محسوب می‌شود.
 </p>
 
-</div>
+</article>
 
 
-<div class="fact">
+<article class="fact">
 
 <div class="fact-icon">
-    📅
+🪽
 </div>
 
 <h3>
-    انتشار
+Elytra
 </h3>
 
 <p>
-2011
+Elytra امکان سر خوردن در هوا
+و پرواز با Firework را فراهم می‌کند.
 </p>
 
-</div>
+</article>
 
 
-<div class="fact">
+<article class="fact">
 
 <div class="fact-icon">
-    🎮
+💀
 </div>
 
 <h3>
-    سبک
+Wither
 </h3>
 
 <p>
-Sandbox / Survival
+Wither یکی از باس‌های قدرتمند بازی است
+و Nether Star را می‌اندازد.
 </p>
 
-</div>
-
-
-<div class="fact">
-
-<div class="fact-icon">
-    🌍
-</div>
-
-<h3>
-    جهان
-</h3>
-
-<p>
-Procedurally Generated
-</p>
-
-</div>
-
+</article>
 
 </div>
 
 </section>
 
+<!-- ================= GALLERY ================= -->
 
-<!-- ABOUT -->
+<section>
 
-<section
-    class="about"
-    id="about"
+<h2 class="section-title">
+🖼️ گالری Minecraft
+</h2>
+
+<div class="gallery">
+
+<img
+    src="images/overworld.jpg"
+    alt="Minecraft Overworld"
 >
 
+<img
+    src="images/nether.jpg"
+    alt="Minecraft Nether"
+>
+
+<img
+    src="images/end.jpg"
+    alt="Minecraft The End"
+>
+
+</div>
+
+</section>
+
+<!-- ================= MUSIC ================= -->
+
+<section class="music">
+
 <h2>
-    👤 Minecraft در AMiR GAMiNG
+🎵 موسیقی Minecraft
 </h2>
 
 <p>
-
-Minecraft فقط یک بازی برای ساختن خانه نیست؛
-یک جهان بزرگ برای اکتشاف، بقا،
-مبارزه و ساختن چیزهایی است که
-تنها محدودیتشان خلاقیت بازیکن است. 🎮⛏️
-
-<br><br>
-
-در این صفحه مهم‌ترین بخش‌ها،
-سرزمین‌ها، باس‌ها و آیتم‌های Minecraft
-را معرفی کردیم.
-
+موسیقی کلاسیک Minecraft
 </p>
+
+<audio
+    controls
+    loop
+>
+
+<source
+    src="images/minecraft-music.mp3"
+    type="audio/mpeg"
+>
+
+مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+
+</audio>
 
 </section>
 
-
 </main>
-
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-© 2026 AMiR GAMiNG
-<br>
-Minecraft Page 🎮⛏️
+© 2026 AMiR GAMiNG | Minecraft
 
 </footer>
 
-
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================= PARTICLES ================= -->
 
 <script>
 
-
-/* ================= MENU ================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-
-menuButton.addEventListener(
-    "click",
-    function(){
-
-        navLinks.classList.toggle("active");
-
-    }
-);
-
-
-document.querySelectorAll(
-    ".nav-links a"
-).forEach(function(link){
-
-    link.addEventListener(
-        "click",
-        function(){
-
-            navLinks.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-});
-
-
-/* ================= MUSIC ================= */
-
-const music =
-    document.getElementById(
-        "minecraftMusic"
-    );
-
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
-const musicStatus =
-    document.getElementById(
-        "musicStatus"
-    );
-
-
-music.volume = 0.7;
-
-
-musicButton.addEventListener(
-    "click",
-    function(){
-
-        if(music.paused){
-
-            music.play();
-
-            musicButton.textContent =
-                "⏸️ توقف موسیقی";
-
-            musicStatus.textContent =
-                "🎵 موسیقی در حال پخش است";
-
-        }else{
-
-            music.pause();
-
-            musicButton.textContent =
-                "🎵 پخش موسیقی Minecraft";
-
-            musicStatus.textContent =
-                "موسیقی خاموش است";
-
-        }
-
-    }
-);
-
-
-/* ================= PARTICLES ================= */
-
 const canvas =
-    document.getElementById(
-        "particles"
-    );
+document.getElementById(
+    "particles"
+);
 
 const ctx =
-    canvas.getContext("2d");
-
+canvas.getContext("2d");
 
 let particles = [];
-
 
 const mouse = {
 
@@ -1431,7 +1349,6 @@ const mouse = {
 
 };
 
-
 function resizeCanvas(){
 
     canvas.width =
@@ -1442,15 +1359,12 @@ function resizeCanvas(){
 
 }
 
-
 resizeCanvas();
-
 
 window.addEventListener(
     "resize",
     resizeCanvas
 );
-
 
 window.addEventListener(
     "mousemove",
@@ -1465,7 +1379,6 @@ window.addEventListener(
     }
 );
 
-
 window.addEventListener(
     "mouseleave",
     function(){
@@ -1477,12 +1390,10 @@ window.addEventListener(
     }
 );
 
-
 const particleCount =
     window.innerWidth < 700
-        ? 55
-        : 100;
-
+    ? 60
+    : 100;
 
 for(
     let i=0;
@@ -1502,22 +1413,21 @@ for(
 
         size:
             Math.random()
-            *2.4+.7,
+            *2+.5,
 
         speedX:
             (Math.random()-.5)
-            *.65,
+            *.6,
 
         speedY:
             (Math.random()-.5)
-            *.65
+            *.6
 
     });
 
 }
 
-
-function animateParticles(){
+function animate(){
 
     ctx.clearRect(
         0,
@@ -1526,7 +1436,6 @@ function animateParticles(){
         canvas.height
     );
 
-
     particles.forEach(
         function(p){
 
@@ -1534,75 +1443,67 @@ function animateParticles(){
 
             p.y += p.speedY;
 
-
             if(
-                p.x<0 ||
-                p.x>canvas.width
+                p.x < 0 ||
+                p.x > canvas.width
             ){
 
                 p.speedX *= -1;
 
             }
 
-
             if(
-                p.y<0 ||
-                p.y>canvas.height
+                p.y < 0 ||
+                p.y > canvas.height
             ){
 
                 p.speedY *= -1;
 
             }
 
-
-            /* MOUSE */
-
             if(
-                mouse.x!==null &&
-                mouse.y!==null
+                mouse.x !== null &&
+                mouse.y !== null
             ){
 
                 const dx =
-                    p.x-mouse.x;
+                    p.x - mouse.x;
 
                 const dy =
-                    p.y-mouse.y;
+                    p.y - mouse.y;
 
                 const distance =
                     Math.sqrt(
-                        dx*dx+
+                        dx*dx +
                         dy*dy
                     );
 
-
                 if(
-                    distance<
+                    distance <
                     mouse.radius &&
-                    distance>0
+                    distance > 0
                 ){
 
                     const force =
                         (
-                            mouse.radius-
+                            mouse.radius -
                             distance
-                        )/
+                        ) /
                         mouse.radius;
 
-
                     p.x +=
-                        (dx/distance)*
-                        force*1.8;
+                        (dx/distance) *
+                        force *
+                        2;
 
                     p.y +=
-                        (dy/distance)*
-                        force*1.8;
+                        (dy/distance) *
+                        force *
+                        2;
 
                 }
 
             }
-
-
-            /* PARTICLE */
 
             ctx.beginPath();
 
@@ -1620,7 +1521,7 @@ function animateParticles(){
             ctx.shadowBlur = 10;
 
             ctx.shadowColor =
-                "#45ff70";
+                "#55ff55";
 
             ctx.fill();
 
@@ -1628,7 +1529,6 @@ function animateParticles(){
 
         }
     );
-
 
     /* PARTICLE LINES */
 
@@ -1645,22 +1545,21 @@ function animateParticles(){
         ){
 
             const dx =
-                particles[i].x-
+                particles[i].x -
                 particles[j].x;
 
             const dy =
-                particles[i].y-
+                particles[i].y -
                 particles[j].y;
 
             const distance =
                 Math.sqrt(
-                    dx*dx+
+                    dx*dx +
                     dy*dy
                 );
 
-
             if(
-                distance<90
+                distance < 90
             ){
 
                 ctx.beginPath();
@@ -1676,13 +1575,14 @@ function animateParticles(){
                 );
 
                 ctx.strokeStyle =
-                    "rgba(90,180,255,"+
+                    "rgba(0,180,80," +
                     (
-                        1-distance/90
-                    )+
+                        1 -
+                        distance/90
+                    ) +
                     ")";
 
-                ctx.lineWidth=.6;
+                ctx.lineWidth = .6;
 
                 ctx.stroke();
 
@@ -1692,80 +1592,17 @@ function animateParticles(){
 
     }
 
-
-    /* MOUSE LINES */
-
-    if(
-        mouse.x!==null &&
-        mouse.y!==null
-    ){
-
-        particles.forEach(
-            function(p){
-
-                const dx =
-                    p.x-mouse.x;
-
-                const dy =
-                    p.y-mouse.y;
-
-                const distance =
-                    Math.sqrt(
-                        dx*dx+
-                        dy*dy
-                    );
-
-
-                if(
-                    distance<
-                    mouse.radius
-                ){
-
-                    ctx.beginPath();
-
-                    ctx.moveTo(
-                        p.x,
-                        p.y
-                    );
-
-                    ctx.lineTo(
-                        mouse.x,
-                        mouse.y
-                    );
-
-                    ctx.strokeStyle =
-                        "rgba(80,255,120,"+
-                        (
-                            1-
-                            distance/
-                            mouse.radius
-                        )+
-                        ")";
-
-                    ctx.lineWidth=.8;
-
-                    ctx.stroke();
-
-                }
-
-            }
-        );
-
-    }
-
-
     requestAnimationFrame(
-        animateParticles
+        animate
     );
 
 }
 
-
-animateParticles();
+animate();
 
 </script>
-
 
 </body>
 
 </html>
+```
