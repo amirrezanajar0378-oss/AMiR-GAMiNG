@@ -1,1148 +1,376 @@
 ```html
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<!-- ================= REALISTIC NEON PALM ================= -->
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="palm-scene">
 
-<title>GTA V | AMiR GAMiNG</title>
+    <svg
+        class="palm-svg"
+        viewBox="0 0 420 650"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <defs>
 
-<style>
+            <!-- Purple neon glow -->
+            <filter id="palmGlow">
+                <feGaussianBlur
+                    stdDeviation="7"
+                    result="blur"
+                />
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+                <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
 
-html{
-    scroll-behavior:smooth;
-}
+            <!-- Trunk gradient -->
+            <linearGradient
+                id="trunkGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="0"
+            >
+                <stop
+                    offset="0"
+                    stop-color="#050309"
+                />
 
-body{
-    font-family:"Vazirmatn",sans-serif;
-    color:white;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(128,0,255,.15),transparent 30%),
-        radial-gradient(circle at 80% 70%,rgba(255,255,255,.06),transparent 28%),
-        linear-gradient(180deg,#08030d,#030305 70%);
-    min-height:100vh;
-    overflow-x:hidden;
-}
+                <stop
+                    offset=".5"
+                    stop-color="#25102f"
+                />
 
-/* ================= PARTICLES ================= */
+                <stop
+                    offset="1"
+                    stop-color="#030207"
+                />
+            </linearGradient>
 
-#particles{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index:1;
-}
+            <!-- Leaf gradient -->
+            <linearGradient
+                id="leafGradient"
+                x1="0"
+                y1="0"
+                x2="1"
+                y2="1"
+            >
+                <stop
+                    offset="0"
+                    stop-color="#08050d"
+                />
 
-/* ================= NAV ================= */
+                <stop
+                    offset=".6"
+                    stop-color="#24102f"
+                />
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    height:70px;
+                <stop
+                    offset="1"
+                    stop-color="#08040d"
+                />
+            </linearGradient>
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
+        </defs>
 
-    background:rgba(4,2,8,.78);
-    backdrop-filter:blur(16px);
 
-    border-bottom:1px solid rgba(180,80,255,.18);
+        <!-- ================= TRUNK ================= -->
 
-    z-index:100;
-}
+        <path
+            d="
+            M218 650
+            C216 570 210 490 213 415
+            C216 340 225 275 246 218
+            "
+            fill="none"
+            stroke="url(#trunkGradient)"
+            stroke-width="30"
+            stroke-linecap="round"
+        />
 
-nav a{
-    color:#ddd;
-    text-decoration:none;
 
-    padding:10px 18px;
-    border-radius:12px;
+        <!-- Purple edge light -->
 
-    transition:.3s;
-}
+        <path
+            d="
+            M218 650
+            C216 570 210 490 213 415
+            C216 340 225 275 246 218
+            "
+            fill="none"
+            stroke="#9b35ff"
+            stroke-opacity=".45"
+            stroke-width="3"
+            stroke-linecap="round"
+            filter="url(#palmGlow)"
+        />
 
-nav a:hover{
-    color:white;
-    background:rgba(150,50,255,.12);
 
-    box-shadow:
-        0 0 25px rgba(150,50,255,.2);
+        <!-- ================= TRUNK MARKS ================= -->
 
-    transform:translateY(-2px);
-}
+        <g
+            stroke="#9b35ff"
+            stroke-opacity=".18"
+            stroke-width="3"
+        >
 
-/* ================= HERO ================= */
+            <path d="M211 565 L235 570"/>
+            <path d="M210 520 L232 525"/>
+            <path d="M211 470 L230 474"/>
+            <path d="M214 420 L232 423"/>
+            <path d="M218 370 L235 373"/>
+            <path d="M223 320 L240 323"/>
+            <path d="M231 270 L247 274"/>
 
-.hero{
-    position:relative;
-    min-height:90vh;
+        </g>
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
 
-    text-align:center;
+        <!-- ================= PALM CENTER ================= -->
 
-    padding:120px 20px 70px;
+        <circle
+            cx="247"
+            cy="218"
+            r="27"
+            fill="#0b0610"
+            stroke="#9b35ff"
+            stroke-opacity=".5"
+            stroke-width="3"
+            filter="url(#palmGlow)"
+        />
 
-    z-index:2;
 
-    overflow:hidden;
-}
+        <!-- ================= LEAVES ================= -->
 
-.hero::before{
-    content:"";
+        <g
+            fill="url(#leafGradient)"
+            stroke="#9b35ff"
+            stroke-opacity=".35"
+            stroke-width="2"
+            filter="url(#palmGlow)"
+        >
 
+            <!-- Left long leaf -->
+
+            <path
+                d="
+                M247 218
+                C198 205 128 170 38 105
+                C125 190 184 225 247 229
+                Z
+                "
+            />
+
+
+            <!-- Upper-left -->
+
+            <path
+                d="
+                M247 218
+                C204 173 164 108 125 25
+                C191 96 229 153 252 213
+                Z
+                "
+            />
+
+
+            <!-- Top -->
+
+            <path
+                d="
+                M248 215
+                C247 153 258 79 282 8
+                C293 98 280 169 255 220
+                Z
+                "
+            />
+
+
+            <!-- Upper-right -->
+
+            <path
+                d="
+                M250 216
+                C291 166 337 112 392 78
+                C349 142 303 196 255 224
+                Z
+                "
+            />
+
+
+            <!-- Right -->
+
+            <path
+                d="
+                M252 220
+                C311 201 367 191 419 195
+                C364 224 310 235 253 228
+                Z
+                "
+            />
+
+
+            <!-- Lower-right -->
+
+            <path
+                d="
+                M251 223
+                C301 238 347 272 381 311
+                C326 287 282 255 247 231
+                Z
+                "
+            />
+
+
+            <!-- Lower-left -->
+
+            <path
+                d="
+                M246 225
+                C210 256 177 300 153 348
+                C194 313 226 269 253 230
+                Z
+                "
+            />
+
+
+            <!-- Front leaf -->
+
+            <path
+                d="
+                M247 220
+                C235 273 238 319 250 366
+                C267 310 265 264 255 222
+                Z
+                "
+            />
+
+        </g>
+
+
+        <!-- ================= LEAF VEINS ================= -->
+
+        <g
+            stroke="#d27aff"
+            stroke-opacity=".2"
+            stroke-width="2"
+            fill="none"
+        >
+
+            <path d="M247 221 C185 188 105 137 48 108"/>
+            <path d="M249 218 C215 151 170 78 127 30"/>
+            <path d="M250 216 C254 138 270 55 282 10"/>
+            <path d="M252 218 C300 159 348 111 390 80"/>
+            <path d="M253 222 C315 206 375 195 416 196"/>
+            <path d="M252 225 C303 248 348 281 378 307"/>
+            <path d="M247 227 C211 267 177 313 155 345"/>
+            <path d="M250 223 C244 278 246 324 250 360"/>
+
+        </g>
+
+    </svg>
+
+</div>
+```
+
+و این CSS را هم داخل `<style>` بگذار:
+
+```css
+/* ================= PALM SCENE ================= */
+
+.palm-scene{
     position:absolute;
 
-    width:700px;
-    height:700px;
+    right:2%;
+    bottom:-90px;
 
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(128,0,255,.18),
-            transparent 65%
-        );
-
-    filter:blur(20px);
-
-    z-index:-2;
-}
-
-/* ================= PALM TREE ================= */
-
-.palm{
-    position:absolute;
-
-    width:270px;
-    height:430px;
-
-    right:5%;
-    bottom:-20px;
+    width:330px;
+    height:520px;
 
     z-index:-1;
 
-    transform:scale(.95);
+    pointer-events:none;
+
+    opacity:.88;
 
     filter:
-        drop-shadow(0 0 12px rgba(150,50,255,.65))
-        drop-shadow(0 0 35px rgba(110,0,255,.3));
-}
-
-/* curved trunk */
-
-.trunk{
-    position:absolute;
-
-    width:34px;
-    height:310px;
-
-    right:115px;
-    bottom:0;
-
-    background:
-        linear-gradient(
-            90deg,
-            #09070d,
-            #21132d,
-            #050408
+        drop-shadow(
+            0 0 18px
+            rgba(155,53,255,.25)
         );
 
-    border-radius:
-        50% 45% 25% 25%;
-
-    transform:
-        rotate(-7deg);
-
-    transform-origin:
-        bottom center;
-
-    box-shadow:
-        0 0 12px rgba(150,50,255,.35);
+    transform:rotate(-2deg);
 }
 
-/* trunk details */
 
-.trunk::before,
-.trunk::after{
-    content:"";
+/* SVG */
 
-    position:absolute;
-
-    left:4px;
-
-    width:26px;
-    height:4px;
-
-    background:
-        rgba(170,90,255,.25);
-
-    border-radius:50%;
-}
-
-.trunk::before{
-    top:55px;
-    transform:rotate(-8deg);
-}
-
-.trunk::after{
-    top:125px;
-    transform:rotate(-8deg);
-}
-
-/* leaves container */
-
-.leaves{
-    position:absolute;
-
-    width:220px;
-    height:170px;
-
-    right:28px;
-    top:25px;
-}
-
-/* individual palm leaves */
-
-.leaves span{
-    position:absolute;
-
-    width:150px;
-    height:18px;
-
-    right:75px;
-    top:75px;
-
-    transform-origin:
-        right center;
-
-    border-radius:
-        100% 10% 10% 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #12091c,
-            #32124d
-        );
-
-    box-shadow:
-        0 0 8px rgba(160,60,255,.45);
-
-    clip-path:
-        polygon(
-            0 50%,
-            100% 0,
-            82% 50%,
-            100% 100%
-        );
-}
-
-/* fan arrangement */
-
-.leaves span:nth-child(1){
-    transform:rotate(-70deg);
-}
-
-.leaves span:nth-child(2){
-    transform:rotate(-48deg);
-}
-
-.leaves span:nth-child(3){
-    transform:rotate(-27deg);
-}
-
-.leaves span:nth-child(4){
-    transform:rotate(-8deg);
-}
-
-.leaves span:nth-child(5){
-    transform:rotate(15deg);
-}
-
-.leaves span:nth-child(6){
-    transform:rotate(38deg);
-}
-
-.leaves span:nth-child(7){
-    transform:rotate(60deg);
-}
-
-.leaves span:nth-child(8){
-    transform:rotate(82deg);
-}
-
-/* ================= HERO TEXT ================= */
-
-.logo{
-    position:relative;
-
-    font-size:
-        clamp(48px,9vw,100px);
-
-    font-weight:900;
-
-    letter-spacing:5px;
-
-    color:white;
-
-    text-shadow:
-        0 0 8px white,
-        0 0 22px #b000ff,
-        0 0 50px #7200ff,
-        0 0 90px rgba(120,0,255,.6);
-
-    animation:
-        glow 2.5s infinite alternate;
-}
-
-@keyframes glow{
-
-    from{
-        text-shadow:
-            0 0 8px white,
-            0 0 20px #b000ff,
-            0 0 40px #7200ff;
-    }
-
-    to{
-        text-shadow:
-            0 0 12px white,
-            0 0 30px #d000ff,
-            0 0 65px #7200ff,
-            0 0 100px rgba(120,0,255,.6);
-    }
-
-}
-
-.subtitle{
-    margin-top:20px;
-
-    color:#aaa;
-
-    font-size:
-        clamp(15px,2.5vw,21px);
-}
-
-.hero-line{
-    width:min(520px,80vw);
-
-    height:2px;
-
-    margin-top:30px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #8a00ff,
-            white,
-            #8a00ff,
-            transparent
-        );
-
-    box-shadow:
-        0 0 20px
-        rgba(150,0,255,.8);
-}
-
-/* ================= CONTENT ================= */
-
-.content{
-    position:relative;
-
-    z-index:2;
-
+.palm-svg{
     width:100%;
-    max-width:1150px;
+    height:100%;
 
-    margin:auto;
-
-    padding:
-        50px 20px 80px;
-}
-
-.section-title{
-    text-align:center;
-
-    font-size:
-        clamp(28px,4vw,38px);
-
-    margin:
-        45px 0 30px;
-
-    text-shadow:
-        0 0 20px
-        rgba(150,0,255,.4);
-}
-
-/* ================= INFO CARD ================= */
-
-.info-card{
-    padding:35px;
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.07),
-            rgba(120,0,255,.04)
-        );
-
-    border:
-        1px solid
-        rgba(170,70,255,.2);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.35);
-}
-
-.info-card p{
-    color:#aaa;
-
-    line-height:2.3;
-
-    text-align:center;
-}
-
-/* ================= STATS ================= */
-
-.stats{
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-
-    margin-top:25px;
-}
-
-.stat{
-    padding:25px 15px;
-
-    text-align:center;
-
-    border-radius:18px;
-
-    background:
-        rgba(255,255,255,.04);
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
-
-    transition:.3s;
-}
-
-.stat:hover{
-    transform:translateY(-6px);
-
-    border-color:
-        rgba(160,60,255,.45);
-
-    box-shadow:
-        0 0 25px
-        rgba(130,0,255,.15);
-}
-
-.stat strong{
     display:block;
 
-    font-size:28px;
-
-    color:white;
-
-    text-shadow:
-        0 0 15px
-        rgba(160,60,255,.7);
+    overflow:visible;
 }
 
-.stat span{
-    display:block;
 
-    margin-top:7px;
+/* subtle movement */
 
-    color:#888;
-
-    font-size:13px;
+.palm-scene{
+    animation:
+        palmFloat 6s ease-in-out infinite;
 }
 
-/* ================= RATING ================= */
 
-.rating-box{
-    margin-top:30px;
+@keyframes palmFloat{
 
-    padding:25px;
+    0%,100%{
+        transform:
+            rotate(-2deg)
+            translateY(0);
+    }
 
-    text-align:center;
+    50%{
+        transform:
+            rotate(-1deg)
+            translateY(-5px);
+    }
 
-    border-radius:18px;
-
-    background:
-        rgba(128,0,255,.07);
-
-    border:
-        1px solid
-        rgba(160,60,255,.22);
 }
 
-.stars{
-    color:#fff;
 
-    font-size:24px;
-
-    letter-spacing:3px;
-
-    text-shadow:
-        0 0 15px
-        #a000ff;
-}
-
-.rating-number{
-    margin-top:8px;
-
-    color:#aaa;
-}
-
-/* ================= BUTTON ================= */
-
-.back-button{
-    display:block;
-
-    width:fit-content;
-
-    margin:35px auto 0;
-
-    padding:12px 25px;
-
-    color:white;
-
-    text-decoration:none;
-
-    border-radius:13px;
-
-    background:
-        rgba(130,0,255,.1);
-
-    border:
-        1px solid
-        rgba(170,70,255,.35);
-
-    transition:.3s;
-}
-
-.back-button:hover{
-    transform:
-        translateY(-4px);
-
-    background:
-        rgba(130,0,255,.2);
-
-    box-shadow:
-        0 0 30px
-        rgba(140,0,255,.25);
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    position:relative;
-
-    z-index:2;
-
-    padding:35px 20px;
-
-    text-align:center;
-
-    color:#666;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.05);
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:850px){
 
-    .palm{
-        right:-65px;
-        opacity:.5;
-        transform:scale(.7);
-    }
+    .palm-scene{
+        right:-90px;
+        bottom:-80px;
 
-    .stats{
-        grid-template-columns:
-            1fr 1fr;
+        width:280px;
+        height:450px;
+
+        opacity:.42;
+
+        transform:scale(.8);
     }
 
 }
+
 
 @media(max-width:550px){
 
-    nav{
-        gap:2px;
-    }
+    .palm-scene{
+        right:-125px;
+        bottom:-100px;
 
-    nav a{
-        font-size:12px;
-        padding:8px 10px;
-    }
+        width:250px;
+        height:410px;
 
-    .palm{
-        right:-105px;
-        transform:
-            scale(.58);
-        opacity:.35;
-    }
-
-    .stats{
-        grid-template-columns:
-            1fr;
-    }
-
-    .info-card{
-        padding:25px 18px;
+        opacity:.25;
     }
 
 }
-
-</style>
-
-</head>
-
-<body>
-
-<canvas id="particles"></canvas>
-
-<!-- ================= NAVBAR ================= -->
-
-<nav>
-
-    <a href="index.html">
-        🏠 خانه
-    </a>
-
-    <a href="#info">
-        🎮 اطلاعات
-    </a>
-
-    <a href="#rating">
-        ⭐ امتیاز
-    </a>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-    <!-- CSS PALM -->
-
-    <div class="palm">
-
-        <div class="trunk"></div>
-
-        <div class="leaves">
-
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-
-    <h1 class="logo">
-        GTA V
-    </h1>
-
-    <p class="subtitle">
-        Grand Theft Auto V
-    </p>
-
-    <div class="hero-line"></div>
-
-</section>
-
-
-<!-- ================= MAIN ================= -->
-
-<main class="content">
-
-
-<section id="info">
-
-    <h2 class="section-title">
-        🎮 درباره GTA V
-    </h2>
-
-    <div class="info-card">
-
-        <p>
-            Grand Theft Auto V یک بازی اکشن و جهان‌باز
-            ساخته Rockstar Games است که در سال 2013
-            منتشر شد. داستان بازی در شهر خیالی Los Santos
-            جریان دارد و شامل سه شخصیت اصلی Michael،
-            Franklin و Trevor است.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ================= STATS ================= -->
-
-<h2 class="section-title">
-    📊 اطلاعات بازی
-</h2>
-
-<div class="stats">
-
-    <div class="stat">
-
-        <strong>2013</strong>
-
-        <span>
-            سال انتشار
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>Rockstar</strong>
-
-        <span>
-            سازنده
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>97/100</strong>
-
-        <span>
-            Metacritic
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>Open World</strong>
-
-        <span>
-            سبک
-        </span>
-
-    </div>
-
-</div>
-
-
-<!-- ================= RATING ================= -->
-
-<section id="rating">
-
-    <h2 class="section-title">
-        ⭐ امتیاز
-    </h2>
-
-    <div class="rating-box">
-
-        <div class="stars">
-            ★★★★★
-        </div>
-
-        <div class="rating-number">
-            امتیاز منتقدان: 97 / 100
-        </div>
-
-    </div>
-
-</section>
-
-
-<a
-    href="index.html"
-    class="back-button"
->
-    ← بازگشت به صفحه اصلی
-</a>
-
-
-</main>
-
-
-<footer>
-
-    © 2026 AMiR GAMiNG
-    <br>
-    GTA V • Los Santos • Rockstar Games
-
-</footer>
-
-
-<!-- ================= PARTICLES ================= -->
-
-<script>
-
-const canvas =
-    document.getElementById("particles");
-
-const ctx =
-    canvas.getContext("2d");
-
-let particles = [];
-
-const mouse = {
-    x:null,
-    y:null,
-    radius:150
-};
-
-
-function resizeCanvas(){
-
-    canvas.width =
-        window.innerWidth;
-
-    canvas.height =
-        window.innerHeight;
-
-}
-
-resizeCanvas();
-
-
-window.addEventListener(
-    "resize",
-    resizeCanvas
-);
-
-
-window.addEventListener(
-    "mousemove",
-    function(e){
-
-        mouse.x =
-            e.clientX;
-
-        mouse.y =
-            e.clientY;
-
-    }
-);
-
-
-window.addEventListener(
-    "mouseleave",
-    function(){
-
-        mouse.x=null;
-        mouse.y=null;
-
-    }
-);
-
-
-const count =
-    window.innerWidth < 700
-        ? 55
-        : 100;
-
-
-for(
-    let i=0;
-    i<count;
-    i++
-){
-
-    particles.push({
-
-        x:
-            Math.random()
-            *canvas.width,
-
-        y:
-            Math.random()
-            *canvas.height,
-
-        size:
-            Math.random()*2+.6,
-
-        speedX:
-            (Math.random()-.5)*.6,
-
-        speedY:
-            (Math.random()-.5)*.6
-
-    });
-
-}
-
-
-function animate(){
-
-    ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-
-    particles.forEach(
-        function(p){
-
-            p.x += p.speedX;
-            p.y += p.speedY;
-
-
-            if(
-                p.x<0 ||
-                p.x>canvas.width
-            ){
-                p.speedX*=-1;
-            }
-
-
-            if(
-                p.y<0 ||
-                p.y>canvas.height
-            ){
-                p.speedY*=-1;
-            }
-
-
-            if(
-                mouse.x!==null &&
-                mouse.y!==null
-            ){
-
-                const dx =
-                    p.x-mouse.x;
-
-                const dy =
-                    p.y-mouse.y;
-
-                const d =
-                    Math.sqrt(
-                        dx*dx+
-                        dy*dy
-                    );
-
-
-                if(
-                    d<mouse.radius &&
-                    d>0
-                ){
-
-                    const force =
-                        (
-                            mouse.radius-d
-                        )/
-                        mouse.radius;
-
-
-                    p.x +=
-                        dx/d*
-                        force*
-                        1.7;
-
-                    p.y +=
-                        dy/d*
-                        force*
-                        1.7;
-
-                }
-
-            }
-
-
-            ctx.beginPath();
-
-            ctx.arc(
-                p.x,
-                p.y,
-                p.size,
-                0,
-                Math.PI*2
-            );
-
-            ctx.fillStyle =
-                "rgba(170,70,255,.8)";
-
-            ctx.shadowBlur=10;
-
-            ctx.shadowColor="#9d00ff";
-
-            ctx.fill();
-
-            ctx.shadowBlur=0;
-
-        }
-    );
-
-
-    for(
-        let i=0;
-        i<particles.length;
-        i++
-    ){
-
-        for(
-            let j=i+1;
-            j<particles.length;
-            j++
-        ){
-
-            const dx =
-                particles[i].x-
-                particles[j].x;
-
-            const dy =
-                particles[i].y-
-                particles[j].y;
-
-            const d =
-                Math.sqrt(
-                    dx*dx+
-                    dy*dy
-                );
-
-
-            if(d<90){
-
-                ctx.beginPath();
-
-                ctx.moveTo(
-                    particles[i].x,
-                    particles[i].y
-                );
-
-                ctx.lineTo(
-                    particles[j].x,
-                    particles[j].y
-                );
-
-                ctx.strokeStyle =
-                    "rgba(150,50,255,"+
-                    (1-d/90)+
-                    ")";
-
-                ctx.lineWidth=.6;
-
-                ctx.stroke();
-
-            }
-
-        }
-
-    }
-
-
-    if(
-        mouse.x!==null &&
-        mouse.y!==null
-    ){
-
-        particles.forEach(
-            function(p){
-
-                const dx =
-                    p.x-mouse.x;
-
-                const dy =
-                    p.y-mouse.y;
-
-                const d =
-                    Math.sqrt(
-                        dx*dx+
-                        dy*dy
-                    );
-
-
-                if(d<mouse.radius){
-
-                    ctx.beginPath();
-
-                    ctx.moveTo(
-                        p.x,
-                        p.y
-                    );
-
-                    ctx.lineTo(
-                        mouse.x,
-                        mouse.y
-                    );
-
-                    ctx.strokeStyle =
-                        "rgba(190,80,255,"+
-                        (1-d/mouse.radius)+
-                        ")";
-
-                    ctx.lineWidth=.8;
-
-                    ctx.stroke();
-
-                }
-
-            }
-        );
-
-    }
-
-
-    requestAnimationFrame(
-        animate
-    );
-
-}
-
-
-animate();
-
-</script>
-
-</body>
-
-</html>
 ```
