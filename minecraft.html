@@ -3,6 +3,7 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,9 +11,15 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+>
 
 <style>
+
+/* ================= RESET ================= */
 
 *{
     margin:0;
@@ -25,547 +32,1092 @@ html{
 }
 
 body{
+
     font-family:"Vazirmatn",sans-serif;
-    background:
-        radial-gradient(circle at 15% 20%,rgba(0,229,255,.08),transparent 28%),
-        radial-gradient(circle at 85% 70%,rgba(128,0,255,.08),transparent 28%),
-        #050509;
+
     color:white;
+
     min-height:100vh;
+
     overflow-x:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(76,175,80,.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(0,120,60,.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #101810,
+            #18251a 45%,
+            #0b120c
+        );
 }
 
+
+/* ================= PARTICLES ================= */
+
 #particles{
+
     position:fixed;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     pointer-events:none;
+
     z-index:1;
 }
 
+
+/* ================= NAVBAR ================= */
+
 nav{
+
     position:fixed;
+
     top:0;
     left:0;
     right:0;
+
     height:70px;
+
     display:flex;
+
     justify-content:center;
     align-items:center;
+
     gap:10px;
-    background:rgba(5,5,9,.78);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(0,229,255,.12);
+
+    background:
+        rgba(8,15,9,.86);
+
+    backdrop-filter:
+        blur(15px);
+
+    border-bottom:
+        2px solid
+        rgba(76,175,80,.20);
+
     z-index:100;
 }
 
+.nav-links{
+
+    display:flex;
+
+    gap:10px;
+}
+
 nav a{
-    color:#ccc;
+
+    color:#d7e6d7;
+
     text-decoration:none;
+
     padding:10px 18px;
-    border-radius:12px;
+
+    border-radius:8px;
+
     transition:.3s;
 }
 
 nav a:hover{
+
     color:white;
-    background:rgba(0,229,255,.08);
-    box-shadow:0 0 20px rgba(0,229,255,.18);
-    transform:translateY(-2px);
+
+    background:
+        rgba(76,175,80,.15);
+
+    box-shadow:
+        0 0 20px
+        rgba(76,175,80,.18);
 }
 
+.menu-button{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+
+/* ================= HERO ================= */
+
 .hero{
+
     position:relative;
+
     z-index:2;
-    min-height:70vh;
-    padding:130px 20px 60px;
+
+    min-height:88vh;
+
+    padding:
+        130px 20px 60px;
+
     display:flex;
+
     justify-content:center;
     align-items:center;
+
     flex-direction:column;
+
     text-align:center;
 }
 
-.hero-title{
-    font-size:clamp(42px,8vw,90px);
+
+/* ================= MINECRAFT TITLE ================= */
+
+.minecraft-title{
+
+    display:inline-block;
+
+    padding:
+        18px 35px;
+
+    color:#fff;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #a83a3a,
+            #7d2424
+        );
+
+    border:
+        5px solid
+        #4e1717;
+
+    box-shadow:
+
+        8px 8px 0
+        #2d0e0e,
+
+        inset
+        0 0 0 3px
+        rgba(255,255,255,.08);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        clamp(40px,8vw,90px);
+
     font-weight:900;
+
+    letter-spacing:3px;
+
     text-shadow:
-        0 0 8px #fff,
-        0 0 20px #00e5ff,
-        0 0 45px #8000ff;
-    animation:glow 2s infinite alternate;
+
+        4px 4px 0
+        #222,
+
+        0 0 10px
+        rgba(255,255,255,.15);
+
+    image-rendering:pixelated;
+
+    transition:.3s;
 }
 
-.hero-subtitle{
-    margin-top:18px;
-    color:#aaa;
-    font-size:clamp(15px,3vw,22px);
+.minecraft-title:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+
+        10px 13px 0
+        #2d0e0e,
+
+        0 0 30px
+        rgba(180,40,40,.25);
+}
+
+
+.subtitle{
+
+    margin-top:28px;
+
+    color:#b9c9b9;
+
+    font-size:
+        clamp(16px,3vw,23px);
 }
 
 .hero-line{
-    width:min(500px,80vw);
-    height:2px;
+
+    width:
+        min(500px,80vw);
+
+    height:4px;
+
     margin-top:30px;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        #00e5ff,
-        #8000ff,
-        transparent
-    );
-    box-shadow:0 0 15px rgba(0,229,255,.7);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #4caf50,
+            #8bc34a,
+            #4caf50,
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 15px
+        rgba(76,175,80,.55);
 }
+
+
+/* ================= CONTENT ================= */
 
 .content{
+
     position:relative;
+
     z-index:2;
-    max-width:1100px;
-    margin:auto;
-    padding:50px 20px 80px;
-}
 
-.game-main{
-    overflow:hidden;
-    border-radius:25px;
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.015)
-    );
-    border:1px solid rgba(255,255,255,.09);
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
-}
-
-.game-cover{
     width:100%;
-    height:clamp(250px,45vw,500px);
-    object-fit:cover;
-    display:block;
-}
 
-.game-description{
-    padding:30px;
-}
+    max-width:1150px;
 
-.game-description h2{
-    font-size:32px;
-    margin-bottom:15px;
-}
+    margin:auto;
 
-.game-description p{
-    color:#aaa;
-    line-height:2;
-    font-size:15px;
+    padding:
+        60px 20px;
 }
 
 .section-title{
+
     text-align:center;
-    font-size:clamp(27px,4vw,36px);
-    margin:55px 0 30px;
-    text-shadow:0 0 20px rgba(0,229,255,.3);
+
+    font-size:
+        clamp(28px,5vw,38px);
+
+    margin-bottom:35px;
+
+    color:#e7f5e7;
+
+    text-shadow:
+        0 0 18px
+        rgba(76,175,80,.35);
 }
+
+
+/* ================= INFO BOX ================= */
+
+.minecraft-intro{
+
+    padding:
+        30px;
+
+    margin-bottom:50px;
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:
+        2px solid
+        rgba(76,175,80,.20);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,.3);
+}
+
+.minecraft-intro p{
+
+    color:#b9c5b9;
+
+    line-height:2.2;
+
+    text-align:center;
+}
+
+
+/* ================= CARDS ================= */
 
 .info-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
 }
 
-.info-box{
-    padding:24px;
-    text-align:center;
-    border-radius:18px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
+.info-card{
+
+    padding:28px;
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.02)
+        );
+
+    border:
+        2px solid
+        rgba(255,255,255,.08);
+
+    transition:.35s;
 }
 
-.info-box:hover{
-    transform:translateY(-6px);
-    border-color:rgba(0,229,255,.35);
-    box-shadow:0 0 25px rgba(0,229,255,.1);
+.info-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(76,175,80,.45);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,.35),
+
+        0 0 25px
+        rgba(76,175,80,.10);
 }
 
 .info-icon{
-    font-size:32px;
-    margin-bottom:10px;
+
+    font-size:42px;
+
+    margin-bottom:15px;
 }
 
-.info-box h3{
+.info-card h3{
+
+    margin-bottom:10px;
+
+    font-size:22px;
+}
+
+.info-card p{
+
+    color:#999;
+
+    line-height:1.9;
+
+    font-size:14px;
+}
+
+
+/* ================= GAME MODES ================= */
+
+.modes{
+
+    margin-top:80px;
+}
+
+.mode-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+}
+
+.mode-card{
+
+    padding:25px;
+
+    border-radius:12px;
+
+    background:
+        rgba(0,0,0,.25);
+
+    border:
+        2px solid
+        rgba(76,175,80,.14);
+
+    transition:.3s;
+}
+
+.mode-card:hover{
+
+    border-color:
+        rgba(76,175,80,.4);
+
+    transform:
+        translateY(-5px);
+}
+
+.mode-card h3{
+
     margin-bottom:8px;
 }
 
-.info-box p{
+.mode-card p{
+
     color:#999;
+
+    line-height:1.9;
+
     font-size:14px;
-    line-height:1.8;
 }
 
-.ratings{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
 
-.rating-card{
-    padding:25px;
+/* ================= VERSION ================= */
+
+.version-box{
+
+    margin-top:70px;
+
+    padding:30px;
+
     text-align:center;
-    border-radius:18px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(76,175,80,.12),
+            rgba(0,0,0,.25)
+        );
+
+    border:
+        2px solid
+        rgba(76,175,80,.25);
 }
 
-.rating-card h3{
+.version-box h2{
+
     margin-bottom:12px;
 }
 
-.rating-number{
-    font-size:32px;
-    font-weight:800;
-    color:#00e5ff;
+.version-box p{
+
+    color:#aaa;
+
+    line-height:2;
 }
 
-.rating-stars{
-    margin-top:6px;
-    color:#ffd000;
-    letter-spacing:2px;
-}
 
-.rating-label{
-    margin-top:6px;
-    color:#888;
-    font-size:12px;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
-}
-
-.feature{
-    padding:25px;
-    border-radius:18px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.feature:hover{
-    transform:translateY(-5px);
-    border-color:rgba(128,0,255,.4);
-}
-
-.feature h3{
-    margin-bottom:10px;
-}
-
-.feature p{
-    color:#999;
-    line-height:1.9;
-    font-size:14px;
-}
+/* ================= BACK BUTTON ================= */
 
 .back-button{
+
     display:block;
-    width:min(400px,100%);
-    margin:50px auto 0;
+
+    max-width:300px;
+
+    margin:
+        50px auto 0;
+
     padding:13px 20px;
+
     text-align:center;
-    color:white;
+
     text-decoration:none;
-    border-radius:13px;
-    background:rgba(0,229,255,.08);
-    border:1px solid rgba(0,229,255,.3);
-    transition:.3s;
+
+    color:white;
+
+    border-radius:8px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #3d8b40,
+            #245c27
+        );
+
+    border:
+        2px solid
+        #4caf50;
+
+    box-shadow:
+
+        0 6px 0
+        #173b19;
+
+    transition:.2s;
 }
 
 .back-button:hover{
-    background:rgba(0,229,255,.17);
-    box-shadow:0 0 25px rgba(0,229,255,.2);
-    transform:translateY(-3px);
+
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        0 3px 0
+        #173b19;
+
+    background:
+        #4caf50;
 }
+
+
+/* ================= FOOTER ================= */
 
 footer{
+
     position:relative;
+
     z-index:2;
+
+    margin-top:60px;
+
     padding:35px 20px;
+
     text-align:center;
-    color:#666;
-    border-top:1px solid rgba(255,255,255,.05);
+
+    color:#667066;
+
+    border-top:
+        2px solid
+        rgba(76,175,80,.10);
 }
 
-@keyframes glow{
-    from{
-        text-shadow:
-            0 0 8px #fff,
-            0 0 20px #00e5ff,
-            0 0 40px #8000ff;
-    }
-    to{
-        text-shadow:
-            0 0 10px #fff,
-            0 0 30px #00e5ff,
-            0 0 65px #8000ff;
-    }
-}
 
-@media(max-width:800px){
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    nav{
+
+        justify-content:flex-end;
+
+        padding:
+            0 18px;
+    }
+
+    .menu-button{
+
+        display:block;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:70px;
+
+        right:15px;
+        left:15px;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:15px;
+
+        border-radius:10px;
+
+        background:
+            rgba(8,15,9,.97);
+
+        border:
+            2px solid
+            rgba(76,175,80,.20);
+    }
+
+    .nav-links.active{
+
+        display:flex;
+    }
+
     .info-grid,
-    .ratings{
-        grid-template-columns:1fr;
+    .mode-grid{
+
+        grid-template-columns:
+            1fr;
     }
 
-    .features{
-        grid-template-columns:1fr;
+}
+
+@media(max-width:550px){
+
+    .minecraft-title{
+
+        padding:
+            14px 20px;
+
+        font-size:
+            clamp(32px,11vw,60px);
+
+        border-width:4px;
+
+        box-shadow:
+            6px 6px 0
+            #2d0e0e;
     }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <canvas id="particles"></canvas>
 
+
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-    <a href="index.html">🏠 خانه</a>
-    <a href="index.html#games">🎮 بازی‌ها</a>
-    <a href="#information">📊 اطلاعات</a>
+
+<button
+class="menu-button"
+id="menuButton"
+>
+☰
+</button>
+
+<div
+class="nav-links"
+id="navLinks"
+>
+
+<a href="#home">
+🏠 خانه
+</a>
+
+<a href="#about">
+⛏️ درباره Minecraft
+</a>
+
+<a href="#modes">
+🎮 حالت‌ها
+</a>
+
+</div>
+
 </nav>
 
-<section class="hero">
 
-    <h1 class="hero-title">
-        ⛏️ Minecraft
-    </h1>
+<!-- ================= HERO ================= -->
 
-    <p class="hero-subtitle">
-        Minecraft
-    </p>
+<section
+class="hero"
+id="home"
+>
 
-    <div class="hero-line"></div>
+<div class="minecraft-title">
+MINECRAFT
+</div>
+
+<p class="subtitle">
+⛏️ ساختن، بقا و ماجراجویی در یک دنیای بی‌نهایت
+</p>
+
+<div class="hero-line"></div>
 
 </section>
+
+
+<!-- ================= MAIN ================= -->
 
 <main class="content">
 
-<section>
 
-    <div class="game-main">
+<!-- ================= ABOUT ================= -->
 
-        <img
-            src="images/minecraft.jpg"
-            alt="Minecraft"
-            class="game-cover"
-        >
+<section id="about">
 
-        <div class="game-description">
+<h2 class="section-title">
+🌍 Minecraft چیست؟
+</h2>
 
-            <h2>⛏️ Minecraft</h2>
+<div class="minecraft-intro">
 
-            <p>
-                Minecraft یک بازی سندباکس و ماجراجویی
-                است که به بازیکنان اجازه می‌دهد در دنیایی
-                از بلوک‌ها به ساخت‌وساز، اکتشاف و بقا
-                بپردازند.
-            </p>
+<p>
 
-        </div>
+Minecraft یک بازی سندباکس است که به بازیکن
+اجازه می‌دهد در یک دنیای بزرگ و بلوکی
+ساخت‌وساز کند، منابع جمع‌آوری کند،
+اکتشاف کند و ماجراجویی داشته باشد.
 
-    </div>
+</p>
 
-</section>
+</div>
 
-<section id="information">
 
-    <h2 class="section-title">
-        📊 اطلاعات بازی
-    </h2>
+<div class="info-grid">
 
-    <div class="info-grid">
 
-        <div class="info-box">
-            <div class="info-icon">🏢</div>
-            <h3>سازنده</h3>
-            <p>Mojang Studios</p>
-        </div>
+<div class="info-card">
 
-        <div class="info-box">
-            <div class="info-icon">🎮</div>
-            <h3>ناشر</h3>
-            <p>Mojang Studios / Xbox Game Studios</p>
-        </div>
+<div class="info-icon">
+⛏️
+</div>
 
-        <div class="info-box">
-            <div class="info-icon">📅</div>
-            <h3>انتشار</h3>
-            <p>18 نوامبر 2011</p>
-        </div>
+<h3>
+ساخت‌وساز
+</h3>
 
-        <div class="info-box">
-            <div class="info-icon">🧱</div>
-            <h3>سبک</h3>
-            <p>Sandbox / Survival</p>
-        </div>
+<p>
+از چوب و سنگ گرفته تا سازه‌های عظیم؛
+تقریباً هر چیزی را می‌توان با بلوک‌ها ساخت.
+</p>
 
-        <div class="info-box">
-            <div class="info-icon">👥</div>
-            <h3>حالت‌ها</h3>
-            <p>Single Player و Multiplayer</p>
-        </div>
+</div>
 
-        <div class="info-box">
-            <div class="info-icon">🌍</div>
-            <h3>دنیای بازی</h3>
-            <p>جهان‌های تولیدشده به‌صورت رویه‌ای</p>
-        </div>
 
-    </div>
+<div class="info-card">
 
-</section>
+<div class="info-icon">
+🌲
+</div>
 
-<section>
+<h3>
+اکتشاف
+</h3>
 
-    <h2 class="section-title">
-        ⭐ امتیازات
-    </h2>
+<p>
+جنگل‌ها، کوه‌ها، اقیانوس‌ها،
+غارها و محیط‌های مختلف منتظر کشف شدن هستند.
+</p>
 
-    <div class="ratings">
+</div>
 
-        <div class="rating-card">
-            <h3>Metacritic</h3>
-            <div class="rating-number">93/100</div>
-            <div class="rating-stars">★★★★★</div>
-            <div class="rating-label">امتیاز منتقدان</div>
-        </div>
 
-        <div class="rating-card">
-            <h3>GameSpot</h3>
-            <div class="rating-number">8.5/10</div>
-            <div class="rating-stars">★★★★☆</div>
-            <div class="rating-label">امتیاز نقد</div>
-        </div>
+<div class="info-card">
 
-        <div class="rating-card">
-            <h3>IGN</h3>
-            <div class="rating-number">9/10</div>
-            <div class="rating-stars">★★★★★</div>
-            <div class="rating-label">امتیاز نقد</div>
-        </div>
+<div class="info-icon">
+⚔️
+</div>
 
-    </div>
+<h3>
+ماجراجویی
+</h3>
+
+<p>
+با موجودات مختلف مبارزه کن،
+منابع جمع کن و برای زنده ماندن تلاش کن.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
-<section>
 
-    <h2 class="section-title">
-        🔥 ویژگی‌های Minecraft
-    </h2>
+<!-- ================= MODES ================= -->
 
-    <div class="features">
+<section
+class="modes"
+id="modes"
+>
 
-        <div class="feature">
-            <h3>🧱 ساخت‌وساز</h3>
-            <p>
-                ساخت سازه‌ها و دنیای دلخواه با
-                بلوک‌ها و منابع مختلف.
-            </p>
-        </div>
+<h2 class="section-title">
+🎮 حالت‌های بازی
+</h2>
 
-        <div class="feature">
-            <h3>⛏️ استخراج و اکتشاف</h3>
-            <p>
-                پیدا کردن منابع، غارها و محیط‌های
-                مختلف در دنیای بازی.
-            </p>
-        </div>
 
-        <div class="feature">
-            <h3>👾 موجودات</h3>
-            <p>
-                موجودات مختلف و دشمنانی که
-                در دنیای Minecraft زندگی می‌کنند.
-            </p>
-        </div>
+<div class="mode-grid">
 
-        <div class="feature">
-            <h3>🌐 Multiplayer</h3>
-            <p>
-                امکان بازی با دیگر بازیکنان
-                در سرورها و دنیاهای چندنفره.
-            </p>
-        </div>
 
-    </div>
+<div class="mode-card">
+
+<h3>
+🧱 Survival
+</h3>
+
+<p>
+منابع جمع کن، ابزار بساز،
+خانه درست کن و در برابر خطرات
+دنیای Minecraft زنده بمان.
+</p>
+
+</div>
+
+
+<div class="mode-card">
+
+<h3>
+🏗️ Creative
+</h3>
+
+<p>
+با دسترسی آزاد به بلوک‌ها
+هر چیزی که می‌خواهی بساز
+و بدون نگرانی از منابع بازی کن.
+</p>
+
+</div>
+
+
+<div class="mode-card">
+
+<h3>
+👁️ Spectator
+</h3>
+
+<p>
+دنیای Minecraft را بدون دخالت
+مستقیم در بازی مشاهده و کاوش کن.
+</p>
+
+</div>
+
+
+<div class="mode-card">
+
+<h3>
+💀 Hardcore
+</h3>
+
+<p>
+یک تجربه سخت‌تر از Survival
+که در آن زنده ماندن اهمیت بیشتری دارد.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
-<a href="index.html" class="back-button">
-    ← بازگشت به AMiR GAMiNG
+
+<!-- ================= VERSION ================= -->
+
+<section class="version-box">
+
+<h2>
+🟩 Minecraft
+</h2>
+
+<p>
+یک دنیای بلوکی؛
+بی‌نهایت راه برای ساختن،
+اکتشاف و ماجراجویی.
+</p>
+
+</section>
+
+
+<!-- ================= BACK ================= -->
+
+<a
+href="index.html"
+class="back-button"
+>
+⬅️ بازگشت به AMiR GAMiNG
 </a>
+
 
 </main>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    © 2026 AMiR GAMiNG
+
+© 2026 AMiR GAMiNG
+<br>
+Minecraft Gaming Page ⛏️
+
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
+/* ================= MENU ================= */
 
-let particles=[];
+const menuButton =
+document.getElementById(
+    "menuButton"
+);
 
-const mouse={
+const navLinks =
+document.getElementById(
+    "navLinks"
+);
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        navLinks.classList.toggle(
+            "active"
+        );
+
+    }
+);
+
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(
+    function(link){
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* ================= PARTICLES ================= */
+
+const canvas =
+document.getElementById(
+    "particles"
+);
+
+const ctx =
+canvas.getContext("2d");
+
+
+let particles = [];
+
+
+const mouse = {
+
     x:null,
+
     y:null,
-    radius:150
+
+    radius:140
+
 };
+
 
 function resizeCanvas(){
 
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
 
 }
 
+
 resizeCanvas();
 
-window.addEventListener("resize",resizeCanvas);
 
-window.addEventListener("mousemove",function(e){
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
 
-    mouse.x=e.clientX;
-    mouse.y=e.clientY;
 
-});
+window.addEventListener(
+    "mousemove",
+    function(event){
 
-window.addEventListener("mouseleave",function(){
+        mouse.x =
+            event.clientX;
 
-    mouse.x=null;
-    mouse.y=null;
+        mouse.y =
+            event.clientY;
 
-});
+    }
+);
 
-const particleCount=window.innerWidth<700?60:110;
 
-for(let i=0;i<particleCount;i++){
+window.addEventListener(
+    "mouseleave",
+    function(){
+
+        mouse.x=null;
+
+        mouse.y=null;
+
+    }
+);
+
+
+const particleCount =
+window.innerWidth < 700
+? 55
+: 90;
+
+
+for(
+    let i=0;
+    i<particleCount;
+    i++
+){
 
     particles.push({
 
-        x:Math.random()*canvas.width,
-        y:Math.random()*canvas.height,
-        size:Math.random()*2.5+.7,
-        speedX:(Math.random()-.5)*.7,
-        speedY:(Math.random()-.5)*.7
+        x:
+            Math.random()
+            *canvas.width,
+
+        y:
+            Math.random()
+            *canvas.height,
+
+        size:
+            Math.random()
+            *2.5+.7,
+
+        speedX:
+            (Math.random()-.5)
+            *.45,
+
+        speedY:
+            (Math.random()-.5)
+            *.45
 
     });
 
 }
+
 
 function animateParticles(){
 
@@ -576,70 +1128,140 @@ function animateParticles(){
         canvas.height
     );
 
-    particles.forEach(function(p){
 
-        p.x+=p.speedX;
-        p.y+=p.speedY;
+    particles.forEach(
+        function(p){
 
-        if(p.x<0||p.x>canvas.width)
-            p.speedX*=-1;
+            p.x +=
+                p.speedX;
 
-        if(p.y<0||p.y>canvas.height)
-            p.speedY*=-1;
+            p.y +=
+                p.speedY;
 
-        if(mouse.x!==null&&mouse.y!==null){
 
-            const dx=p.x-mouse.x;
-            const dy=p.y-mouse.y;
+            if(
+                p.x<0 ||
+                p.x>canvas.width
+            ){
 
-            const distance=Math.sqrt(dx*dx+dy*dy);
-
-            if(distance<mouse.radius&&distance>0){
-
-                const force=
-                    (mouse.radius-distance)/
-                    mouse.radius;
-
-                p.x+=(dx/distance)*force*2;
-                p.y+=(dy/distance)*force*2;
+                p.speedX *= -1;
 
             }
 
+
+            if(
+                p.y<0 ||
+                p.y>canvas.height
+            ){
+
+                p.speedY *= -1;
+
+            }
+
+
+            if(
+                mouse.x!==null &&
+                mouse.y!==null
+            ){
+
+                const dx =
+                    p.x-mouse.x;
+
+                const dy =
+                    p.y-mouse.y;
+
+                const distance =
+                    Math.sqrt(
+                        dx*dx+
+                        dy*dy
+                    );
+
+
+                if(
+                    distance<
+                    mouse.radius &&
+                    distance>0
+                ){
+
+                    const force =
+                    (
+                        mouse.radius-
+                        distance
+                    )/
+                    mouse.radius;
+
+
+                    p.x +=
+                        dx/distance*
+                        force*1.5;
+
+                    p.y +=
+                        dy/distance*
+                        force*1.5;
+
+                }
+
+            }
+
+
+            ctx.beginPath();
+
+            ctx.arc(
+                p.x,
+                p.y,
+                p.size,
+                0,
+                Math.PI*2
+            );
+
+            ctx.fillStyle =
+                "rgba(76,175,80,.75)";
+
+            ctx.shadowBlur=8;
+
+            ctx.shadowColor =
+                "#4caf50";
+
+            ctx.fill();
+
+            ctx.shadowBlur=0;
+
         }
+    );
 
-        ctx.beginPath();
 
-        ctx.arc(
-            p.x,
-            p.y,
-            p.size,
-            0,
-            Math.PI*2
-        );
+    /* PARTICLE LINES */
 
-        ctx.fillStyle="rgba(0,229,255,.85)";
-        ctx.shadowBlur=10;
-        ctx.shadowColor="#00e5ff";
-        ctx.fill();
-        ctx.shadowBlur=0;
+    for(
+        let i=0;
+        i<particles.length;
+        i++
+    ){
 
-    });
+        for(
+            let j=i+1;
+            j<particles.length;
+            j++
+        ){
 
-    for(let i=0;i<particles.length;i++){
-
-        for(let j=i+1;j<particles.length;j++){
-
-            const dx=
+            const dx =
                 particles[i].x-
                 particles[j].x;
 
-            const dy=
+            const dy =
                 particles[i].y-
                 particles[j].y;
 
-            const distance=Math.sqrt(dx*dx+dy*dy);
+            const distance =
+                Math.sqrt(
+                    dx*dx+
+                    dy*dy
+                );
 
-            if(distance<90){
+
+            if(
+                distance<90
+            ){
 
                 ctx.beginPath();
 
@@ -653,11 +1275,16 @@ function animateParticles(){
                     particles[j].y
                 );
 
-                ctx.strokeStyle=
-                    "rgba(128,0,255,"+
-                    (1-distance/90)+")";
+                ctx.strokeStyle =
+                    "rgba(76,175,80,"+
+                    (
+                        1-
+                        distance/90
+                    )+
+                    ")";
 
-                ctx.lineWidth=.7;
+                ctx.lineWidth=.6;
+
                 ctx.stroke();
 
             }
@@ -666,43 +1293,81 @@ function animateParticles(){
 
     }
 
-    if(mouse.x!==null&&mouse.y!==null){
 
-        particles.forEach(function(p){
+    /* MOUSE LINES */
 
-            const dx=p.x-mouse.x;
-            const dy=p.y-mouse.y;
+    if(
+        mouse.x!==null &&
+        mouse.y!==null
+    ){
 
-            const distance=Math.sqrt(dx*dx+dy*dy);
+        particles.forEach(
+            function(p){
 
-            if(distance<mouse.radius){
+                const dx =
+                    p.x-mouse.x;
 
-                ctx.beginPath();
+                const dy =
+                    p.y-mouse.y;
 
-                ctx.moveTo(p.x,p.y);
-                ctx.lineTo(mouse.x,mouse.y);
+                const distance =
+                    Math.sqrt(
+                        dx*dx+
+                        dy*dy
+                    );
 
-                ctx.strokeStyle=
-                    "rgba(0,229,255,"+
-                    (1-distance/mouse.radius)+")";
 
-                ctx.lineWidth=1;
-                ctx.stroke();
+                if(
+                    distance<
+                    mouse.radius
+                ){
+
+                    ctx.beginPath();
+
+                    ctx.moveTo(
+                        p.x,
+                        p.y
+                    );
+
+                    ctx.lineTo(
+                        mouse.x,
+                        mouse.y
+                    );
+
+                    ctx.strokeStyle =
+                        "rgba(76,175,80,"+
+                        (
+                            1-
+                            distance/
+                            mouse.radius
+                        )+
+                        ")";
+
+                    ctx.lineWidth=.8;
+
+                    ctx.stroke();
+
+                }
 
             }
-
-        });
+        );
 
     }
 
-    requestAnimationFrame(animateParticles);
+
+    requestAnimationFrame(
+        animateParticles
+    );
 
 }
+
 
 animateParticles();
 
 </script>
 
+
 </body>
+
 </html>
 ```
