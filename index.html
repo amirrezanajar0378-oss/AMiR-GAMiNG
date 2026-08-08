@@ -3,30 +3,14 @@
 <html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>AMiR GAMiNG</title>
 
-    <!-- =========================
-         WEBSITE ICON
-    ========================== -->
-
-    <link rel="icon" type="image/png" href="./icon.png">
-    <link rel="shortcut icon" type="image/png" href="./icon.png">
-
-    <!-- FONT -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
 
@@ -41,649 +25,412 @@
         }
 
         body {
-
             font-family: "Vazirmatn", sans-serif;
-
             background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(0, 229, 255, 0.08),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 80% 70%,
-                    rgba(128, 0, 255, 0.08),
-                    transparent 30%
-                ),
-
+                radial-gradient(circle at 15% 20%, rgba(0,229,255,.08), transparent 28%),
+                radial-gradient(circle at 85% 70%, rgba(128,0,255,.08), transparent 28%),
                 #050509;
-
-            color: white;
-
+            color: #fff;
             min-height: 100vh;
-
             overflow-x: hidden;
         }
 
-
-        /* =========================
-           PARTICLES CANVAS
-        ========================== */
-
         #particles {
-
             position: fixed;
-
             inset: 0;
-
             width: 100%;
             height: 100%;
-
             pointer-events: none;
-
             z-index: 1;
         }
 
-
-        /* =========================
-           NAVBAR
-        ========================== */
+        /* ================= NAVBAR ================= */
 
         nav {
-
             position: fixed;
-
             top: 0;
             left: 0;
             right: 0;
-
             height: 70px;
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
-            gap: 12px;
-
-            background:
-                rgba(5, 5, 9, 0.78);
-
-            backdrop-filter:
-                blur(15px);
-
-            border-bottom:
-                1px solid
-                rgba(0, 229, 255, 0.12);
-
+            gap: 10px;
+            background: rgba(5,5,9,.78);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,229,255,.12);
             z-index: 100;
         }
 
-
         nav a {
-
-            color: #ddd;
-
+            color: #ccc;
             text-decoration: none;
-
-            padding:
-                10px 18px;
-
+            padding: 10px 18px;
             border-radius: 12px;
-
-            transition: 0.3s;
+            transition: .3s;
         }
-
 
         nav a:hover {
-
-            color: white;
-
-            background:
-                rgba(0, 229, 255, 0.08);
-
-            box-shadow:
-                0 0 20px
-                rgba(0, 229, 255, 0.15);
-
-            transform:
-                translateY(-2px);
+            color: #fff;
+            background: rgba(0,229,255,.08);
+            box-shadow: 0 0 20px rgba(0,229,255,.18);
         }
 
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
-        /* =========================
-           HERO
-        ========================== */
+        /* ================= HERO ================= */
 
         .hero {
-
             min-height: 88vh;
-
-            padding:
-                130px 20px 60px;
-
+            padding: 130px 20px 60px;
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             flex-direction: column;
-
             text-align: center;
-
             position: relative;
-
             z-index: 2;
         }
-
 
         .logo {
-
-            font-size:
-                clamp(
-                    42px,
-                    9vw,
-                    95px
-                );
-
+            font-size: clamp(42px, 9vw, 95px);
             font-weight: 900;
-
             letter-spacing: 4px;
-
-            color: white;
-
             text-shadow:
-
-                0 0 8px white,
-
+                0 0 8px #fff,
                 0 0 20px #00e5ff,
-
-                0 0 45px #8000ff,
-
-                0 0 80px
-                rgba(128, 0, 255, 0.6);
-
-            animation:
-                logoGlow 2s
-                ease-in-out
-                infinite alternate;
+                0 0 45px #8000ff;
+            animation: logoGlow 2s infinite alternate;
         }
-
 
         .subtitle {
-
-            margin-top: 25px;
-
+            margin-top: 22px;
             color: #aaa;
-
-            font-size:
-                clamp(
-                    16px,
-                    3vw,
-                    23px
-                );
+            font-size: clamp(16px, 3vw, 23px);
         }
-
 
         .hero-line {
-
-            width:
-                min(500px, 80vw);
-
+            width: min(500px, 80vw);
             height: 2px;
-
             margin-top: 30px;
-
-            background:
-
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #00e5ff,
-                    #8000ff,
-                    transparent
-                );
-
-            box-shadow:
-                0 0 15px
-                rgba(0, 229, 255, 0.7);
-
-            animation:
-                linePulse 2s infinite;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #00e5ff,
+                #8000ff,
+                transparent
+            );
+            box-shadow: 0 0 15px rgba(0,229,255,.7);
         }
 
-
-        /* =========================
-           CONTENT
-        ========================== */
+        /* ================= CONTENT ================= */
 
         .content {
-
             position: relative;
-
             z-index: 2;
-
             width: 100%;
-
             max-width: 1150px;
-
             margin: auto;
-
-            padding:
-                60px 20px;
+            padding: 60px 20px;
         }
-
 
         .section-title {
-
             text-align: center;
-
-            font-size: 35px;
-
+            font-size: 34px;
             margin-bottom: 35px;
-
-            text-shadow:
-                0 0 20px
-                rgba(0, 229, 255, 0.3);
+            text-shadow: 0 0 20px rgba(0,229,255,.3);
         }
 
-
-        /* =========================
-           GAME GRID
-        ========================== */
+        /* ================= GAME CARDS ================= */
 
         .games {
-
             display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
         }
 
-
-        /* =========================
-           GAME CARD
-        ========================== */
-
         .game-card {
-
+            position: relative;
             overflow: hidden;
-
             border-radius: 22px;
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.07),
-                    rgba(255, 255, 255, 0.015)
-                );
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.09);
-
-            transition:
-                0.35s;
-
-            display: flex;
-
-            flex-direction: column;
+            background: linear-gradient(
+                145deg,
+                rgba(255,255,255,.07),
+                rgba(255,255,255,.015)
+            );
+            border: 1px solid rgba(255,255,255,.09);
+            transition: .4s;
         }
-
 
         .game-card:hover {
-
-            transform:
-                translateY(-10px);
-
-            border-color:
-                rgba(0, 229, 255, 0.45);
-
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(0,229,255,.5);
             box-shadow:
-
-                0 20px 50px
-                rgba(0, 0, 0, 0.5),
-
-                0 0 30px
-                rgba(0, 229, 255, 0.12);
+                0 20px 50px rgba(0,0,0,.55),
+                0 0 35px rgba(0,229,255,.15);
         }
 
-
-        /* =========================
-           GAME IMAGE
-        ========================== */
-
         .game-image {
-
             width: 100%;
-
             height: 210px;
-
             object-fit: cover;
-
             display: block;
-
-            transition:
-                transform 0.5s;
+            transition: .5s;
         }
 
-
-        .game-card:hover
-        .game-image {
-
-            transform:
-                scale(1.06);
+        .game-card:hover .game-image {
+            transform: scale(1.08);
         }
-
-
-        /* =========================
-           CARD CONTENT
-        ========================== */
 
         .game-info {
-
-            padding: 25px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            flex: 1;
+            padding: 24px;
         }
-
 
         .game-info h3 {
-
-            font-size: 25px;
-
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 8px;
         }
-
 
         .game-info p {
-
             color: #999;
-
             line-height: 1.9;
-
             font-size: 14px;
-
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
+        /* ================= RATING ================= */
 
-        /* =========================
-           BUTTON
-        ========================== */
-
-        .game-button {
-
-            margin-top: auto;
-
-            display: block;
-
-            text-align: center;
-
-            text-decoration: none;
-
-            color: white;
-
-            padding:
-                12px 20px;
-
-            border-radius: 12px;
-
-            background:
-                rgba(0, 229, 255, 0.08);
-
-            border:
-                1px solid
-                rgba(0, 229, 255, 0.3);
-
-            transition:
-                0.3s;
-        }
-
-
-        .game-button:hover {
-
-            background:
-                rgba(0, 229, 255, 0.16);
-
-            box-shadow:
-                0 0 20px
-                rgba(0, 229, 255, 0.2);
-
-            transform:
-                translateY(-2px);
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about {
-
-            margin-top: 70px;
-
-            padding: 40px 30px;
-
-            text-align: center;
-
-            border-radius: 22px;
-
-            background:
-                rgba(255, 255, 255, 0.04);
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.08);
-        }
-
-
-        .about h2 {
-
-            font-size: 30px;
-
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 20px;
         }
 
+        .stars {
+            color: #ffd000;
+            letter-spacing: 2px;
+        }
+
+        .rating-number {
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .game-button {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            background: rgba(0,229,255,.08);
+            border: 1px solid rgba(0,229,255,.3);
+            transition: .3s;
+        }
+
+        .game-button:hover {
+            background: rgba(0,229,255,.17);
+            box-shadow: 0 0 22px rgba(0,229,255,.2);
+            transform: translateY(-2px);
+        }
+
+        /* ================= RECOMMENDED ================= */
+
+        .recommended {
+            margin-top: 90px;
+        }
+
+        .recommend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .recommend-card {
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+            transition: .35s;
+        }
+
+        .recommend-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(128,0,255,.5);
+            box-shadow: 0 0 30px rgba(128,0,255,.15);
+        }
+
+        .recommend-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .recommend-info {
+            padding: 18px;
+        }
+
+        .recommend-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .recommend-info p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            margin-top: 80px;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 22px;
+            background: rgba(255,255,255,.04);
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .about h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
 
         .about p {
-
             color: #aaa;
-
             max-width: 800px;
-
             margin: auto;
-
             line-height: 2.2;
         }
 
-
-        /* =========================
-           FOOTER
-        ========================== */
+        /* ================= FOOTER ================= */
 
         footer {
-
             position: relative;
-
             z-index: 2;
-
             margin-top: 50px;
-
             padding: 35px 20px;
-
             text-align: center;
-
             color: #666;
-
-            border-top:
-                1px solid
-                rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255,255,255,.05);
         }
 
-
-        /* =========================
-           ANIMATIONS
-        ========================== */
+        /* ================= ANIMATIONS ================= */
 
         @keyframes logoGlow {
 
             from {
-
-                transform:
-                    scale(1);
-
                 text-shadow:
-
-                    0 0 8px white,
-
+                    0 0 8px #fff,
                     0 0 20px #00e5ff,
-
                     0 0 40px #8000ff;
             }
 
             to {
-
-                transform:
-                    scale(1.02);
-
                 text-shadow:
-
-                    0 0 10px white,
-
+                    0 0 10px #fff,
                     0 0 30px #00e5ff,
-
                     0 0 65px #8000ff,
-
-                    0 0 90px
-                    rgba(128, 0, 255, 0.5);
+                    0 0 90px rgba(128,0,255,.5);
             }
         }
 
-
-        @keyframes linePulse {
-
-            0%,
-            100% {
-
-                transform:
-                    scaleX(0.6);
-
-                opacity: 0.5;
-            }
-
-            50% {
-
-                transform:
-                    scaleX(1);
-
-                opacity: 1;
-            }
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
+        /* ================= MOBILE ================= */
 
         @media (max-width: 850px) {
 
-            .games {
-
-                grid-template-columns:
-                    1fr;
+            nav {
+                justify-content: flex-end;
+                padding: 0 18px;
             }
 
+            .menu-button {
+                display: block;
+            }
+
+            nav .nav-links {
+                position: absolute;
+                top: 70px;
+                right: 15px;
+                left: 15px;
+                display: none;
+                flex-direction: column;
+                padding: 15px;
+                border-radius: 16px;
+                background: rgba(5,5,9,.95);
+                border: 1px solid rgba(0,229,255,.15);
+            }
+
+            nav .nav-links.active {
+                display: flex;
+            }
+
+            .games,
+            .recommend-grid {
+                grid-template-columns: 1fr;
+            }
 
             .game-image {
-
                 height: 230px;
             }
-
-
-            nav {
-
-                height: 60px;
-
-                gap: 4px;
-            }
-
-
-            nav a {
-
-                padding:
-                    8px 10px;
-
-                font-size: 13px;
-            }
-
         }
 
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- PARTICLES -->
-
     <canvas id="particles"></canvas>
 
-
-    <!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
 
     <nav>
 
-        <a href="#home">
-            🏠 خانه
-        </a>
+        <button class="menu-button" id="menuButton">
+            ☰
+        </button>
 
-        <a href="#games">
-            🎮 بازی‌ها
-        </a>
+        <div class="nav-links" id="navLinks">
 
-        <a href="#about">
-            👤 درباره
-        </a>
+            <a href="#home">🏠 خانه</a>
+
+            <a href="#games">🎮 بازی‌ها</a>
+
+            <a href="#recommended">🔥 پیشنهادی</a>
+
+            <a href="#about">👤 درباره</a>
+
+        </div>
 
     </nav>
 
 
-    <!-- HERO -->
+    <!-- ================= HERO ================= -->
 
-    <section
-        class="hero"
-        id="home"
-    >
+    <section class="hero" id="home">
 
         <h1 class="logo">
             AMiR GAMiNG
         </h1>
 
-
         <p class="subtitle">
             دنیای گیمینگ من 🎮⚡
         </p>
-
 
         <div class="hero-line"></div>
 
     </section>
 
 
-    <!-- CONTENT -->
+    <!-- ================= MAIN ================= -->
 
     <main class="content">
 
@@ -693,14 +440,13 @@
         <section id="games">
 
             <h2 class="section-title">
-                🔥 بازی‌ها
+                🔥 بازی‌های من
             </h2>
-
 
             <div class="games">
 
 
-                <!-- GTA V -->
+                <!-- GTA -->
 
                 <article class="game-card">
 
@@ -709,7 +455,6 @@
                         alt="GTA V"
                         class="game-image"
                     >
-
 
                     <div class="game-info">
 
@@ -721,12 +466,23 @@
                             دنیای بزرگ و هیجان‌انگیز GTA
                         </p>
 
+                        <div class="rating">
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+
+                            <span class="rating-number">
+                                4.8/5
+                            </span>
+
+                        </div>
 
                         <a
                             href="gta.html"
                             class="game-button"
                         >
-                            ورود
+                            ورود به صفحه
                         </a>
 
                     </div>
@@ -744,7 +500,6 @@
                         class="game-image"
                     >
 
-
                     <div class="game-info">
 
                         <h3>
@@ -755,12 +510,23 @@
                             ساخت و ماجراجویی بی‌پایان
                         </p>
 
+                        <div class="rating">
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+
+                            <span class="rating-number">
+                                4.9/5
+                            </span>
+
+                        </div>
 
                         <a
                             href="minecraft.html"
                             class="game-button"
                         >
-                            ورود
+                            ورود به صفحه
                         </a>
 
                     </div>
@@ -778,7 +544,6 @@
                         class="game-image"
                     >
 
-
                     <div class="game-info">
 
                         <h3>
@@ -789,25 +554,120 @@
                             سرعت، رقابت و هیجان
                         </p>
 
+                        <div class="rating">
+
+                            <span class="stars">
+                                ★★★★☆
+                            </span>
+
+                            <span class="rating-number">
+                                4.5/5
+                            </span>
+
+                        </div>
 
                         <a
                             href="racing.html"
                             class="game-button"
                         >
-                            ورود
+                            ورود به صفحه
                         </a>
 
                     </div>
 
                 </article>
 
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECOMMENDED ================= -->
+
+        <section
+            class="recommended"
+            id="recommended"
+        >
+
+            <h2 class="section-title">
+                🕹️ بازی‌های پیشنهادی
+            </h2>
+
+            <div class="recommend-grid">
+
+
+                <article class="recommend-card">
+
+                    <img
+                        src="images/gta.jpg"
+                        alt="GTA"
+                    >
+
+                    <div class="recommend-info">
+
+                        <h3>
+                            🎮 GTA V
+                        </h3>
+
+                        <p>
+                            مناسب برای علاقه‌مندان
+                            به دنیای Open World
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="recommend-card">
+
+                    <img
+                        src="images/minecraft.jpg"
+                        alt="Minecraft"
+                    >
+
+                    <div class="recommend-info">
+
+                        <h3>
+                            ⛏️ Minecraft
+                        </h3>
+
+                        <p>
+                            ساخت، بقا و ماجراجویی
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="recommend-card">
+
+                    <img
+                        src="images/racing.jpg"
+                        alt="Racing"
+                    >
+
+                    <div class="recommend-info">
+
+                        <h3>
+                            🏎️ Racing
+                        </h3>
+
+                        <p>
+                            برای عاشقان سرعت و مسابقه
+                        </p>
+
+                    </div>
+
+                </article>
 
             </div>
 
         </section>
 
 
-        <!-- ABOUT -->
+        <!-- ================= ABOUT ================= -->
 
         <section
             class="about"
@@ -818,44 +678,67 @@
                 👤 درباره AMiR GAMiNG
             </h2>
 
-
             <p>
-
                 به سایت AMiR GAMiNG خوش آمدید.
-
-                اینجا دنیای بازی‌ها،
-                گیمینگ و پروژه‌های من است.
-
-                🎮⚡
-
+                اینجا دنیای بازی‌ها، گیمینگ
+                و پروژه‌های من است. 🎮⚡
             </p>
 
         </section>
 
-
     </main>
 
 
-    <!-- FOOTER -->
-
     <footer>
-
         © 2026 AMiR GAMiNG
-
     </footer>
 
 
-    <!-- =========================
-         PARTICLES JAVASCRIPT
-    ========================== -->
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script>
 
-        const canvas =
-            document.getElementById(
-                "particles"
+        /* ================= MENU ================= */
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        document.querySelectorAll(
+            ".nav-links a"
+        ).forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    navLinks.classList.remove(
+                        "active"
+                    );
+
+                }
             );
 
+        });
+
+
+        /* ================= PARTICLES ================= */
+
+        const canvas =
+            document.getElementById("particles");
 
         const ctx =
             canvas.getContext("2d");
@@ -897,7 +780,7 @@
 
         window.addEventListener(
             "mousemove",
-            function (event) {
+            function(event) {
 
                 mouse.x =
                     event.clientX;
@@ -911,7 +794,7 @@
 
         window.addEventListener(
             "mouseleave",
-            function () {
+            function() {
 
                 mouse.x = null;
 
@@ -945,15 +828,15 @@
 
                 size:
                     Math.random()
-                    * 2.5 + 0.7,
+                    * 2.5 + .7,
 
                 speedX:
-                    (Math.random() - 0.5)
-                    * 0.7,
+                    (Math.random() - .5)
+                    * .7,
 
                 speedY:
-                    (Math.random() - 0.5)
-                    * 0.7
+                    (Math.random() - .5)
+                    * .7
 
             });
 
@@ -970,136 +853,113 @@
             );
 
 
-            /* =====================
-               MOVE + DRAW PARTICLES
-            ====================== */
+            particles.forEach(
+                function(p) {
 
-            for (
-                const particle of particles
-            ) {
+                    p.x += p.speedX;
 
-                particle.x +=
-                    particle.speedX;
-
-                particle.y +=
-                    particle.speedY;
-
-
-                if (
-                    particle.x < 0 ||
-                    particle.x >
-                    canvas.width
-                ) {
-
-                    particle.speedX *= -1;
-
-                }
-
-
-                if (
-                    particle.y < 0 ||
-                    particle.y >
-                    canvas.height
-                ) {
-
-                    particle.speedY *= -1;
-
-                }
-
-
-                /* MOUSE REACTION */
-
-                if (
-                    mouse.x !== null &&
-                    mouse.y !== null
-                ) {
-
-                    const dx =
-                        particle.x -
-                        mouse.x;
-
-                    const dy =
-                        particle.y -
-                        mouse.y;
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+                    p.y += p.speedY;
 
 
                     if (
-                        distance <
-                        mouse.radius &&
-                        distance > 0
+                        p.x < 0 ||
+                        p.x > canvas.width
                     ) {
 
-                        const force =
-                            (
-                                mouse.radius -
-                                distance
-                            ) /
-                            mouse.radius;
-
-
-                        particle.x +=
-                            (dx / distance)
-                            * force
-                            * 2;
-
-
-                        particle.y +=
-                            (dy / distance)
-                            * force
-                            * 2;
+                        p.speedX *= -1;
 
                     }
 
+
+                    if (
+                        p.y < 0 ||
+                        p.y > canvas.height
+                    ) {
+
+                        p.speedY *= -1;
+
+                    }
+
+
+                    /* MOUSE REACTION */
+
+                    if (
+                        mouse.x !== null &&
+                        mouse.y !== null
+                    ) {
+
+                        const dx =
+                            p.x - mouse.x;
+
+                        const dy =
+                            p.y - mouse.y;
+
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
+
+
+                        if (
+                            distance <
+                            mouse.radius &&
+                            distance > 0
+                        ) {
+
+                            const force =
+                                (
+                                    mouse.radius -
+                                    distance
+                                ) /
+                                mouse.radius;
+
+
+                            p.x +=
+                                (dx / distance)
+                                * force
+                                * 2;
+
+
+                            p.y +=
+                                (dy / distance)
+                                * force
+                                * 2;
+
+                        }
+
+                    }
+
+
+                    /* DRAW PARTICLE */
+
+                    ctx.beginPath();
+
+                    ctx.arc(
+                        p.x,
+                        p.y,
+                        p.size,
+                        0,
+                        Math.PI * 2
+                    );
+
+                    ctx.fillStyle =
+                        "rgba(0,229,255,.85)";
+
+                    ctx.shadowBlur = 10;
+
+                    ctx.shadowColor =
+                        "#00e5ff";
+
+                    ctx.fill();
+
+                    ctx.shadowBlur = 0;
+
                 }
+            );
 
 
-                /* DRAW PARTICLE */
-
-                ctx.beginPath();
-
-
-                ctx.arc(
-
-                    particle.x,
-
-                    particle.y,
-
-                    particle.size,
-
-                    0,
-
-                    Math.PI * 2
-
-                );
-
-
-                ctx.fillStyle =
-                    "rgba(0,229,255,0.85)";
-
-
-                ctx.shadowBlur = 10;
-
-                ctx.shadowColor =
-                    "#00e5ff";
-
-
-                ctx.fill();
-
-
-                ctx.shadowBlur = 0;
-
-            }
-
-
-            /* =====================
-               LINES BETWEEN PARTICLES
-            ====================== */
+            /* LINES BETWEEN PARTICLES */
 
             for (
                 let i = 0;
@@ -1117,11 +977,9 @@
                         particles[i].x -
                         particles[j].x;
 
-
                     const dy =
                         particles[i].y -
                         particles[j].y;
-
 
                     const distance =
                         Math.sqrt(
@@ -1136,24 +994,15 @@
 
                         ctx.beginPath();
 
-
                         ctx.moveTo(
-
                             particles[i].x,
-
                             particles[i].y
-
                         );
-
 
                         ctx.lineTo(
-
                             particles[j].x,
-
                             particles[j].y
-
                         );
-
 
                         ctx.strokeStyle =
                             "rgba(128,0,255," +
@@ -1163,10 +1012,7 @@
                             ) +
                             ")";
 
-
-                        ctx.lineWidth =
-                            0.7;
-
+                        ctx.lineWidth = .7;
 
                         ctx.stroke();
 
@@ -1177,81 +1023,63 @@
             }
 
 
-            /* =====================
-               LINES TO MOUSE
-            ====================== */
+            /* LINES TO MOUSE */
 
             if (
                 mouse.x !== null &&
                 mouse.y !== null
             ) {
 
-                for (
-                    const particle
-                    of particles
-                ) {
+                particles.forEach(
+                    function(p) {
 
-                    const dx =
-                        particle.x -
-                        mouse.x;
+                        const dx =
+                            p.x - mouse.x;
 
+                        const dy =
+                            p.y - mouse.y;
 
-                    const dy =
-                        particle.y -
-                        mouse.y;
-
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
 
 
-                    if (
-                        distance <
-                        mouse.radius
-                    ) {
+                        if (
+                            distance <
+                            mouse.radius
+                        ) {
 
-                        ctx.beginPath();
+                            ctx.beginPath();
 
+                            ctx.moveTo(
+                                p.x,
+                                p.y
+                            );
 
-                        ctx.moveTo(
+                            ctx.lineTo(
+                                mouse.x,
+                                mouse.y
+                            );
 
-                            particle.x,
+                            ctx.strokeStyle =
+                                "rgba(0,229,255," +
+                                (
+                                    1 -
+                                    distance /
+                                    mouse.radius
+                                ) +
+                                ")";
 
-                            particle.y
+                            ctx.lineWidth = 1;
 
-                        );
+                            ctx.stroke();
 
-
-                        ctx.lineTo(
-
-                            mouse.x,
-
-                            mouse.y
-
-                        );
-
-
-                        ctx.strokeStyle =
-                            "rgba(0,229,255," +
-                            (
-                                1 -
-                                distance /
-                                mouse.radius
-                            ) +
-                            ")";
-
-
-                        ctx.lineWidth = 1;
-
-
-                        ctx.stroke();
+                        }
 
                     }
-
-                }
+                );
 
             }
 
@@ -1266,7 +1094,6 @@
         animateParticles();
 
     </script>
-
 
 </body>
 
