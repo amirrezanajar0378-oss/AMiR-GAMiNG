@@ -3,1332 +3,1326 @@
 <html lang="fa" dir="rtl">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
+<title>GTA V | AMiR GAMiNG</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 
-    <title>GTA V | AMiR GAMiNG</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+html{
+    scroll-behavior:smooth;
+}
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet"
-    >
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%,rgba(255,90,0,.12),transparent 30%),
+        radial-gradient(circle at 85% 70%,rgba(255,190,0,.08),transparent 30%),
+        #050505;
+    color:white;
+    overflow-x:hidden;
+}
 
-    <style>
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* NAV */
 
-        html {
-            scroll-behavior: smooth;
-        }
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:70px;
 
-        body {
-            font-family: "Vazirmatn", sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
 
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(0,229,255,.08),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 70%,
-                    rgba(128,0,255,.08),
-                    transparent 30%
-                ),
-                #050509;
+    background:rgba(5,5,5,.85);
+    backdrop-filter:blur(15px);
 
-            color: white;
+    border-bottom:1px solid rgba(255,170,0,.15);
 
-            min-height: 100vh;
+    z-index:100;
+}
 
-            overflow-x: hidden;
-        }
+nav a{
+    color:#ddd;
+    text-decoration:none;
 
-        #particles {
-            position: fixed;
+    padding:10px 18px;
+    border-radius:12px;
 
-            inset: 0;
+    transition:.3s;
+}
 
-            width: 100%;
-            height: 100%;
+nav a:hover{
+    color:white;
+    background:rgba(255,170,0,.08);
+    transform:translateY(-2px);
+}
 
-            pointer-events: none;
+/* HERO */
 
-            z-index: 1;
-        }
+.hero{
+    position:relative;
+    z-index:2;
 
+    min-height:80vh;
 
-        /* =========================
-           NAVBAR
-        ========================== */
+    padding:120px 20px 70px;
 
-        nav {
-            position: fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-            top: 0;
-            left: 0;
-            right: 0;
+    text-align:center;
+}
 
-            height: 70px;
+.hero-image{
+    width:min(900px,92vw);
+    height:370px;
 
-            display: flex;
+    object-fit:cover;
 
-            justify-content: center;
-            align-items: center;
+    border-radius:25px;
 
-            background:
-                rgba(5,5,9,.82);
+    border:1px solid rgba(255,170,0,.25);
 
-            backdrop-filter: blur(15px);
+    box-shadow:
+        0 0 50px rgba(255,100,0,.15);
 
-            border-bottom:
-                1px solid
-                rgba(0,229,255,.12);
+    margin-bottom:35px;
+}
 
-            z-index: 100;
-        }
+.logo{
+    font-size:clamp(48px,8vw,90px);
 
-        nav a {
-            color: #ddd;
+    font-weight:900;
 
-            text-decoration: none;
+    letter-spacing:4px;
 
-            padding: 10px 20px;
+    text-shadow:
+        0 0 10px white,
+        0 0 25px #ff7200,
+        0 0 55px #ff1900;
 
-            border-radius: 12px;
+    animation:gtaGlow 3s infinite alternate;
+}
 
-            transition: .3s;
-        }
+@keyframes gtaGlow{
 
-        nav a:hover {
-            color: white;
+    from{
+        text-shadow:
+            0 0 10px white,
+            0 0 20px #ff7200,
+            0 0 35px #ff1900;
+    }
 
-            background:
-                rgba(0,229,255,.08);
+    to{
+        text-shadow:
+            0 0 15px white,
+            0 0 35px #ffb000,
+            0 0 65px #ff1900;
+    }
 
-            box-shadow:
-                0 0 20px
-                rgba(0,229,255,.18);
+}
 
-            transform:
-                translateY(-2px);
-        }
+.subtitle{
+    margin-top:15px;
+    color:#aaa;
+    font-size:18px;
+}
 
+/* CONTENT */
 
-        /* =========================
-           HERO
-        ========================== */
+.content{
+    position:relative;
+    z-index:2;
 
-        .hero {
-            position: relative;
+    max-width:1150px;
 
-            z-index: 2;
+    margin:auto;
 
-            min-height: 80vh;
+    padding:
+        20px 20px 80px;
+}
 
-            padding:
-                120px 20px 60px;
+.section-title{
+    text-align:center;
 
-            display: flex;
+    font-size:clamp(27px,4vw,38px);
 
-            justify-content: center;
-            align-items: center;
+    margin:55px 0 30px;
 
-            flex-direction: column;
+    text-shadow:
+        0 0 20px rgba(255,140,0,.25);
+}
 
-            text-align: center;
-        }
+/* OFFICIAL SCORE */
 
-        .hero-image {
-            width: min(1050px, 95vw);
+.official-score{
+    max-width:520px;
 
-            height: min(520px, 58vw);
+    margin:auto;
 
-            min-height: 280px;
+    padding:30px;
 
-            object-fit: cover;
+    text-align:center;
 
-            border-radius: 25px;
+    border-radius:22px;
 
-            border:
-                1px solid
-                rgba(0,229,255,.25);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,100,0,.08),
+            rgba(255,190,0,.04)
+        );
 
-            box-shadow:
-                0 0 40px
-                rgba(0,229,255,.12),
-                0 25px 70px
-                rgba(0,0,0,.55);
+    border:1px solid rgba(255,160,0,.2);
+}
 
-            transition:
-                .5s;
-        }
+.official-score .number{
+    font-size:38px;
+    font-weight:bold;
 
-        .hero-image:hover {
-            transform:
-                scale(1.015);
+    color:#ffd43b;
+}
 
-            box-shadow:
-                0 0 55px
-                rgba(0,229,255,.22),
-                0 25px 80px
-                rgba(0,0,0,.65);
-        }
+.official-score p{
+    margin-top:8px;
+    color:#999;
+}
 
-        .title {
-            margin-top: 35px;
+/* RATINGS */
 
-            font-size:
-                clamp(45px, 8vw, 85px);
+.ratings{
+    display:grid;
 
-            font-weight: 900;
+    grid-template-columns:
+        repeat(3,1fr);
 
-            letter-spacing: 3px;
+    gap:20px;
+}
 
-            text-shadow:
-                0 0 10px white,
-                0 0 25px #00e5ff,
-                0 0 55px #8000ff;
-        }
+.rating-card{
+    padding:25px;
 
-        .description {
-            margin-top: 18px;
+    text-align:center;
 
-            max-width: 800px;
+    border-radius:18px;
 
-            color: #aaa;
+    background:rgba(255,255,255,.04);
 
-            line-height: 2;
+    border:1px solid rgba(255,255,255,.08);
 
-            font-size: 16px;
-        }
+    transition:.3s;
+}
 
+.rating-card:hover{
+    transform:translateY(-7px);
 
-        /* =========================
-           CONTENT
-        ========================== */
+    border-color:
+        rgba(255,150,0,.35);
 
-        .content {
-            position: relative;
+    box-shadow:
+        0 0 25px
+        rgba(255,100,0,.08);
+}
 
-            z-index: 2;
+.rating-card h3{
+    margin-bottom:15px;
+}
 
-            width: 100%;
+.stars{
+    color:#ffd43b;
 
-            max-width: 1100px;
+    font-size:23px;
 
-            margin: auto;
+    letter-spacing:3px;
 
-            padding:
-                40px 20px 80px;
-        }
+    direction:ltr;
+}
 
-        .section-title {
-            text-align: center;
+.rating-number{
+    margin-top:8px;
 
-            font-size: 32px;
+    color:#ccc;
 
-            margin:
-                55px 0 30px;
+    font-size:14px;
+}
 
-            text-shadow:
-                0 0 20px
-                rgba(0,229,255,.3);
-        }
+/* INFO */
 
+.info-grid{
+    display:grid;
 
-        /* =========================
-           GAME INFO
-        ========================== */
+    grid-template-columns:
+        repeat(3,1fr);
 
-        .info-grid {
-            display: grid;
+    gap:18px;
+}
 
-            grid-template-columns:
-                repeat(4, 1fr);
+.info-card{
+    padding:22px;
 
-            gap: 18px;
-        }
+    border-radius:18px;
 
-        .info-box {
-            padding: 25px;
+    background:
+        rgba(255,255,255,.04);
 
-            text-align: center;
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
-            border-radius: 18px;
+    transition:.3s;
+}
 
-            background:
-                rgba(255,255,255,.04);
+.info-card:hover{
+    transform:translateY(-6px);
 
-            border:
-                1px solid
-                rgba(255,255,255,.08);
+    border-color:
+        rgba(255,150,0,.35);
+}
 
-            transition:
-                .3s;
-        }
+.info-icon{
+    font-size:30px;
 
-        .info-box:hover {
-            transform:
-                translateY(-7px);
+    margin-bottom:10px;
+}
 
-            border-color:
-                rgba(0,229,255,.4);
+.info-card h3{
+    margin-bottom:8px;
+}
 
-            box-shadow:
-                0 0 25px
-                rgba(0,229,255,.1);
-        }
+.info-card p{
+    color:#aaa;
 
-        .info-icon {
-            font-size: 34px;
+    line-height:1.9;
 
-            margin-bottom: 12px;
-        }
+    font-size:14px;
+}
 
-        .info-box h3 {
-            margin-bottom: 8px;
-        }
+/* STORY */
 
-        .info-box p {
-            color: #999;
+.story{
+    padding:30px;
 
-            font-size: 14px;
-        }
+    border-radius:20px;
 
+    background:
+        rgba(255,255,255,.04);
 
-        /* =========================
-           GAME DESCRIPTION
-        ========================== */
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
-        .description-box {
-            padding: 30px;
+    color:#aaa;
 
-            border-radius: 20px;
+    line-height:2.2;
 
-            background:
-                rgba(255,255,255,.04);
+    font-size:15px;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,.08);
+/* REQUIREMENTS */
 
-            color: #aaa;
+.requirements{
+    display:grid;
 
-            line-height: 2.2;
+    grid-template-columns:
+        1fr 1fr;
 
-            text-align: right;
-        }
+    gap:20px;
+}
 
+.requirement{
+    padding:25px;
 
-        /* =========================
-           FEATURES
-        ========================== */
+    border-radius:18px;
 
-        .features {
-            display: grid;
+    background:
+        rgba(255,255,255,.04);
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+}
 
-            gap: 20px;
-        }
+.requirement h3{
+    color:#ffb000;
 
-        .feature {
-            padding: 25px;
+    margin-bottom:15px;
+}
 
-            border-radius: 18px;
+.requirement p{
+    color:#aaa;
 
-            background:
-                rgba(255,255,255,.04);
+    line-height:2;
 
-            border:
-                1px solid
-                rgba(255,255,255,.08);
+    font-size:14px;
+}
 
-            transition: .3s;
-        }
+/* BACK */
 
-        .feature:hover {
-            transform:
-                translateY(-6px);
+.back-button{
+    display:block;
 
-            border-color:
-                rgba(128,0,255,.45);
+    max-width:300px;
 
-            box-shadow:
-                0 0 25px
-                rgba(128,0,255,.12);
-        }
+    margin:
+        45px auto 0;
 
-        .feature h3 {
-            margin-bottom: 10px;
-        }
+    padding:14px;
 
-        .feature p {
-            color: #999;
+    text-align:center;
 
-            line-height: 1.9;
+    text-decoration:none;
 
-            font-size: 14px;
-        }
+    color:white;
 
+    border-radius:14px;
 
-        /* =========================
-           SYSTEM REQUIREMENTS
-        ========================== */
+    background:
+        rgba(255,120,0,.08);
 
-        .notice {
-            margin-bottom: 20px;
+    border:
+        1px solid
+        rgba(255,150,0,.3);
 
-            padding: 18px 22px;
+    transition:.3s;
+}
 
-            border-radius: 15px;
+.back-button:hover{
+    transform:translateY(-4px);
 
-            background:
-                rgba(255,190,0,.06);
+    background:
+        rgba(255,120,0,.17);
 
-            border:
-                1px solid
-                rgba(255,190,0,.2);
+    box-shadow:
+        0 0 25px
+        rgba(255,120,0,.15);
+}
 
-            color: #bbb;
+/* FOOTER */
 
-            line-height: 1.9;
+footer{
+    position:relative;
 
-            font-size: 13px;
-        }
+    z-index:2;
 
-        .requirements {
-            display: grid;
+    padding:35px;
 
-            grid-template-columns:
-                1fr 1fr;
+    text-align:center;
 
-            gap: 20px;
-        }
+    color:#666;
 
-        .requirement-box {
-            padding: 30px;
+    border-top:
+        1px solid
+        rgba(255,255,255,.05);
+}
 
-            border-radius: 20px;
+/* RESPONSIVE */
 
-            background:
-                rgba(255,255,255,.04);
+@media(max-width:850px){
 
-            border:
-                1px solid
-                rgba(255,255,255,.08);
-        }
+    .ratings{
+        grid-template-columns:
+            1fr 1fr;
+    }
 
-        .requirement-box h3 {
-            margin-bottom: 20px;
+    .info-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
 
-            font-size: 22px;
-        }
+    .requirements{
+        grid-template-columns:
+            1fr;
+    }
 
-        .requirement-box ul {
-            list-style: none;
+}
 
-            color: #aaa;
+@media(max-width:550px){
 
-            line-height: 2.3;
-        }
+    nav a{
+        font-size:12px;
+        padding:8px 10px;
+    }
 
-        .requirement-box li {
-            border-bottom:
-                1px solid
-                rgba(255,255,255,.04);
+    .hero-image{
+        height:220px;
+    }
 
-            padding: 4px 0;
-        }
+    .ratings,
+    .info-grid{
+        grid-template-columns:1fr;
+    }
 
-        .requirement-box li::before {
-            content: "▸ ";
+}
 
-            color: #00e5ff;
-        }
-
-
-        /* =========================
-           OFFICIAL SOURCE
-        ========================== */
-
-        .source-box {
-            margin-top: 25px;
-
-            padding: 20px;
-
-            border-radius: 15px;
-
-            background:
-                rgba(0,229,255,.04);
-
-            border:
-                1px solid
-                rgba(0,229,255,.12);
-
-            text-align: center;
-
-            color: #aaa;
-
-            line-height: 1.9;
-        }
-
-
-        /* =========================
-           BUTTONS
-        ========================== */
-
-        .buttons {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            margin-top: 45px;
-
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-block;
-
-            color: white;
-
-            text-decoration: none;
-
-            padding:
-                13px 25px;
-
-            border-radius: 13px;
-
-            background:
-                rgba(0,229,255,.08);
-
-            border:
-                1px solid
-                rgba(0,229,255,.3);
-
-            transition: .3s;
-        }
-
-        .button:hover {
-            background:
-                rgba(0,229,255,.18);
-
-            box-shadow:
-                0 0 25px
-                rgba(0,229,255,.2);
-
-            transform:
-                translateY(-3px);
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            position: relative;
-
-            z-index: 2;
-
-            text-align: center;
-
-            padding: 35px;
-
-            color: #666;
-
-            border-top:
-                1px solid
-                rgba(255,255,255,.05);
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 800px) {
-
-            .info-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-            .features {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .requirements {
-                grid-template-columns:
-                    1fr;
-            }
-
-            .hero-image {
-                height: 300px;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .info-grid {
-                grid-template-columns:
-                    1fr;
-            }
-
-            nav a {
-                font-size: 13px;
-
-                padding:
-                    8px 12px;
-            }
-
-            .hero-image {
-                min-height: 220px;
-            }
-        }
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
 
+<canvas id="particles"></canvas>
 
-    <canvas id="particles"></canvas>
+<!-- NAV -->
 
+<nav>
 
-    <!-- =========================
-         NAVBAR
-    ========================== -->
+<a href="index.html">
+🏠 خانه
+</a>
 
-    <nav>
+<a href="#ratings">
+⭐ امتیازات
+</a>
 
-        <a href="index.html">
-            🏠 بازگشت به خانه
-        </a>
+<a href="#info">
+📊 اطلاعات
+</a>
 
-    </nav>
+<a href="#requirements">
+💻 سیستم
+</a>
 
+</nav>
 
-    <!-- =========================
-         HERO
-    ========================== -->
 
-    <section class="hero">
+<!-- HERO -->
 
+<section class="hero">
 
-        <img
-            src="images/gta.jpg"
-            alt="Grand Theft Auto V"
-            class="hero-image"
-        >
+<img
+src="images/gta.jpg"
+alt="Grand Theft Auto V"
+class="hero-image"
+>
 
+<h1 class="logo">
+GTA V
+</h1>
 
-        <h1 class="title">
-            GTA V
-        </h1>
+<p class="subtitle">
+Grand Theft Auto V
+</p>
 
+</section>
 
-        <p class="description">
 
-            Grand Theft Auto V دنیای
-            Los Santos و Blaine County را
-            در قالب یک بازی جهان‌باز ارائه می‌کند
-            و شامل Story Mode و GTA Online است.
+<main class="content">
 
-        </p>
 
+<!-- OFFICIAL SCORE -->
 
-    </section>
+<h2 class="section-title">
+🏆 امتیاز رسمی
+</h2>
 
+<div class="official-score">
 
-    <!-- =========================
-         MAIN
-    ========================== -->
+<div class="number">
+97 / 100
+</div>
 
-    <main class="content">
+<p>
+Metascore منتقدان در Metacritic
+</p>
 
+<p>
+بر اساس 66 نقد منتقدان
+</p>
 
-        <!-- GAME INFO -->
+</div>
 
-        <h2 class="section-title">
-            🎮 اطلاعات بازی
-        </h2>
 
+<!-- RATINGS -->
 
-        <div class="info-grid">
+<h2
+class="section-title"
+id="ratings"
+>
+⭐ امتیازات بخش‌ها
+</h2>
 
 
-            <div class="info-box">
+<div class="ratings">
 
-                <div class="info-icon">
-                    🏢
-                </div>
 
-                <h3>
-                    سازنده
-                </h3>
+<div class="rating-card">
 
-                <p>
-                    Rockstar Games
-                </p>
+<h3>
+🎮 گیم‌پلی
+</h3>
 
-            </div>
+<div class="stars">
+★★★★★
+</div>
 
+<div class="rating-number">
+4.8 / 5
+</div>
 
-            <div class="info-box">
+</div>
 
-                <div class="info-icon">
-                    📅
-                </div>
 
-                <h3>
-                    انتشار اولیه
-                </h3>
+<div class="rating-card">
 
-                <p>
-                    17 سپتامبر 2013
-                </p>
+<h3>
+📖 داستان
+</h3>
 
-            </div>
+<div class="stars">
+★★★★★
+</div>
 
+<div class="rating-number">
+4.9 / 5
+</div>
 
-            <div class="info-box">
+</div>
 
-                <div class="info-icon">
-                    🌎
-                </div>
 
-                <h3>
-                    سبک
-                </h3>
+<div class="rating-card">
 
-                <p>
-                    Action / Open World
-                </p>
+<h3>
+🎨 گرافیک
+</h3>
 
-            </div>
+<div class="stars">
+★★★★★
+</div>
 
+<div class="rating-number">
+4.7 / 5
+</div>
 
-            <div class="info-box">
+</div>
 
-                <div class="info-icon">
-                    👥
-                </div>
 
-                <h3>
-                    بخش آنلاین
-                </h3>
+<div class="rating-card">
 
-                <p>
-                    GTA Online
-                </p>
+<h3>
+🎵 صدا و موسیقی
+</h3>
 
-            </div>
+<div class="stars">
+★★★★★
+</div>
 
+<div class="rating-number">
+4.8 / 5
+</div>
 
-        </div>
+</div>
 
 
-        <!-- DESCRIPTION -->
+<div class="rating-card">
 
-        <h2 class="section-title">
-            📖 درباره بازی
-        </h2>
+<h3>
+🌎 دنیای بازی
+</h3>
 
+<div class="stars">
+★★★★★
+</div>
 
-        <div class="description-box">
+<div class="rating-number">
+5.0 / 5
+</div>
 
-            در GTA V بازیکن وارد دنیای
-            Los Santos و Blaine County می‌شود.
-            داستان بازی سه شخصیت اصلی را دنبال می‌کند
-            که در دنیای جرم و ماجراجویی‌های مختلف
-            درگیر می‌شوند.
+</div>
 
-            <br><br>
 
-            در کنار Story Mode،
-            GTA Online یک دنیای آنلاین
-            پویا و در حال توسعه ارائه می‌دهد.
+<div class="rating-card">
 
-        </div>
+<h3>
+👥 GTA Online
+</h3>
 
+<div class="stars">
+★★★★★
+</div>
 
-        <!-- FEATURES -->
+<div class="rating-number">
+4.5 / 5
+</div>
 
-        <h2 class="section-title">
-            ⚡ ویژگی‌ها
-        </h2>
+</div>
 
 
-        <div class="features">
+</div>
 
 
-            <div class="feature">
+<!-- INFORMATION -->
 
-                <h3>
-                    🌎 جهان‌باز
-                </h3>
+<h2
+class="section-title"
+id="info"
+>
+🎮 اطلاعات بازی
+</h2>
 
-                <p>
-                    امکان گشت‌وگذار در
-                    Los Santos و Blaine County
-                    و تجربه فعالیت‌های مختلف.
-                </p>
 
-            </div>
+<div class="info-grid">
 
 
-            <div class="feature">
+<div class="info-card">
 
-                <h3>
-                    🎬 Story Mode
-                </h3>
+<div class="info-icon">
+🏢
+</div>
 
-                <p>
-                    بخش داستانی بازی با
-                    سه شخصیت اصلی و مأموریت‌های
-                    مختلف.
-                </p>
+<h3>
+سازنده
+</h3>
 
-            </div>
+<p>
+Rockstar North
+</p>
 
+</div>
 
-            <div class="feature">
 
-                <h3>
-                    🌐 GTA Online
-                </h3>
+<div class="info-card">
 
-                <p>
-                    دنیای آنلاین مستقل و
-                    در حال توسعه با فعالیت‌ها
-                    و محتوای متعدد.
-                </p>
+<div class="info-icon">
+🏷️
+</div>
 
-            </div>
+<h3>
+ناشر
+</h3>
 
+<p>
+Rockstar Games
+</p>
 
-        </div>
+</div>
 
 
-        <!-- SYSTEM REQUIREMENTS -->
+<div class="info-card">
 
-        <h2 class="section-title">
-            💻 سیستم موردنیاز PC
-        </h2>
+<div class="info-icon">
+📅
+</div>
 
+<h3>
+انتشار اولیه
+</h3>
 
-        <div class="notice">
+<p>
+17 سپتامبر 2013
+</p>
 
-            توجه: مشخصات زیر، مشخصات رسمی منتشرشده
-            توسط Rockstar برای نسخه اولیه PC هستند.
-            نسخه ارتقایافته PC که در سال 2025 منتشر شد
-            می‌تواند نیازمندی‌ها و قابلیت‌های متفاوتی داشته باشد.
+</div>
 
-        </div>
 
+<div class="info-card">
 
-        <div class="requirements">
+<div class="info-icon">
+🖥️
+</div>
 
+<h3>
+نسخه PC اولیه
+</h3>
 
-            <!-- MINIMUM -->
+<p>
+14 آوریل 2015
+</p>
 
-            <div class="requirement-box">
+</div>
 
-                <h3>
-                    🔹 حداقل
-                </h3>
 
-                <ul>
+<div class="info-card">
 
-                    <li>
-                        OS: Windows 7 / 8 / 8.1 - 64 Bit
-                    </li>
+<div class="info-icon">
+🌎
+</div>
 
-                    <li>
-                        CPU: Intel Core 2 Quad Q6600
-                        یا AMD Phenom 9850
-                    </li>
+<h3>
+محیط
+</h3>
 
-                    <li>
-                        RAM: 4GB
-                    </li>
+<p>
+Los Santos و Blaine County
+</p>
 
-                    <li>
-                        GPU: NVIDIA 9800 GT 1GB
-                        یا AMD HD 4870 1GB
-                    </li>
+</div>
 
-                    <li>
-                        Storage: 65GB
-                    </li>
 
-                    <li>
-                        DirectX: 10 / 10.1 / 11
-                    </li>
+<div class="info-card">
 
-                </ul>
+<div class="info-icon">
+👥
+</div>
 
-            </div>
+<h3>
+حالت‌های بازی
+</h3>
 
+<p>
+Story Mode و GTA Online
+</p>
 
-            <!-- RECOMMENDED -->
+</div>
 
-            <div class="requirement-box">
 
-                <h3>
-                    🔹 پیشنهادی
-                </h3>
+</div>
 
-                <ul>
 
-                    <li>
-                        OS: Windows 7 / 8 / 8.1 - 64 Bit
-                    </li>
+<!-- STORY -->
 
-                    <li>
-                        CPU: Intel Core i5 3470
-                        یا AMD FX-8350
-                    </li>
+<h2 class="section-title">
+📖 درباره GTA V
+</h2>
 
-                    <li>
-                        RAM: 8GB
-                    </li>
 
-                    <li>
-                        GPU: NVIDIA GTX 660 2GB
-                        یا AMD HD 7870 2GB
-                    </li>
+<div class="story">
 
-                    <li>
-                        Storage: 65GB
-                    </li>
+Grand Theft Auto V یک بازی جهان‌باز
+از Rockstar North است که در شهر خیالی
+Los Santos و منطقه Blaine County
+جریان دارد.
 
-                    <li>
-                        DirectX: 10 / 10.1 / 11
-                    </li>
+<br><br>
 
-                </ul>
+داستان بازی سه شخصیت اصلی یعنی
+Michael De Santa، Franklin Clinton
+و Trevor Philips را دنبال می‌کند.
 
-            </div>
+<br><br>
 
+بازیکن می‌تواند در بخش داستانی بین
+این سه شخصیت جابه‌جا شود و مأموریت‌ها،
+فعالیت‌های جانبی و اکتشاف در دنیای
+بازی را تجربه کند.
 
-        </div>
+<br><br>
 
+GTA Online نیز بخش آنلاین بازی است
+که بازیکنان می‌توانند در آن شخصیت خود
+را بسازند و فعالیت‌ها و محتوای مختلف
+را تجربه کنند.
 
-        <div class="source-box">
+</div>
 
-            📚 منبع اطلاعات سیستم موردنیاز:
-            Rockstar Games
 
-            <br>
+<!-- REQUIREMENTS -->
 
-            مشخصات این بخش بر اساس
-            اعلام رسمی Rockstar برای نسخه PC
-            تهیه شده است.
+<h2
+class="section-title"
+id="requirements"
+>
+💻 سیستم موردنیاز PC
+</h2>
 
-        </div>
 
+<div class="requirements">
 
-        <!-- BUTTON -->
 
-        <div class="buttons">
+<!-- ENHANCED -->
 
-            <a
-                href="index.html"
-                class="button"
-            >
-                🔙 برگشت به صفحه اصلی
-            </a>
+<div class="requirement">
 
-        </div>
+<h3>
+🚀 GTA V Enhanced
+</h3>
 
+<p>
 
-    </main>
+سیستم‌عامل:
+Windows 10 نسخه 1909 یا بالاتر
 
+<br>
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+پردازنده حداقل:
+Intel Core i7-4770
+یا AMD FX-9590
 
-    <footer>
+<br>
 
-        © 2026 AMiR GAMiNG
+RAM حداقل:
+8GB
 
-    </footer>
+<br>
 
+کارت گرافیک حداقل:
+NVIDIA GeForce GTX 1630
+یا AMD Radeon RX 6400
 
-    <!-- =========================
-         PARTICLES
-    ========================== -->
+<br>
 
-    <script>
+فضای ذخیره‌سازی:
+105GB
 
-        const canvas =
-            document.getElementById("particles");
+<br>
 
-        const ctx =
-            canvas.getContext("2d");
+نوع ذخیره‌سازی:
+SSD الزامی
 
+</p>
 
-        let particles = [];
+</div>
 
 
-        const mouse = {
+<!-- ENHANCED RECOMMENDED -->
 
-            x: null,
+<div class="requirement">
 
-            y: null,
+<h3>
+🔥 Enhanced پیشنهادی
+</h3>
 
-            radius: 150
+<p>
 
-        };
+سیستم‌عامل:
+Windows 11
 
+<br>
 
-        function resizeCanvas() {
+پردازنده:
+Intel Core i5-10600
+یا AMD Ryzen 5 3600
 
-            canvas.width =
-                window.innerWidth;
+<br>
 
-            canvas.height =
-                window.innerHeight;
+RAM:
+16GB Dual-Channel
 
-        }
+<br>
 
+کارت گرافیک:
+NVIDIA GeForce RTX 3060
+یا AMD Radeon RX 6600 XT
 
-        resizeCanvas();
+<br>
 
+فضای ذخیره‌سازی:
+105GB
 
-        window.addEventListener(
-            "resize",
-            resizeCanvas
-        );
+<br>
 
+نوع ذخیره‌سازی:
+SSD
 
-        window.addEventListener(
-            "mousemove",
-            function(event) {
+</p>
 
-                mouse.x =
-                    event.clientX;
+</div>
 
-                mouse.y =
-                    event.clientY;
 
-            }
-        );
+<!-- LEGACY -->
 
+<div class="requirement">
 
-        window.addEventListener(
-            "mouseleave",
-            function() {
+<h3>
+🕹️ GTA V Legacy
+</h3>
 
-                mouse.x = null;
+<p>
 
-                mouse.y = null;
+سیستم‌عامل:
+Windows 10 / 8.1 / 7 نسخه 64-bit
 
-            }
-        );
+<br>
 
+RAM:
+4GB حداقل
 
-        for (
-            let i = 0;
-            i < 100;
-            i++
-        ) {
+<br>
 
-            particles.push({
+کارت گرافیک:
+NVIDIA 9800 GT 1GB
+یا AMD HD 4870 1GB
 
-                x:
-                    Math.random()
-                    * canvas.width,
+<br>
 
-                y:
-                    Math.random()
-                    * canvas.height,
+فضای ذخیره‌سازی:
+125GB
 
-                size:
-                    Math.random()
-                    * 2.5 + .7,
+<br>
 
-                speedX:
-                    (Math.random() - .5)
-                    * .7,
+نسخه قدیمی PC بازی
 
-                speedY:
-                    (Math.random() - .5)
-                    * .7
+</p>
 
-            });
+</div>
 
-        }
 
+</div>
 
-        function animateParticles() {
 
-            ctx.clearRect(
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
+<!-- SOURCES -->
 
+<h2 class="section-title">
+📚 منابع اطلاعات
+</h2>
 
-            particles.forEach(
-                function(p) {
 
-                    p.x += p.speedX;
+<div class="story">
 
-                    p.y += p.speedY;
+اطلاعات فنی نسخه‌های PC از منابع رسمی
+Rockstar Games بررسی شده‌اند.
 
+<br><br>
 
-                    if (
-                        p.x < 0 ||
-                        p.x > canvas.width
-                    ) {
+امتیاز منتقدان از Metacritic گرفته شده
+و با امتیازهای کاربران اشتباه گرفته نشده است.
 
-                        p.speedX *= -1;
+<br><br>
 
-                    }
+امتیازهای ۱ تا ۵ بخش‌های گیم‌پلی،
+داستان، گرافیک، صدا، دنیای بازی و
+GTA Online امتیاز اختصاصی صفحه
+AMiR GAMiNG هستند و امتیاز رسمی
+Metacritic محسوب نمی‌شوند.
 
+</div>
 
-                    if (
-                        p.y < 0 ||
-                        p.y > canvas.height
-                    ) {
 
-                        p.speedY *= -1;
+<a
+href="index.html"
+class="back-button"
+>
+← بازگشت به AMiR GAMiNG
+</a>
 
-                    }
 
+</main>
 
-                    if (
-                        mouse.x !== null &&
-                        mouse.y !== null
-                    ) {
 
-                        const dx =
-                            p.x - mouse.x;
+<footer>
 
-                        const dy =
-                            p.y - mouse.y;
+© 2026 AMiR GAMiNG
 
-                        const distance =
-                            Math.sqrt(
-                                dx * dx +
-                                dy * dy
-                            );
+</footer>
 
 
-                        if (
-                            distance <
-                            mouse.radius &&
-                            distance > 0
-                        ) {
+<script>
 
-                            const force =
-                                (
-                                    mouse.radius -
-                                    distance
-                                ) /
-                                mouse.radius;
+/* PARTICLES */
 
+const canvas =
+document.getElementById("particles");
 
-                            p.x +=
-                                (dx / distance)
-                                * force
-                                * 2;
+const ctx =
+canvas.getContext("2d");
 
+let particles=[];
 
-                            p.y +=
-                                (dy / distance)
-                                * force
-                                * 2;
+const mouse={
+x:null,
+y:null,
+radius:150
+};
 
-                        }
 
-                    }
+function resizeCanvas(){
 
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
 
-                    ctx.beginPath();
+}
 
-                    ctx.arc(
-                        p.x,
-                        p.y,
-                        p.size,
-                        0,
-                        Math.PI * 2
-                    );
+resizeCanvas();
 
-                    ctx.fillStyle =
-                        "rgba(0,229,255,.85)";
 
-                    ctx.shadowBlur = 10;
+window.addEventListener(
+"resize",
+resizeCanvas
+);
 
-                    ctx.shadowColor =
-                        "#00e5ff";
 
-                    ctx.fill();
+window.addEventListener(
+"mousemove",
+function(e){
 
-                    ctx.shadowBlur = 0;
+mouse.x=e.clientX;
+mouse.y=e.clientY;
 
-                }
-            );
+}
+);
 
 
-            /* PARTICLE LINES */
+window.addEventListener(
+"mouseleave",
+function(){
 
-            for (
-                let i = 0;
-                i < particles.length;
-                i++
-            ) {
+mouse.x=null;
+mouse.y=null;
 
-                for (
-                    let j = i + 1;
-                    j < particles.length;
-                    j++
-                ) {
+}
+);
 
-                    const dx =
-                        particles[i].x -
-                        particles[j].x;
 
-                    const dy =
-                        particles[i].y -
-                        particles[j].y;
+for(
+let i=0;
+i<90;
+i++
+){
 
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+particles.push({
 
+x:Math.random()*canvas.width,
 
-                    if (
-                        distance < 90
-                    ) {
+y:Math.random()*canvas.height,
 
-                        ctx.beginPath();
+size:Math.random()*2.5+.7,
 
-                        ctx.moveTo(
-                            particles[i].x,
-                            particles[i].y
-                        );
+speedX:(Math.random()-.5)*.7,
 
-                        ctx.lineTo(
-                            particles[j].x,
-                            particles[j].y
-                        );
+speedY:(Math.random()-.5)*.7
 
-                        ctx.strokeStyle =
-                            "rgba(128,0,255," +
-                            (
-                                1 -
-                                distance / 90
-                            ) +
-                            ")";
+});
 
-                        ctx.lineWidth = .7;
+}
 
-                        ctx.stroke();
 
-                    }
+function animate(){
 
-                }
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
-            }
 
+particles.forEach(
+function(p){
 
-            /* MOUSE LINES */
+p.x+=p.speedX;
+p.y+=p.speedY;
 
-            if (
-                mouse.x !== null &&
-                mouse.y !== null
-            ) {
 
-                particles.forEach(
-                    function(p) {
+if(
+p.x<0 ||
+p.x>canvas.width
+){
 
-                        const dx =
-                            p.x - mouse.x;
+p.speedX*=-1;
 
-                        const dy =
-                            p.y - mouse.y;
+}
 
-                        const distance =
-                            Math.sqrt(
-                                dx * dx +
-                                dy * dy
-                            );
 
+if(
+p.y<0 ||
+p.y>canvas.height
+){
 
-                        if (
-                            distance <
-                            mouse.radius
-                        ) {
+p.speedY*=-1;
 
-                            ctx.beginPath();
+}
 
-                            ctx.moveTo(
-                                p.x,
-                                p.y
-                            );
 
-                            ctx.lineTo(
-                                mouse.x,
-                                mouse.y
-                            );
+if(
+mouse.x!==null &&
+mouse.y!==null
+){
 
-                            ctx.strokeStyle =
-                                "rgba(0,229,255," +
-                                (
-                                    1 -
-                                    distance /
-                                    mouse.radius
-                                ) +
-                                ")";
+const dx=p.x-mouse.x;
+const dy=p.y-mouse.y;
 
-                            ctx.lineWidth = 1;
+const distance=
+Math.sqrt(
+dx*dx+
+dy*dy
+);
 
-                            ctx.stroke();
 
-                        }
+if(
+distance<mouse.radius &&
+distance>0
+){
 
-                    }
-                );
+const force=
+(mouse.radius-distance)/
+mouse.radius;
 
-            }
+p.x+=
+(dx/distance)*
+force*2;
 
+p.y+=
+(dy/distance)*
+force*2;
 
-            requestAnimationFrame(
-                animateParticles
-            );
+}
 
-        }
+}
 
 
-        animateParticles();
+ctx.beginPath();
 
-    </script>
+ctx.arc(
+p.x,
+p.y,
+p.size,
+0,
+Math.PI*2
+);
 
+ctx.fillStyle=
+"rgba(255,160,0,.85)";
+
+ctx.shadowBlur=10;
+
+ctx.shadowColor="#ff6a00";
+
+ctx.fill();
+
+ctx.shadowBlur=0;
+
+}
+);
+
+
+/* PARTICLE CONNECTIONS */
+
+for(
+let i=0;
+i<particles.length;
+i++
+){
+
+for(
+let j=i+1;
+j<particles.length;
+j++
+){
+
+const dx=
+particles[i].x-
+particles[j].x;
+
+const dy=
+particles[i].y-
+particles[j].y;
+
+const distance=
+Math.sqrt(
+dx*dx+
+dy*dy
+);
+
+
+if(
+distance<90
+){
+
+ctx.beginPath();
+
+ctx.moveTo(
+particles[i].x,
+particles[i].y
+);
+
+ctx.lineTo(
+particles[j].x,
+particles[j].y
+);
+
+ctx.strokeStyle=
+"rgba(255,90,0,"+
+(1-distance/90)+
+")";
+
+ctx.lineWidth=.7;
+
+ctx.stroke();
+
+}
+
+}
+
+}
+
+
+/* MOUSE CONNECTIONS */
+
+if(
+mouse.x!==null &&
+mouse.y!==null
+){
+
+particles.forEach(
+function(p){
+
+const dx=p.x-mouse.x;
+const dy=p.y-mouse.y;
+
+const distance=
+Math.sqrt(
+dx*dx+
+dy*dy
+);
+
+
+if(
+distance<mouse.radius
+){
+
+ctx.beginPath();
+
+ctx.moveTo(
+p.x,
+p.y
+);
+
+ctx.lineTo(
+mouse.x,
+mouse.y
+);
+
+ctx.strokeStyle=
+"rgba(255,160,0,"+
+(
+1-distance/
+mouse.radius
+)+
+")";
+
+ctx.lineWidth=1;
+
+ctx.stroke();
+
+}
+
+}
+);
+
+}
+
+
+requestAnimationFrame(
+animate
+);
+
+}
+
+
+animate();
+
+</script>
 
 </body>
 
