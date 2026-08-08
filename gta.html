@@ -3,27 +3,28 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AMiR GAMiNG | GTA V</title>
-
-    <link rel="icon" type="image/png" href="icon.png">
+    <title>GTA V | AMiR GAMiNG</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     >
 
     <style>
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -31,200 +32,232 @@
         }
 
         body {
-            font-family: "Vazirmatn", sans-serif;
+
+            font-family:
+                "Vazirmatn",
+                sans-serif;
 
             background:
+
                 radial-gradient(
                     circle at 20% 20%,
-                    rgba(255, 190, 0, 0.09),
+                    rgba(0,229,255,.08),
                     transparent 30%
                 ),
+
                 radial-gradient(
                     circle at 80% 70%,
-                    rgba(255, 80, 0, 0.08),
+                    rgba(128,0,255,.08),
                     transparent 30%
                 ),
-                #070605;
+
+                #050509;
 
             color: white;
+
             min-height: 100vh;
+
             overflow-x: hidden;
         }
 
-        /* =====================
+
+        /* =========================
            PARTICLES
-        ===================== */
+        ========================== */
 
         #particles {
+
             position: fixed;
+
             inset: 0;
+
             width: 100%;
             height: 100%;
+
             pointer-events: none;
+
             z-index: 1;
         }
 
-        /* =====================
+
+        /* =========================
            NAV
-        ===================== */
+        ========================== */
 
         nav {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             right: 0;
 
+            height: 70px;
+
             display: flex;
-            justify-content: center;
+
             align-items: center;
-            gap: 10px;
 
-            padding: 18px;
+            justify-content: center;
 
-            background: rgba(7, 6, 5, 0.78);
-            backdrop-filter: blur(15px);
+            background:
+                rgba(5,5,9,.8);
+
+            backdrop-filter:
+                blur(15px);
 
             border-bottom:
-                1px solid rgba(255, 180, 0, 0.14);
+                1px solid
+                rgba(0,229,255,.12);
 
             z-index: 100;
         }
 
+
         nav a {
+
             color: #ddd;
+
             text-decoration: none;
 
-            padding: 10px 18px;
+            padding:
+                10px 20px;
+
             border-radius: 12px;
 
-            transition: 0.3s;
+            transition: .3s;
         }
 
+
         nav a:hover {
+
             color: white;
 
             background:
-                rgba(255, 180, 0, 0.1);
+                rgba(0,229,255,.08);
 
             box-shadow:
                 0 0 20px
-                rgba(255, 180, 0, 0.18);
+                rgba(0,229,255,.18);
         }
 
-        /* =====================
+
+        /* =========================
            HERO
-        ===================== */
+        ========================== */
 
         .hero {
-            min-height: 88vh;
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 75vh;
 
             padding:
-                140px 20px 80px;
+                120px 20px 50px;
 
             display: flex;
-            justify-content: center;
-            align-items: center;
 
-            flex-direction: column;
+            justify-content: center;
+
+            align-items: center;
 
             text-align: center;
 
-            position: relative;
-            z-index: 2;
+            flex-direction: column;
         }
 
-        .gta-title {
-            font-size:
-                clamp(48px, 10vw, 110px);
 
-            font-weight: 900;
+        .hero-image {
 
-            letter-spacing: 4px;
-
-            color: white;
-
-            text-shadow:
-                0 0 8px white,
-                0 0 20px #ffd000,
-                0 0 45px #ff7b00,
-                0 0 80px rgba(255, 120, 0, 0.6);
-
-            animation:
-                gtaGlow 2s ease-in-out infinite alternate;
-        }
-
-        .gta-subtitle {
-            margin-top: 25px;
-
-            color: #aaa;
-
-            font-size:
-                clamp(16px, 3vw, 22px);
-        }
-
-        .gold-line {
             width:
-                min(500px, 80vw);
+                min(1000px, 95vw);
 
-            height: 2px;
+            height:
+                min(480px, 55vw);
 
-            margin-top: 30px;
+            min-height: 280px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #ffd000,
-                    #ff7b00,
-                    transparent
-                );
+            object-fit: cover;
 
-            box-shadow:
-                0 0 15px
-                rgba(255, 180, 0, 0.8);
-
-            animation:
-                linePulse 1.5s infinite;
-        }
-
-        .back-button {
-            margin-top: 35px;
-
-            padding: 13px 25px;
-
-            border-radius: 13px;
-
-            text-decoration: none;
-
-            color: white;
+            border-radius: 25px;
 
             border:
                 1px solid
-                rgba(255, 190, 0, 0.5);
-
-            background:
-                rgba(255, 190, 0, 0.07);
-
-            transition: 0.3s;
-        }
-
-        .back-button:hover {
-            transform: translateY(-4px);
-
-            background:
-                rgba(255, 190, 0, 0.15);
+                rgba(0,229,255,.25);
 
             box-shadow:
-                0 0 25px
-                rgba(255, 180, 0, 0.25);
+
+                0 0 40px
+                rgba(0,229,255,.12),
+
+                0 25px 70px
+                rgba(0,0,0,.5);
+
+            transition:
+                .5s;
         }
 
-        /* =====================
+
+        .hero-image:hover {
+
+            transform:
+                scale(1.015);
+
+            box-shadow:
+
+                0 0 55px
+                rgba(0,229,255,.2),
+
+                0 25px 80px
+                rgba(0,0,0,.6);
+        }
+
+
+        .title {
+
+            margin-top: 35px;
+
+            font-size:
+                clamp(40px,7vw,75px);
+
+            font-weight: 900;
+
+            text-shadow:
+
+                0 0 10px white,
+
+                0 0 25px #00e5ff,
+
+                0 0 50px #8000ff;
+        }
+
+
+        .description {
+
+            margin-top: 15px;
+
+            color: #aaa;
+
+            max-width: 750px;
+
+            line-height: 2;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
            CONTENT
-        ===================== */
+        ========================== */
 
         .content {
+
             position: relative;
+
             z-index: 2;
 
             max-width: 1100px;
@@ -232,342 +265,597 @@
             margin: auto;
 
             padding:
-                70px 20px;
+                40px 20px 80px;
         }
 
-        .gta-image {
-            width: 100%;
 
-            max-height: 470px;
+        .section-title {
 
-            object-fit: cover;
+            text-align: center;
 
-            display: block;
+            font-size: 32px;
 
-            border-radius: 22px;
+            margin:
+                50px 0 30px;
 
-            background: #111;
-
-            border:
-                1px solid
-                rgba(255, 190, 0, 0.2);
-
-            box-shadow:
-                0 20px 60px
-                rgba(0, 0, 0, 0.5),
-
-                0 0 30px
-                rgba(255, 160, 0, 0.08);
+            text-shadow:
+                0 0 20px
+                rgba(0,229,255,.3);
         }
 
-        .description {
-            margin-top: 40px;
 
-            padding: 30px;
+        /* =========================
+           INFO
+        ========================== */
 
-            border-radius: 22px;
-
-            background:
-                rgba(255, 255, 255, 0.04);
-
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.08);
-        }
-
-        .description h2 {
-            font-size: 30px;
-
-            margin-bottom: 20px;
-        }
-
-        .description h2 span {
-            color: #ffd000;
-        }
-
-        .description p {
-            color: #aaa;
-
-            line-height: 2.2;
-
-            font-size: 16px;
-        }
-
-        /* =====================
-           FEATURES
-        ===================== */
-
-        .features {
-            margin-top: 50px;
+        .info-grid {
 
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(4,1fr);
 
-            gap: 20px;
+            gap: 18px;
         }
 
-        .feature {
+
+        .info-box {
+
             padding: 25px;
 
-            border-radius: 20px;
+            text-align: center;
+
+            border-radius: 18px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(255, 255, 255, 0.06),
-                    rgba(255, 255, 255, 0.015)
-                );
+                rgba(255,255,255,.04);
 
             border:
                 1px solid
-                rgba(255, 255, 255, 0.08);
+                rgba(255,255,255,.08);
 
-            transition: 0.3s;
+            transition: .3s;
         }
 
-        .feature:hover {
+
+        .info-box:hover {
+
             transform:
-                translateY(-8px);
+                translateY(-6px);
 
             border-color:
-                rgba(255, 190, 0, 0.45);
+                rgba(0,229,255,.4);
 
             box-shadow:
-                0 15px 40px
-                rgba(0, 0, 0, 0.4),
-
                 0 0 25px
-                rgba(255, 180, 0, 0.1);
+                rgba(0,229,255,.1);
         }
 
-        .feature h3 {
-            font-size: 22px;
 
-            margin-bottom: 12px;
+        .info-icon {
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
         }
 
-        .feature p {
+
+        .info-box h3 {
+
+            margin-bottom: 8px;
+        }
+
+
+        .info-box p {
+
             color: #999;
-
-            line-height: 1.9;
 
             font-size: 14px;
         }
 
-        /* =====================
+
+        /* =========================
+           RATING
+        ========================== */
+
+        .rating-box {
+
+            text-align: center;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+
+        .stars {
+
+            color: #ffd000;
+
+            font-size: 30px;
+
+            letter-spacing: 4px;
+        }
+
+
+        .score {
+
+            color: #aaa;
+
+            margin-top: 10px;
+        }
+
+
+        /* =========================
+           REQUIREMENTS
+        ========================== */
+
+        .requirements {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .requirement-box {
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+
+        .requirement-box h3 {
+
+            margin-bottom: 20px;
+
+            font-size: 22px;
+        }
+
+
+        .requirement-box ul {
+
+            list-style: none;
+
+            color: #aaa;
+
+            line-height: 2.3;
+        }
+
+
+        .requirement-box li::before {
+
+            content:
+                "▸ ";
+
+            color:
+                #00e5ff;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            margin-top: 40px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .button {
+
+            text-decoration: none;
+
+            color: white;
+
+            padding:
+                13px 25px;
+
+            border-radius: 13px;
+
+            background:
+                rgba(0,229,255,.08);
+
+            border:
+                1px solid
+                rgba(0,229,255,.3);
+
+            transition: .3s;
+        }
+
+
+        .button:hover {
+
+            background:
+                rgba(0,229,255,.18);
+
+            box-shadow:
+                0 0 25px
+                rgba(0,229,255,.2);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =========================
            FOOTER
-        ===================== */
+        ========================== */
 
         footer {
+
             position: relative;
+
             z-index: 2;
 
             text-align: center;
 
-            padding: 30px 20px;
+            padding: 35px;
 
             color: #666;
 
             border-top:
                 1px solid
-                rgba(255, 255, 255, 0.05);
+                rgba(255,255,255,.05);
         }
 
-        /* =====================
-           ANIMATIONS
-        ===================== */
 
-        @keyframes gtaGlow {
-
-            from {
-                transform: scale(1);
-
-                text-shadow:
-                    0 0 8px white,
-                    0 0 20px #ffd000,
-                    0 0 40px #ff7b00;
-            }
-
-            to {
-                transform: scale(1.02);
-
-                text-shadow:
-                    0 0 10px white,
-                    0 0 30px #ffd000,
-                    0 0 65px #ff7b00,
-                    0 0 90px
-                    rgba(255, 120, 0, 0.5);
-            }
-        }
-
-        @keyframes linePulse {
-
-            0%,
-            100% {
-                transform: scaleX(0.6);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scaleX(1);
-                opacity: 1;
-            }
-        }
-
-        /* =====================
+        /* =========================
            MOBILE
-        ===================== */
+        ========================== */
 
         @media (max-width: 800px) {
 
-            .features {
-                grid-template-columns: 1fr;
+            .info-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
             }
 
-            nav {
-                padding: 12px 8px;
+
+            .requirements {
+
+                grid-template-columns:
+                    1fr;
             }
+
+
+            .hero-image {
+
+                height:
+                    300px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .info-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
 
             nav a {
-                padding: 8px 10px;
+
                 font-size: 13px;
+
+                padding:
+                    8px 12px;
             }
+
         }
 
     </style>
 
 </head>
 
+
 <body>
 
+
     <canvas id="particles"></canvas>
+
+
+    <!-- NAV -->
 
     <nav>
 
         <a href="index.html">
-            🏠 خانه
-        </a>
-
-        <a href="#gta">
-            🎮 GTA V
+            🏠 بازگشت به خانه
         </a>
 
     </nav>
 
-    <section
-        class="hero"
-        id="gta"
-    >
 
-        <div class="gta-title">
-            GTA V
-        </div>
+    <!-- HERO -->
 
-        <p class="gta-subtitle">
-            دنیای آزاد، سرعت، ماجراجویی و هیجان 🎮🔥
-        </p>
+    <section class="hero">
 
-        <div class="gold-line"></div>
-
-        <a
-            href="index.html"
-            class="back-button"
-        >
-            ← برگشت به AMiR GAMiNG
-        </a>
-
-    </section>
-
-    <main class="content">
 
         <img
             src="images/gta.jpg"
             alt="GTA V"
-            class="gta-image"
+            class="hero-image"
         >
 
-        <section class="description">
 
-            <h2>
-                🎮 درباره
-                <span>GTA V</span>
-            </h2>
+        <h1 class="title">
+            GTA V
+        </h1>
 
-            <p>
-                GTA V یکی از معروف‌ترین بازی‌های جهان باز است.
-                در شهر Los Santos می‌توانی در یک دنیای بزرگ
-                به گشت‌وگذار بپردازی، مأموریت انجام بدهی،
-                رانندگی کنی و ماجراهای مختلفی را تجربه کنی.
-            </p>
 
-        </section>
+        <p class="description">
 
-        <section class="features">
+            وارد دنیای عظیم و پرهیجان
+            Grand Theft Auto V شوید؛
+            شهری پر از مأموریت، رانندگی،
+            ماجراجویی و اتفاقات مختلف.
 
-            <div class="feature">
+        </p>
+
+
+    </section>
+
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+
+        <!-- INFO -->
+
+        <h2 class="section-title">
+            🎮 اطلاعات بازی
+        </h2>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🏢
+                </div>
 
                 <h3>
-                    🌆 دنیای آزاد
+                    سازنده
                 </h3>
 
                 <p>
-                    در دنیای بزرگ بازی آزادانه
-                    حرکت و محیط‌های مختلف را کشف کن.
+                    Rockstar Games
                 </p>
 
             </div>
 
-            <div class="feature">
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    📅
+                </div>
 
                 <h3>
-                    🚗 رانندگی
+                    انتشار
                 </h3>
 
                 <p>
-                    انواع ماشین‌ها و وسایل نقلیه
-                    را تجربه کن و در شهر رانندگی کن.
+                    2013
                 </p>
 
             </div>
 
-            <div class="feature">
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    🎭
+                </div>
 
                 <h3>
-                    🎯 مأموریت‌ها
+                    سبک
                 </h3>
 
                 <p>
-                    مأموریت‌های مختلف را انجام بده
-                    و داستان بازی را دنبال کن.
+                    Action / Open World
                 </p>
 
             </div>
 
-        </section>
+
+            <div class="info-box">
+
+                <div class="info-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    امتیاز
+                </h3>
+
+                <p>
+                    4.8 / 5
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- RATING -->
+
+        <h2 class="section-title">
+            ⭐ امتیاز AMiR GAMiNG
+        </h2>
+
+
+        <div class="rating-box">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <div class="score">
+                4.8 از 5
+            </div>
+
+        </div>
+
+
+        <!-- REQUIREMENTS -->
+
+        <h2 class="section-title">
+            💻 سیستم موردنیاز
+        </h2>
+
+
+        <div class="requirements">
+
+
+            <div class="requirement-box">
+
+                <h3>
+                    حداقل سیستم
+                </h3>
+
+                <ul>
+
+                    <li>
+                        CPU: Intel Core 2 Quad Q6600
+                    </li>
+
+                    <li>
+                        RAM: 4GB
+                    </li>
+
+                    <li>
+                        GPU: NVIDIA 9800 GT
+                    </li>
+
+                    <li>
+                        Storage: 72GB
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="requirement-box">
+
+                <h3>
+                    سیستم پیشنهادی
+                </h3>
+
+                <ul>
+
+                    <li>
+                        CPU: Intel Core i5 3470
+                    </li>
+
+                    <li>
+                        RAM: 8GB
+                    </li>
+
+                    <li>
+                        GPU: GTX 660
+                    </li>
+
+                    <li>
+                        Storage: 72GB
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="buttons">
+
+            <a
+                href="index.html"
+                class="button"
+            >
+                🔙 برگشت به خانه
+            </a>
+
+        </div>
+
 
     </main>
 
+
+    <!-- FOOTER -->
+
     <footer>
+
         © 2026 AMiR GAMiNG
+
     </footer>
+
+
+    <!-- PARTICLES -->
 
     <script>
 
         const canvas =
-            document.getElementById("particles");
+            document.getElementById(
+                "particles"
+            );
 
         const ctx =
             canvas.getContext("2d");
 
+
         let particles = [];
 
+
         const mouse = {
+
             x: null,
+
             y: null,
+
             radius: 150
+
         };
+
 
         function resizeCanvas() {
 
@@ -576,43 +864,48 @@
 
             canvas.height =
                 window.innerHeight;
+
         }
 
+
         resizeCanvas();
+
 
         window.addEventListener(
             "resize",
             resizeCanvas
         );
 
+
         window.addEventListener(
             "mousemove",
-            function (e) {
+            function(event) {
 
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
+                mouse.x =
+                    event.clientX;
+
+                mouse.y =
+                    event.clientY;
 
             }
         );
 
+
         window.addEventListener(
             "mouseleave",
-            function () {
+            function() {
 
                 mouse.x = null;
+
                 mouse.y = null;
 
             }
         );
 
-        const count =
-            window.innerWidth < 700
-                ? 60
-                : 100;
 
         for (
             let i = 0;
-            i < count;
+            i < 100;
             i++
         ) {
 
@@ -628,19 +921,22 @@
 
                 size:
                     Math.random()
-                    * 2.5 + 0.7,
+                    * 2.5 + .7,
 
                 speedX:
-                    (Math.random() - 0.5)
-                    * 0.8,
+                    (Math.random() - .5)
+                    * .7,
 
                 speedY:
-                    (Math.random() - 0.5)
-                    * 0.8
+                    (Math.random() - .5)
+                    * .7
+
             });
+
         }
 
-        function animate() {
+
+        function animateParticles() {
 
             ctx.clearRect(
                 0,
@@ -649,91 +945,114 @@
                 canvas.height
             );
 
-            for (const p of particles) {
 
-                p.x += p.speedX;
-                p.y += p.speedY;
+            particles.forEach(
+                function(p) {
 
-                if (
-                    p.x < 0 ||
-                    p.x > canvas.width
-                ) {
-                    p.speedX *= -1;
-                }
+                    p.x +=
+                        p.speedX;
 
-                if (
-                    p.y < 0 ||
-                    p.y > canvas.height
-                ) {
-                    p.speedY *= -1;
-                }
+                    p.y +=
+                        p.speedY;
 
-                if (
-                    mouse.x !== null &&
-                    mouse.y !== null
-                ) {
-
-                    const dx =
-                        p.x - mouse.x;
-
-                    const dy =
-                        p.y - mouse.y;
-
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
 
                     if (
-                        distance <
-                        mouse.radius &&
-                        distance > 0
+                        p.x < 0 ||
+                        p.x > canvas.width
                     ) {
 
-                        const force =
-                            (
-                                mouse.radius -
-                                distance
-                            ) /
-                            mouse.radius;
+                        p.speedX *= -1;
 
-                        p.x +=
-                            (dx / distance)
-                            * force
-                            * 2;
-
-                        p.y +=
-                            (dy / distance)
-                            * force
-                            * 2;
                     }
+
+
+                    if (
+                        p.y < 0 ||
+                        p.y > canvas.height
+                    ) {
+
+                        p.speedY *= -1;
+
+                    }
+
+
+                    if (
+                        mouse.x !== null &&
+                        mouse.y !== null
+                    ) {
+
+                        const dx =
+                            p.x -
+                            mouse.x;
+
+                        const dy =
+                            p.y -
+                            mouse.y;
+
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
+
+
+                        if (
+                            distance <
+                            mouse.radius &&
+                            distance > 0
+                        ) {
+
+                            const force =
+                                (
+                                    mouse.radius -
+                                    distance
+                                ) /
+                                mouse.radius;
+
+
+                            p.x +=
+                                (dx / distance)
+                                * force
+                                * 2;
+
+
+                            p.y +=
+                                (dy / distance)
+                                * force
+                                * 2;
+
+                        }
+
+                    }
+
+
+                    ctx.beginPath();
+
+                    ctx.arc(
+                        p.x,
+                        p.y,
+                        p.size,
+                        0,
+                        Math.PI * 2
+                    );
+
+                    ctx.fillStyle =
+                        "rgba(0,229,255,.85)";
+
+                    ctx.shadowBlur = 10;
+
+                    ctx.shadowColor =
+                        "#00e5ff";
+
+                    ctx.fill();
+
+                    ctx.shadowBlur = 0;
+
                 }
+            );
 
-                ctx.beginPath();
 
-                ctx.arc(
-                    p.x,
-                    p.y,
-                    p.size,
-                    0,
-                    Math.PI * 2
-                );
-
-                ctx.fillStyle =
-                    "rgba(255,190,0,0.85)";
-
-                ctx.shadowBlur = 10;
-
-                ctx.shadowColor =
-                    "#ffd000";
-
-                ctx.fill();
-
-                ctx.shadowBlur = 0;
-            }
-
-            /* خطوط بین ذرات */
+            /* PARTICLE LINES */
 
             for (
                 let i = 0;
@@ -761,7 +1080,10 @@
                             dy * dy
                         );
 
-                    if (distance < 90) {
+
+                    if (
+                        distance < 90
+                    ) {
 
                         ctx.beginPath();
 
@@ -776,82 +1098,100 @@
                         );
 
                         ctx.strokeStyle =
-                            "rgba(255,190,0," +
+                            "rgba(128,0,255," +
                             (
                                 1 -
                                 distance / 90
                             ) +
                             ")";
 
-                        ctx.lineWidth = 0.7;
+                        ctx.lineWidth =
+                            .7;
 
                         ctx.stroke();
+
                     }
+
                 }
+
             }
 
-            /* خطوط بین موس و ذرات */
+
+            /* MOUSE LINES */
 
             if (
                 mouse.x !== null &&
                 mouse.y !== null
             ) {
 
-                for (const p of particles) {
+                particles.forEach(
+                    function(p) {
 
-                    const dx =
-                        p.x - mouse.x;
+                        const dx =
+                            p.x -
+                            mouse.x;
 
-                    const dy =
-                        p.y - mouse.y;
+                        const dy =
+                            p.y -
+                            mouse.y;
 
-                    const distance =
-                        Math.sqrt(
-                            dx * dx +
-                            dy * dy
-                        );
+                        const distance =
+                            Math.sqrt(
+                                dx * dx +
+                                dy * dy
+                            );
 
-                    if (
-                        distance <
-                        mouse.radius
-                    ) {
 
-                        ctx.beginPath();
+                        if (
+                            distance <
+                            mouse.radius
+                        ) {
 
-                        ctx.moveTo(
-                            p.x,
-                            p.y
-                        );
+                            ctx.beginPath();
 
-                        ctx.lineTo(
-                            mouse.x,
-                            mouse.y
-                        );
+                            ctx.moveTo(
+                                p.x,
+                                p.y
+                            );
 
-                        ctx.strokeStyle =
-                            "rgba(255,120,0," +
-                            (
-                                1 -
-                                distance /
-                                mouse.radius
-                            ) +
-                            ")";
+                            ctx.lineTo(
+                                mouse.x,
+                                mouse.y
+                            );
 
-                        ctx.lineWidth = 1;
+                            ctx.strokeStyle =
+                                "rgba(0,229,255," +
+                                (
+                                    1 -
+                                    distance /
+                                    mouse.radius
+                                ) +
+                                ")";
 
-                        ctx.stroke();
+                            ctx.lineWidth =
+                                1;
+
+                            ctx.stroke();
+
+                        }
+
                     }
-                }
+                );
+
             }
 
+
             requestAnimationFrame(
-                animate
+                animateParticles
             );
+
         }
 
-        animate();
+
+        animateParticles();
 
     </script>
+
 
 </body>
 
