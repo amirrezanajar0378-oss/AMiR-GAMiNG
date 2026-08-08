@@ -8,49 +8,49 @@
 
 <title>AMiR GAMiNG</title>
 
+<link rel="icon" type="image/png" href="icon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
 
 
 <style>
 
 *{
-box-sizing:border-box;
-scroll-behavior:smooth;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 
 body{
 
-margin:0;
+    margin:0;
+    font-family:Vazirmatn,sans-serif;
 
-font-family:Vazirmatn,sans-serif;
+    background:#050505;
 
-background:#050505;
+    color:white;
 
-color:white;
-
-overflow-x:hidden;
+    overflow-x:hidden;
 
 }
+
 
 
 /* ذرات */
 
 #particles{
 
-position:fixed;
+    position:fixed;
 
-top:0;
+    top:0;
+    left:0;
 
-left:0;
+    width:100%;
+    height:100%;
 
-width:100%;
+    pointer-events:none;
 
-height:100%;
-
-pointer-events:none;
-
-z-index:0;
+    z-index:0;
 
 }
 
@@ -60,157 +60,178 @@ z-index:0;
 
 #loader{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:#050505;
+    background:#050505;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-flex-direction:column;
+    flex-direction:column;
 
-z-index:9999;
+    z-index:9999;
 
 }
+
 
 
 .loader-logo{
 
-font-size:70px;
+    font-size:70px;
 
-font-weight:900;
+    font-weight:900;
 
-background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
 
-background-size:300%;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #00e5ff,
+        #8000ff,
+        #fff
+    );
 
--webkit-background-clip:text;
 
-color:transparent;
+    background-size:300%;
 
-animation:colorMove 4s infinite;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+
+    animation:colorMove 4s infinite;
 
 }
+
 
 
 .loading{
 
-margin-top:40px;
+    margin-top:40px;
 
-width:300px;
+    width:300px;
 
-height:10px;
+    height:10px;
 
-background:#222;
+    background:#222;
 
-border-radius:20px;
+    border-radius:20px;
 
-overflow:hidden;
+    overflow:hidden;
 
 }
+
 
 
 .loading span{
 
-display:block;
+    display:block;
 
-height:100%;
+    width:0%;
 
-width:0%;
+    height:100%;
 
-background:#00e5ff;
+    background:#00e5ff;
 
-animation:load 3s forwards;
+    animation:load 3s forwards;
 
 }
+
 
 
 .loading-text{
 
-margin-top:20px;
+    margin-top:20px;
 
-color:#aaa;
+    color:#aaa;
 
 }
 
 
 
-/* لوگوی اصلی */
+/* لوگوی اصلی با برق */
 
 .logo{
 
-position:relative;
+    position:relative;
 
-font-size:70px;
+    font-size:70px;
 
-font-weight:900;
-
-color:white;
-
-text-shadow:
-
-0 0 5px white,
-
-0 0 15px #00e5ff,
-
-0 0 40px #00e5ff,
-
-0 0 70px #8000ff;
+    font-weight:900;
 
 
-animation:
+    color:white;
 
-glow 2s infinite alternate,
 
-shake 5s infinite;
+    text-shadow:
+
+    0 0 5px #fff,
+
+    0 0 20px #00e5ff,
+
+    0 0 40px #00e5ff,
+
+    0 0 70px #8000ff;
+
+
+    animation:
+
+    glow 2s infinite alternate,
+
+    shake 5s infinite;
+
 
 }
+
 
 
 .logo::before,
 
 .logo::after{
 
-content:"⚡";
+    content:"⚡";
 
-position:absolute;
+    position:absolute;
 
-font-size:35px;
+    font-size:35px;
 
-opacity:0;
+    opacity:0;
 
 }
+
 
 
 .logo::before{
 
-right:-60px;
+    right:-60px;
 
-top:5px;
+    top:5px;
 
-color:#00e5ff;
+    color:#00e5ff;
 
-animation:bolt1 3s infinite;
+    animation:bolt1 3s infinite;
 
 }
+
 
 
 .logo::after{
 
-left:-60px;
+    left:-60px;
 
-bottom:5px;
+    bottom:5px;
 
-color:#8000ff;
+    color:#8000ff;
 
-animation:bolt2 4s infinite;
+    animation:bolt2 4s infinite;
 
 }
+
 
 
 
@@ -229,13 +250,14 @@ to{
 
 text-shadow:
 
-0 0 20px #00e5ff,
+0 0 25px #00e5ff,
 
 0 0 60px #8000ff;
 
 }
 
 }
+
 
 
 @keyframes shake{
@@ -281,6 +303,7 @@ transform:scale(1.4);
 }
 
 
+
 @keyframes bolt2{
 
 0%,60%,100%{
@@ -312,6 +335,7 @@ width:100%;
 }
 
 
+
 @keyframes colorMove{
 
 from{
@@ -329,223 +353,26 @@ background-position:300%;
 }
 
 
-nav{
-
-background:#111;
-
-padding:20px;
-
-text-align:center;
-
-position:sticky;
-
-top:0;
-
-z-index:10;
-
-}
-
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-margin:15px;
-
-font-weight:bold;
-
-}
-
-
-
-.hero{
-
-height:80vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-text-align:center;
-
-position:relative;
-
-z-index:1;
-
-}
-
-
-
-.hero p{
-
-font-size:22px;
-
-color:#aaa;
-
-}
-
-
-
-.games{
-
-padding:70px 20px;
-
-text-align:center;
-
-position:relative;
-
-z-index:1;
-
-}
-
-
-
-.cards{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:30px;
-
-}
-
-
-
-.card{
-
-width:300px;
-
-background:#151515;
-
-padding:20px;
-
-border-radius:20px;
-
-transition:.4s;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-15px);
-
-box-shadow:0 0 30px #00e5ff;
-
-}
-
-
-
-.game-image{
-
-width:100%;
-
-height:170px;
-
-object-fit:cover;
-
-border-radius:15px;
-
-}
-
-
-
-.card p{
-
-color:#aaa;
-
-}
-
-
-
-.button{
-
-display:inline-block;
-
-background:white;
-
-color:black;
-
-padding:12px 25px;
-
-border-radius:10px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-margin-top:10px;
-
-}
-
-
-
-.about{
-
-padding:70px 20px;
-
-background:#111;
-
-text-align:center;
-
-position:relative;
-
-z-index:1;
-
-}
-
-
-
-.about p{
-
-color:#aaa;
-
-line-height:2;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:30px;
-
-color:#777;
-
-position:relative;
-
-z-index:1;
-
-}
-
+/* ادامه CSS در قسمت ۲ */
 
 </style>
 
-</head>
-
-
-<body>
+</head><body>
 
 
 <canvas id="particles"></canvas>
 
 
+
+<!-- لودینگ -->
+
 <div id="loader">
 
+
 <div class="loader-logo">
+
 AMiR GAMiNG
+
 </div>
 
 
@@ -567,6 +394,10 @@ AMiR GAMiNG
 
 
 
+
+
+<!-- منو -->
+
 <nav>
 
 <a href="#home">🏠 خانه</a>
@@ -579,6 +410,10 @@ AMiR GAMiNG
 
 
 
+
+
+<!-- صفحه اصلی -->
+
 <section class="hero" id="home">
 
 
@@ -590,7 +425,9 @@ AMiR GAMiNG
 
 
 <p>
+
 دنیای گیمینگ من 🎮⚡
+
 </p>
 
 
@@ -598,54 +435,135 @@ AMiR GAMiNG
 
 
 
+
+
+
+
+<!-- بازی‌ها -->
+
 <section class="games" id="games">
 
 
-<h1>🔥 بازی‌ها</h1>
+<h1>
+
+🔥 بازی‌ها
+
+</h1>
+
+
 
 
 <div class="cards">
 
 
+
+
+
+
 <div class="card">
+
 
 <img src="images/gta.jpg" class="game-image">
 
-<h2>🎮 GTA V</h2>
 
-<p>دنیای بزرگ و هیجان انگیز GTA</p>
+<h2>
 
-<a class="button" href="gta.html">ورود</a>
+🎮 GTA V
+
+</h2>
+
+
+<p>
+
+دنیای بزرگ و هیجان انگیز GTA
+
+</p>
+
+
+<a class="button" href="gta.html">
+
+ورود
+
+</a>
+
 
 </div>
 
 
 
+
+
+
+
 <div class="card">
+
 
 <img src="images/minecraft.jpg" class="game-image">
 
-<h2>⛏️ Minecraft</h2>
 
-<p>ساخت و ماجراجویی بی‌پایان</p>
+<h2>
 
-<a class="button" href="minecraft.html">ورود</a>
+⛏️ Minecraft
+
+</h2>
+
+
+<p>
+
+ساخت و ماجراجویی بی پایان
+
+</p>
+
+
+<a class="button" href="minecraft.html">
+
+ورود
+
+</a>
+
 
 </div>
+
+
+
+
+
 
 
 
 <div class="card">
 
+
 <img src="images/racing.jpg" class="game-image">
 
-<h2>🏎️ Racing</h2>
 
-<p>سرعت و رقابت</p>
+<h2>
 
-<a class="button" href="racing.html">ورود</a>
+🏎️ Racing
+
+</h2>
+
+
+<p>
+
+سرعت و رقابت
+
+</p>
+
+
+<a class="button" href="racing.html">
+
+ورود
+
+</a>
+
 
 </div>
+
+
+
+
+
 
 
 </div>
@@ -654,22 +572,478 @@ AMiR GAMiNG
 </section>
 
 
+
+
+
+
+<!-- درباره -->
 
 <section class="about" id="about">
 
-<h1>👤 درباره AMiR GAMiNG</h1>
+
+<h1>
+
+👤 درباره AMiR GAMiNG
+
+</h1>
+
+
 
 <p>
+
 به سایت AMiR GAMiNG خوش آمدید.
-اینجا دنیای بازی‌ها و گیمینگ است.
+
+اینجا دنیای بازی‌ها، گیمینگ و پروژه‌های من است.
+
 </p>
 
+
 </section>
+
+
+
+
 
 
 
 <footer>
 
+
 © 2026 AMiR GAMiNG
 
-</footer>
+
+</footer><script>
+
+
+/* =====================
+   حذف لودینگ
+===================== */
+
+
+window.onload=function(){
+
+    setTimeout(function(){
+
+        document.getElementById("loader").style.display="none";
+
+    },3000);
+
+};
+
+
+
+
+
+/* =====================
+   ذرات + واکنش موس
+===================== */
+
+
+const canvas=document.getElementById("particles");
+
+const ctx=canvas.getContext("2d");
+
+
+let particles=[];
+
+
+let mouse={
+
+    x:null,
+
+    y:null,
+
+    radius:150
+
+};
+
+
+
+
+function resizeCanvas(){
+
+    canvas.width=window.innerWidth;
+
+    canvas.height=window.innerHeight;
+
+}
+
+
+resizeCanvas();
+
+
+
+
+window.addEventListener("resize",resizeCanvas);
+
+
+
+window.addEventListener("mousemove",function(e){
+
+    mouse.x=e.clientX;
+
+    mouse.y=e.clientY;
+
+});
+
+
+
+window.addEventListener("mouseleave",function(){
+
+    mouse.x=null;
+
+    mouse.y=null;
+
+});
+
+
+
+
+
+
+
+for(let i=0;i<120;i++){
+
+
+    particles.push({
+
+        x:Math.random()*canvas.width,
+
+        y:Math.random()*canvas.height,
+
+        size:Math.random()*3+1,
+
+        speedX:(Math.random()-0.5)*0.8,
+
+        speedY:(Math.random()-0.5)*0.8
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+function drawLines(){
+
+
+
+    if(mouse.x && mouse.y){
+
+
+
+        particles.forEach(function(p){
+
+
+
+            let dx=p.x-mouse.x;
+
+            let dy=p.y-mouse.y;
+
+
+            let distance=Math.sqrt(dx*dx+dy*dy);
+
+
+
+
+            if(distance<150){
+
+
+
+                ctx.beginPath();
+
+
+                ctx.moveTo(
+
+                    p.x,
+
+                    p.y
+
+                );
+
+
+                ctx.lineTo(
+
+                    mouse.x,
+
+                    mouse.y
+
+                );
+
+
+
+                ctx.strokeStyle=
+
+                "rgba(0,229,255,"+
+
+                (1-distance/150)
+
+                +")";
+
+
+
+                ctx.lineWidth=1.5;
+
+
+                ctx.stroke();
+
+
+
+            }
+
+
+
+        });
+
+
+
+    }
+
+
+
+
+
+    // خط بین خود ذرات
+
+
+    for(let i=0;i<particles.length;i++){
+
+
+        for(let j=i+1;j<particles.length;j++){
+
+
+
+            let dx=
+
+            particles[i].x-particles[j].x;
+
+
+
+            let dy=
+
+            particles[i].y-particles[j].y;
+
+
+
+
+            let distance=
+
+            Math.sqrt(dx*dx+dy*dy);
+
+
+
+
+
+            if(distance<90){
+
+
+
+                ctx.beginPath();
+
+
+
+                ctx.moveTo(
+
+                    particles[i].x,
+
+                    particles[i].y
+
+                );
+
+
+
+                ctx.lineTo(
+
+                    particles[j].x,
+
+                    particles[j].y
+
+                );
+
+
+
+                ctx.strokeStyle=
+
+                "rgba(128,0,255,"+
+
+                (1-distance/90)
+
+                +")";
+
+
+
+                ctx.lineWidth=1;
+
+
+                ctx.stroke();
+
+
+
+            }
+
+
+        }
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+function animateParticles(){
+
+
+
+    ctx.clearRect(
+
+        0,
+
+        0,
+
+        canvas.width,
+
+        canvas.height
+
+    );
+
+
+
+
+
+    particles.forEach(function(p){
+
+
+
+        p.x+=p.speedX;
+
+        p.y+=p.speedY;
+
+
+
+
+
+
+        // واکنش به موس
+
+
+        if(mouse.x && mouse.y){
+
+
+
+            let dx=p.x-mouse.x;
+
+            let dy=p.y-mouse.y;
+
+
+            let distance=
+
+            Math.sqrt(dx*dx+dy*dy);
+
+
+
+
+
+            if(distance<mouse.radius){
+
+
+
+                p.x+=(dx/distance)*2;
+
+                p.y+=(dy/distance)*2;
+
+
+
+            }
+
+
+
+        }
+
+
+
+
+
+        ctx.beginPath();
+
+
+
+        ctx.arc(
+
+            p.x,
+
+            p.y,
+
+            p.size,
+
+            0,
+
+            Math.PI*2
+
+        );
+
+
+
+        ctx.fillStyle="#00e5ff";
+
+
+        ctx.fill();
+
+
+
+
+        if(p.x<0 || p.x>canvas.width){
+
+            p.speedX*=-1;
+
+        }
+
+
+
+        if(p.y<0 || p.y>canvas.height){
+
+            p.speedY*=-1;
+
+        }
+
+
+
+    });
+
+
+
+
+    drawLines();
+
+
+
+
+    requestAnimationFrame(animateParticles);
+
+
+
+}
+
+
+
+animateParticles();
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
