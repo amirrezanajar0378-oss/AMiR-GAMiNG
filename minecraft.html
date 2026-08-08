@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -6,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Minecraft | AMiR GAMiNG</title>
+<title>AMiR GAMiNG | Minecraft</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,11 +26,11 @@ html{
 body{
     font-family:"Vazirmatn",sans-serif;
     background:
-        radial-gradient(circle at 15% 20%,rgba(0,220,255,.12),transparent 30%),
-        radial-gradient(circle at 85% 30%,rgba(120,0,255,.12),transparent 30%),
-        radial-gradient(circle at 50% 85%,rgba(0,255,200,.07),transparent 35%),
-        #030508;
-    color:#fff;
+        radial-gradient(circle at 15% 10%,rgba(0,220,90,.10),transparent 28%),
+        radial-gradient(circle at 85% 35%,rgba(120,0,255,.10),transparent 30%),
+        radial-gradient(circle at 50% 90%,rgba(0,180,255,.07),transparent 30%),
+        #050806;
+    color:white;
     min-height:100vh;
     overflow-x:hidden;
 }
@@ -61,51 +60,77 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:10px;
 
-    background:rgba(3,5,8,.82);
+    background:rgba(4,8,5,.82);
     backdrop-filter:blur(16px);
 
-    border-bottom:1px solid rgba(0,220,255,.15);
+    border-bottom:1px solid rgba(80,255,120,.13);
 
     z-index:100;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 nav a{
     color:#ccc;
     text-decoration:none;
-    padding:10px 18px;
+
+    padding:10px 17px;
+
     border-radius:12px;
+
     transition:.3s;
 }
 
 nav a:hover{
     color:#fff;
-    background:rgba(0,220,255,.08);
-    box-shadow:0 0 20px rgba(0,220,255,.18);
+
+    background:rgba(70,255,100,.08);
+
+    box-shadow:
+        0 0 20px rgba(70,255,100,.13);
+
     transform:translateY(-2px);
+}
+
+.menu-button{
+    display:none;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
 }
 
 
 /* ================= HERO ================= */
 
 .hero{
-    position:relative;
-    z-index:2;
-
-    min-height:82vh;
+    min-height:90vh;
 
     padding:130px 20px 70px;
 
     display:flex;
     flex-direction:column;
+
     justify-content:center;
     align-items:center;
 
     text-align:center;
+
+    position:relative;
+    z-index:2;
 }
 
-.minecraft-title{
+.minecraft-logo{
     font-size:clamp(48px,9vw,100px);
 
     font-weight:900;
@@ -115,55 +140,106 @@ nav a:hover{
     color:#fff;
 
     text-shadow:
-        0 0 8px #fff,
-        0 0 20px #00dcff,
-        0 0 45px #007cff,
-        0 0 75px #7200ff;
+        0 5px 0 #222,
+        0 0 10px rgba(255,255,255,.4),
+        0 0 25px rgba(0,255,100,.25);
 
-    animation:minecraftGlow 3s infinite alternate;
+    animation:
+        minecraftGlow 3s infinite alternate;
 }
 
-@keyframes minecraftGlow{
-
-    from{
-        text-shadow:
-            0 0 8px #fff,
-            0 0 20px #00dcff,
-            0 0 40px #007cff;
-    }
-
-    to{
-        text-shadow:
-            0 0 10px #fff,
-            0 0 30px #00dcff,
-            0 0 55px #7200ff,
-            0 0 85px rgba(0,220,255,.5);
-    }
-
+.minecraft-logo span{
+    color:#58ff72;
 }
 
 .hero-subtitle{
     margin-top:20px;
+
     color:#aaa;
-    font-size:clamp(15px,2.5vw,21px);
+
+    font-size:clamp(16px,3vw,22px);
 }
 
 .hero-line{
-    width:min(550px,80vw);
+    width:min(550px,82vw);
+
     height:2px;
+
     margin-top:30px;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            #00dcff,
-            #7200ff,
-            #00ffc8,
+            #35ff65,
+            #00cfff,
+            #9b35ff,
             transparent
         );
 
-    box-shadow:0 0 18px rgba(0,220,255,.7);
+    box-shadow:
+        0 0 18px rgba(50,255,100,.5);
+}
+
+
+/* ================= MUSIC ================= */
+
+.music-box{
+    margin-top:30px;
+
+    padding:14px 18px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(80,255,120,.18);
+
+    box-shadow:
+        0 0 25px rgba(0,255,100,.06);
+}
+
+.music-button{
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(40,255,90,.14),
+            rgba(0,200,255,.10)
+        );
+
+    color:white;
+
+    font-family:inherit;
+
+    cursor:pointer;
+
+    border:1px solid rgba(70,255,100,.25);
+
+    transition:.3s;
+}
+
+.music-button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 0 20px rgba(70,255,100,.18);
+}
+
+.music-status{
+    color:#999;
+
+    font-size:13px;
 }
 
 
@@ -184,12 +260,13 @@ nav a:hover{
 .section-title{
     text-align:center;
 
-    font-size:clamp(28px,4vw,38px);
+    font-size:clamp(28px,5vw,38px);
 
-    margin:60px 0 30px;
+    margin:
+        70px 0 35px;
 
     text-shadow:
-        0 0 20px rgba(0,220,255,.35);
+        0 0 20px rgba(80,255,120,.25);
 }
 
 
@@ -203,23 +280,21 @@ nav a:hover{
     background:
         linear-gradient(
             145deg,
-            rgba(0,220,255,.07),
-            rgba(114,0,255,.05),
-            rgba(0,255,200,.03)
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
         );
 
-    border:1px solid rgba(0,220,255,.15);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.3);
-
-    text-align:center;
-
-    color:#aaa;
+    border:
+        1px solid rgba(255,255,255,.08);
 
     line-height:2.3;
 
-    font-size:15px;
+    color:#aaa;
+
+    text-align:center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.25);
 }
 
 .intro strong{
@@ -227,7 +302,7 @@ nav a:hover{
 }
 
 
-/* ================= WORLD CARDS ================= */
+/* ================= WORLDS ================= */
 
 .world-grid{
     display:grid;
@@ -236,274 +311,264 @@ nav a:hover{
         repeat(3,1fr);
 
     gap:22px;
-
-    margin-top:30px;
 }
 
 .world-card{
-    padding:28px;
+    padding:30px;
+
+    min-height:210px;
 
     border-radius:20px;
 
+    text-align:center;
+
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.04);
 
     border:
-        1px solid
-        rgba(255,255,255,.08);
+        1px solid rgba(255,255,255,.08);
 
-    transition:.35s;
+    transition:.4s;
 
-    text-align:center;
+    position:relative;
+
+    overflow:hidden;
+}
+
+.world-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    border-radius:50%;
+
+    filter:blur(55px);
+
+    opacity:.22;
+
+    top:-70px;
+    right:-60px;
+}
+
+.overworld::before{
+    background:#32ff58;
+}
+
+.nether::before{
+    background:#ff3200;
+}
+
+.end::before{
+    background:#a800ff;
 }
 
 .world-card:hover{
     transform:translateY(-8px);
 
     border-color:
-        rgba(0,220,255,.4);
+        rgba(100,255,120,.35);
 
     box-shadow:
-        0 0 30px
-        rgba(0,220,255,.12);
+        0 0 30px rgba(0,255,100,.10);
 }
 
 .world-icon{
-    font-size:42px;
+    font-size:50px;
 
     margin-bottom:15px;
 }
 
 .world-card h3{
+    font-size:24px;
+
     margin-bottom:10px;
 }
 
 .world-card p{
     color:#999;
 
-    font-size:13px;
+    font-size:14px;
 
     line-height:1.9;
 }
 
 
-/* ================= END ================= */
-
-.end-section{
-    margin-top:25px;
-
-    padding:35px 30px;
-
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(90,0,180,.10),
-            rgba(0,0,0,.35),
-            rgba(0,220,255,.05)
-        );
-
-    border:
-        1px solid
-        rgba(130,0,255,.22);
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.3);
-}
-
-.end-title{
-    text-align:center;
-
-    font-size:30px;
-
-    margin-bottom:20px;
-
-    color:#c58cff;
-
-    text-shadow:
-        0 0 20px
-        rgba(150,0,255,.5);
-}
-
-.end-section p{
-    color:#aaa;
-
-    line-height:2.3;
-
-    text-align:center;
-
-    font-size:15px;
-}
-
-.end-highlight{
-    margin-top:25px;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:20px;
-}
-
-.end-item{
-    padding:22px;
-
-    border-radius:17px;
-
-    background:
-        rgba(255,255,255,.04);
-
-    border:
-        1px solid
-        rgba(150,0,255,.15);
-
-    text-align:center;
-}
-
-.end-item h3{
-    margin-bottom:10px;
-
-    color:#fff;
-}
-
-.end-item p{
-    font-size:13px;
-
-    line-height:1.9;
-}
-
-
-/* ================= BOSS GRID ================= */
+/* ================= BOSSES ================= */
 
 .boss-grid{
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(4,1fr);
 
-    gap:25px;
-
-    margin-top:30px;
+    gap:18px;
 }
 
 .boss-card{
-    position:relative;
+    padding:25px 18px;
 
-    overflow:hidden;
+    text-align:center;
 
-    min-height:230px;
-
-    padding:28px;
-
-    border-radius:22px;
+    border-radius:20px;
 
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.04);
 
     border:
-        1px solid
-        rgba(255,255,255,.09);
+        1px solid rgba(255,255,255,.08);
 
     transition:.4s;
 }
 
-.boss-card::before{
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:.12;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--boss-color),
-            transparent 65%
-        );
-
-    pointer-events:none;
-}
-
 .boss-card:hover{
     transform:
-        translateY(-8px)
-        scale(1.015);
+        translateY(-9px)
+        scale(1.02);
 
     border-color:
-        var(--boss-color);
+        rgba(150,80,255,.4);
 
     box-shadow:
-        0 0 35px
-        rgba(0,220,255,.12);
+        0 0 30px rgba(130,0,255,.12);
 }
 
 .boss-icon{
-    font-size:48px;
+    font-size:55px;
 
-    margin-bottom:15px;
-
-    filter:
-        drop-shadow(
-            0 0 10px
-            var(--boss-color)
-        );
+    margin-bottom:12px;
 }
 
 .boss-card h3{
-    font-size:25px;
-
-    margin-bottom:10px;
-
-    color:var(--boss-color);
+    margin-bottom:8px;
 }
 
 .boss-card p{
     color:#999;
 
-    line-height:1.9;
+    font-size:13px;
 
-    font-size:14px;
+    line-height:1.8;
 }
 
 
-/* BOSS COLORS */
+/* ================= ITEMS ================= */
 
-.guardian{
-    --boss-color:#00d9ff;
-}
-
-.warden{
-    --boss-color:#00ffc8;
-}
-
-.wither{
-    --boss-color:#9b59ff;
-}
-
-.dragon{
-    --boss-color:#c000ff;
-}
-
-
-/* ================= FEATURES ================= */
-
-.features{
+.item-grid{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(4,1fr);
 
-    gap:20px;
-
-    margin-top:30px;
+    gap:18px;
 }
 
+.item-card{
+    padding:25px 18px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.015)
+        );
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+}
+
+.item-card:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        rgba(0,220,255,.35);
+
+    box-shadow:
+        0 0 25px rgba(0,200,255,.10);
+}
+
+.item-icon{
+    font-size:48px;
+
+    margin-bottom:12px;
+}
+
+.item-card h3{
+    margin-bottom:8px;
+}
+
+.item-card p{
+    color:#999;
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* ================= FEATURE ================= */
+
 .feature{
-    padding:25px;
+    margin-top:70px;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,255,100,.055),
+            rgba(120,0,255,.055),
+            rgba(0,180,255,.04)
+        );
+
+    border:
+        1px solid rgba(100,255,130,.12);
+
+    text-align:center;
+
+    line-height:2.3;
+}
+
+.feature h2{
+    margin-bottom:15px;
+
+    font-size:30px;
+}
+
+.feature p{
+    color:#aaa;
+}
+
+.highlight{
+    color:#6aff82;
+
+    font-weight:800;
+}
+
+
+/* ================= FACTS ================= */
+
+.facts{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+.fact{
+    padding:24px;
 
     text-align:center;
 
@@ -513,34 +578,29 @@ nav a:hover{
         rgba(255,255,255,.035);
 
     border:
-        1px solid
-        rgba(255,255,255,.08);
+        1px solid rgba(255,255,255,.07);
 
     transition:.3s;
 }
 
-.feature:hover{
-    transform:translateY(-7px);
+.fact:hover{
+    transform:translateY(-5px);
 
     border-color:
-        rgba(0,220,255,.35);
-
-    box-shadow:
-        0 0 25px
-        rgba(0,220,255,.1);
+        rgba(80,255,120,.3);
 }
 
-.feature-icon{
+.fact-icon{
     font-size:35px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-.feature h3{
+.fact h3{
     margin-bottom:8px;
 }
 
-.feature p{
+.fact p{
     color:#999;
 
     font-size:13px;
@@ -549,122 +609,38 @@ nav a:hover{
 }
 
 
-/* ================= RATING ================= */
-
-.rating-box{
-    margin-top:40px;
-
-    padding:28px;
-
-    text-align:center;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,220,255,.06),
-            rgba(114,0,255,.07)
-        );
-
-    border:
-        1px solid
-        rgba(0,220,255,.16);
-}
-
-.stars{
-    color:#ffd43b;
-
-    font-size:25px;
-
-    letter-spacing:3px;
-}
-
-.rating-number{
-    margin-top:8px;
-
-    color:#ccc;
-
-    font-size:16px;
-}
-
-
-/* ================= BUTTON ================= */
-
-.game-button{
-    display:block;
-
-    width:min(400px,100%);
-
-    margin:35px auto 0;
-
-    padding:13px 20px;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    color:white;
-
-    border-radius:13px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,220,255,.1),
-            rgba(114,0,255,.1)
-        );
-
-    border:
-        1px solid
-        rgba(0,220,255,.3);
-
-    transition:.3s;
-}
-
-.game-button:hover{
-    transform:translateY(-3px);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,220,255,.18),
-            rgba(114,0,255,.18)
-        );
-
-    box-shadow:
-        0 0 25px
-        rgba(0,220,255,.18);
-}
-
-
 /* ================= ABOUT ================= */
 
 .about{
     margin-top:70px;
 
-    padding:35px 30px;
+    padding:40px 30px;
 
     text-align:center;
 
     border-radius:22px;
 
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.04);
 
     border:
-        1px solid
-        rgba(255,255,255,.08);
+        1px solid rgba(255,255,255,.08);
+}
+
+.about h2{
+    font-size:30px;
+
+    margin-bottom:18px;
 }
 
 .about p{
     color:#aaa;
 
-    line-height:2.2;
-
     max-width:800px;
 
     margin:auto;
+
+    line-height:2.2;
 }
 
 
@@ -684,45 +660,100 @@ footer{
     color:#666;
 
     border-top:
-        1px solid
-        rgba(255,255,255,.05);
+        1px solid rgba(255,255,255,.05);
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes minecraftGlow{
+
+    from{
+        text-shadow:
+            0 5px 0 #222,
+            0 0 8px rgba(255,255,255,.4),
+            0 0 20px rgba(0,255,100,.15);
+    }
+
+    to{
+        text-shadow:
+            0 5px 0 #222,
+            0 0 12px rgba(255,255,255,.5),
+            0 0 35px rgba(0,255,100,.3),
+            0 0 55px rgba(120,0,255,.15);
+    }
+
 }
 
 
 /* ================= MOBILE ================= */
 
-@media(max-width:750px){
+@media(max-width:900px){
 
-    .world-grid{
-        grid-template-columns:1fr;
+    .boss-grid,
+    .item-grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
-    .boss-grid{
-        grid-template-columns:1fr;
+    .world-grid,
+    .facts{
+        grid-template-columns:
+            1fr;
     }
 
-    .features{
-        grid-template-columns:1fr;
-    }
+}
 
-    .end-highlight{
-        grid-template-columns:1fr;
-    }
+@media(max-width:700px){
 
     nav{
-        overflow-x:auto;
+        justify-content:flex-end;
 
-        justify-content:flex-start;
-
-        padding:0 10px;
+        padding:0 18px;
     }
 
-    nav a{
-        white-space:nowrap;
+    .menu-button{
+        display:block;
+    }
 
-        font-size:13px;
+    .nav-links{
+        position:absolute;
 
-        padding:9px 12px;
+        top:70px;
+
+        right:15px;
+        left:15px;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:15px;
+
+        border-radius:16px;
+
+        background:
+            rgba(4,8,5,.97);
+
+        border:
+            1px solid rgba(80,255,120,.15);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .boss-grid,
+    .item-grid{
+        grid-template-columns:1fr;
+    }
+
+    .music-box{
+        flex-direction:column;
     }
 
 }
@@ -738,495 +769,675 @@ footer{
 <canvas id="particles"></canvas>
 
 
-<!-- ================= NAV ================= -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
-    <a href="index.html">
-        🏠 خانه
-    </a>
+<button
+    class="menu-button"
+    id="menuButton"
+>
+    ☰
+</button>
 
-    <a href="#about">
-        ⛏️ Minecraft
-    </a>
+<div
+    class="nav-links"
+    id="navLinks"
+>
 
-    <a href="#worlds">
-        🌍 دنیاها
-    </a>
+<a href="#home">🏠 خانه</a>
 
-    <a href="#bosses">
-        👹 باس‌ها
-    </a>
+<a href="#intro">🎮 معرفی</a>
+
+<a href="#worlds">🌍 دنیاها</a>
+
+<a href="#bosses">👹 باس‌ها</a>
+
+<a href="#items">💎 آیتم‌ها</a>
+
+<a href="#about">👤 درباره</a>
+
+</div>
 
 </nav>
 
 
 <!-- ================= HERO ================= -->
 
-<section class="hero">
+<section
+    class="hero"
+    id="home"
+>
 
-    <h1 class="minecraft-title">
-        Minecraft
-    </h1>
+<h1 class="minecraft-logo">
+    MINECRAFT
+</h1>
 
-    <p class="hero-subtitle">
-        دنیایی از ساخت‌وساز، ماجراجویی و بقا ⛏️⚔️
-    </p>
+<p class="hero-subtitle">
+    دنیایی که تنها محدودیتش تخیل توست ⛏️🌍
+</p>
 
-    <div class="hero-line"></div>
+<div class="hero-line"></div>
+
+
+<div class="music-box">
+
+<button
+    class="music-button"
+    id="musicButton"
+>
+    🎵 پخش موسیقی Minecraft
+</button>
+
+<span
+    class="music-status"
+    id="musicStatus"
+>
+    موسیقی خاموش است
+</span>
+
+</div>
+
+
+<audio
+    id="minecraftMusic"
+    loop
+>
+
+<source
+    src="minecraft.mp3"
+    type="audio/mpeg"
+>
+
+</audio>
 
 </section>
 
+
+<!-- ================= MAIN ================= -->
 
 <main class="content">
 
 
-<!-- ================= INTRO ================= -->
+<!-- INTRO -->
 
-<section id="about">
+<section id="intro">
 
-    <h2 class="section-title">
-        ⛏️ درباره Minecraft
-    </h2>
+<h2 class="section-title">
+    ⛏️ درباره Minecraft
+</h2>
 
-    <div class="intro">
+<div class="intro">
 
-        <strong>Minecraft</strong>
-        یک بازی Sandbox است که آزادی بسیار زیادی
-        برای ساخت‌وساز، اکتشاف، مبارزه و بقا در اختیار
-        بازیکن قرار می‌دهد.
+<p>
 
-        <br>
+<strong>Minecraft</strong>
+یکی از مشهورترین بازی‌های Sandbox تاریخ است؛
+دنیایی عظیم که بازیکن می‌تواند در آن
+ساخت‌وساز کند، منابع جمع‌آوری کند،
+به ماجراجویی برود و با موجودات مختلف مبارزه کند.
 
-        بازیکنان می‌توانند منابع جمع‌آوری کنند،
-        ابزار و وسایل بسازند، خانه و سازه‌های مختلف
-        ایجاد کنند و در دنیایی تقریباً بی‌پایان به
-        ماجراجویی بپردازند.
+<br><br>
 
-        <br>
+در Minecraft تقریباً هر چیزی که می‌بینی
+می‌تواند بخشی از یک ماجراجویی بزرگ باشد.
+از ساخت یک خانه ساده گرفته تا ساخت سازه‌های عظیم
+و سفر به خطرناک‌ترین نقاط جهان.
 
-        یکی از جذاب‌ترین بخش‌های Minecraft این است
-        که تقریباً هیچ دو دنیایی دقیقاً شبیه هم نیستند
-        و بازیکن می‌تواند مسیر خودش را در بازی انتخاب کند.
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= WORLDS ================= -->
+<!-- WORLDS -->
 
 <section id="worlds">
 
-    <h2 class="section-title">
-        🌍 سرزمین‌های Minecraft
-    </h2>
+<h2 class="section-title">
+    🌍 سرزمین‌های Minecraft
+</h2>
 
-    <div class="world-grid">
-
-
-        <article class="world-card">
-
-            <div class="world-icon">
-                🌳
-            </div>
-
-            <h3>
-                Overworld
-            </h3>
-
-            <p>
-                دنیای اصلی Minecraft که بازیکن
-                ماجراجویی خود را در آن شروع می‌کند.
-                جنگل‌ها، کوه‌ها، اقیانوس‌ها، روستاها
-                و غارهای مختلف در این سرزمین قرار دارند.
-            </p>
-
-        </article>
+<div class="world-grid">
 
 
-        <article class="world-card">
+<div class="world-card overworld">
 
-            <div class="world-icon">
-                🔥
-            </div>
+<div class="world-icon">
+    🌳
+</div>
 
-            <h3>
-                Nether
-            </h3>
+<h3>
+    Overworld
+</h3>
 
-            <p>
-                سرزمینی خطرناک و جهنمی پر از
-                Lava، قلعه‌های Nether، موجودات
-                خطرناک و منابع خاص که برای پیشرفت
-                در بازی اهمیت زیادی دارد.
-            </p>
+<p>
+دنیای اصلی Minecraft؛
+پر از جنگل، کوه، اقیانوس،
+روستاها، غارها و موجودات مختلف.
+</p>
 
-        </article>
+</div>
 
 
-        <article class="world-card">
+<div class="world-card nether">
 
-            <div class="world-icon">
-                🌌
-            </div>
+<div class="world-icon">
+    🔥
+</div>
 
-            <h3>
-                The End
-            </h3>
+<h3>
+    Nether
+</h3>
 
-            <p>
-                یکی از مهم‌ترین و مرموزترین سرزمین‌های
-                Minecraft؛ جایی که Ender Dragon
-                در آن قرار دارد و بازیکن می‌تواند
-                به Elytra دست پیدا کند.
-            </p>
+<p>
+سرزمینی خطرناک و آتشین
+که مملو از Lava، قلعه‌های Nether
+و موجودات خطرناک است.
+</p>
 
-        </article>
+</div>
 
-    </div>
+
+<div class="world-card end">
+
+<div class="world-icon">
+    🟣
+</div>
+
+<h3>
+    The End
+</h3>
+
+<p>
+یکی از مهم‌ترین سرزمین‌های بازی؛
+محل نبرد با Ender Dragon
+و پیدا کردن Elytra.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= THE END ================= -->
+<!-- END FEATURE -->
 
-<section>
+<section class="feature">
 
-    <h2 class="section-title">
-        🌌 The End
-    </h2>
+<h2>
+    🟣 The End
+</h2>
 
-    <div class="end-section">
+<p>
 
-        <div class="end-title">
-            قلمرو اژدها
-        </div>
+<strong class="highlight">
+The End
+</strong>
+یکی از مهم‌ترین سرزمین‌های بازی محسوب می‌شود.
 
-        <p>
+<br>
 
-            اند یکی از مهم‌ترین و مرموزترین سرزمین‌های
-            بازی Minecraft محسوب می‌شود.
+در این سرزمین
+<strong class="highlight">
+Ender Dragon
+</strong>
+قرار دارد و پس از پیشروی در این دنیا،
+بازیکن می‌تواند به شهرهای End برسد.
 
-            <br>
+<br><br>
 
-            این دنیای عجیب، محل زندگی Endermanها و
-            قلمرو <strong>Ender Dragon</strong> است و
-            یکی از مهم‌ترین مراحل پیشرفت در بازی
-            در آن اتفاق می‌افتد.
+یکی از مهم‌ترین آیتم‌های بازی،
+<strong class="highlight">
+Elytra
+</strong>
+نام دارد که امکان پرواز و حرکت سریع در جهان را فراهم می‌کند.
 
-        </p>
+<br><br>
 
+همچنین
+<strong class="highlight">
+Dragon Egg
+</strong>
+یکی از خاص‌ترین آیتم‌های Minecraft است
+که پس از شکست Ender Dragon به‌دست می‌آید
+و در حالت عادی تنها یک نمونه از آن
+در جهان اصلی تولید می‌شود.
 
-        <div class="end-highlight">
-
-
-            <div class="end-item">
-
-                <h3>
-                    🪽 Elytra
-                </h3>
-
-                <p>
-
-                    یکی از مهم‌ترین آیتم‌هایی که بازیکن
-                    می‌تواند در اند به دست بیاورد،
-                    <strong>Elytra</strong> است.
-
-                    این وسیله امکان پرواز کردن را
-                    برای بازیکن فراهم می‌کند و پیدا
-                    کردن آن یکی از اهداف مهم بازیکنان
-                    در اواخر بازی محسوب می‌شود.
-
-                </p>
-
-            </div>
-
-
-            <div class="end-item">
-
-                <h3>
-                    🥚 Dragon Egg
-                </h3>
-
-                <p>
-
-                    تخم اژدها یکی از کمیاب‌ترین و
-                    باارزش‌ترین آیتم‌های تزئینی Minecraft
-                    است.
-
-                    در حالت عادی، پس از شکست دادن
-                    Ender Dragon، تنها یک تخم اژدها
-                    به‌صورت طبیعی در جهان ایجاد می‌شود؛
-                    به همین دلیل ارزش و کمیابی بسیار
-                    زیادی دارد.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</p>
 
 </section>
 
 
-<!-- ================= BOSSES ================= -->
+<!-- BOSSES -->
 
 <section id="bosses">
 
-    <h2 class="section-title">
-        👹 باس‌ها و دشمنان قدرتمند
-    </h2>
+<h2 class="section-title">
+    👹 موجودات و باس‌های قدرتمند
+</h2>
 
-    <div class="boss-grid">
-
-
-        <article class="boss-card guardian">
-
-            <div class="boss-icon">
-                🌊
-            </div>
-
-            <h3>
-                Elder Guardian
-            </h3>
-
-            <p>
-
-                نگهبان قدرتمند Ocean Monumentها
-                که در اعماق اقیانوس‌ها زندگی می‌کند.
-
-                تم آبی و فیروزه‌ای این بخش از
-                فضای اقیانوسی Minecraft الهام گرفته شده است.
-
-            </p>
-
-        </article>
+<div class="boss-grid">
 
 
-        <article class="boss-card warden">
+<div class="boss-card">
 
-            <div class="boss-icon">
-                👁️
-            </div>
+<div class="boss-icon">
+    🐉
+</div>
 
-            <h3>
-                Warden
-            </h3>
+<h3>
+    Ender Dragon
+</h3>
 
-            <p>
+<p>
+باس اصلی The End و
+یکی از بزرگ‌ترین دشمنان بازی.
+</p>
 
-                موجودی بسیار قدرتمند از Deep Dark
-                که به صدا و لرزش‌ها حساس است.
-
-                رنگ‌های آبی تیره و فیروزه‌ای
-                حال‌وهوای Deep Dark را نشان می‌دهند.
-
-            </p>
-
-        </article>
+</div>
 
 
-        <article class="boss-card wither">
+<div class="boss-card">
 
-            <div class="boss-icon">
-                ☠️
-            </div>
+<div class="boss-icon">
+    💀
+</div>
 
-            <h3>
-                Wither
-            </h3>
+<h3>
+    Wither
+</h3>
 
-            <p>
+<p>
+یک باس قدرتمند که
+بازیکن می‌تواند آن را احضار کند.
+</p>
 
-                یکی از باس‌های معروف Minecraft
-                با ظاهر تیره و حملات بسیار قدرتمند.
-
-                مبارزه با آن یکی از چالش‌های مهم
-                بازی برای بازیکنان حرفه‌ای است.
-
-            </p>
-
-        </article>
+</div>
 
 
-        <article class="boss-card dragon">
+<div class="boss-card">
 
-            <div class="boss-icon">
-                🐉
-            </div>
+<div class="boss-icon">
+    👁️
+</div>
 
-            <h3>
-                Ender Dragon
-            </h3>
+<h3>
+    Warden
+</h3>
 
-            <p>
+<p>
+موجودی بسیار قدرتمند
+در Deep Dark که با صدا واکنش نشان می‌دهد.
+</p>
 
-                باس اصلی The End که مبارزه با آن
-                یکی از مهم‌ترین نبردهای Minecraft
-                محسوب می‌شود.
-
-                پس از شکست آن، مسیر دسترسی به
-                بخش‌های بیشتری از End و Elytra
-                برای بازیکن فراهم می‌شود.
-
-            </p>
-
-        </article>
+</div>
 
 
-    </div>
+<div class="boss-card">
+
+<div class="boss-icon">
+    🌊
+</div>
+
+<h3>
+    Elder Guardian
+</h3>
+
+<p>
+موجود قدرتمند اقیانوسی
+که در Ocean Monument زندگی می‌کند.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- ITEMS -->
+
+<section id="items">
+
+<h2 class="section-title">
+    💎 آیتم‌های مهم
+</h2>
+
+<div class="item-grid">
+
+
+<div class="item-card">
+
+<div class="item-icon">
+    🪽
+</div>
+
+<h3>
+    Elytra
+</h3>
+
+<p>
+یکی از ارزشمندترین تجهیزات بازی
+برای پرواز در آسمان.
+</p>
+
+</div>
+
+
+<div class="item-card">
+
+<div class="item-icon">
+    🥚
+</div>
+
+<h3>
+    Dragon Egg
+</h3>
+
+<p>
+تخم Ender Dragon؛
+یکی از خاص‌ترین آیتم‌های بازی.
+</p>
+
+</div>
+
+
+<div class="item-card">
+
+<div class="item-icon">
+    ⭐
+</div>
+
+<h3>
+    Nether Star
+</h3>
+
+<p>
+آیتمی کمیاب که از شکست Wither
+به‌دست می‌آید و برای Beacon استفاده می‌شود.
+</p>
+
+</div>
+
+
+<div class="item-card">
+
+<div class="item-icon">
+    🧿
+</div>
+
+<h3>
+    Totem of Undying
+</h3>
+
+<p>
+آیتمی ویژه که می‌تواند
+بازیکن را از مرگ نجات دهد.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FACTS -->
 
 <section>
 
-    <h2 class="section-title">
-        ⚔️ ویژگی‌های Minecraft
-    </h2>
+<h2 class="section-title">
+    📊 اطلاعات Minecraft
+</h2>
 
-    <div class="features">
-
-
-        <article class="feature">
-
-            <div class="feature-icon">
-                🧱
-            </div>
-
-            <h3>
-                ساخت‌وساز
-            </h3>
-
-            <p>
-                ساخت خانه، قلعه، شهر و
-                سازه‌های خلاقانه با بلوک‌ها.
-            </p>
-
-        </article>
+<div class="facts">
 
 
-        <article class="feature">
+<div class="fact">
 
-            <div class="feature-icon">
-                🌍
-            </div>
+<div class="fact-icon">
+    🏢
+</div>
 
-            <h3>
-                اکتشاف
-            </h3>
+<h3>
+    سازنده
+</h3>
 
-            <p>
-                کشف Overworld، Nether،
-                End، غارها و مناطق مختلف.
-            </p>
+<p>
+Mojang Studios
+</p>
 
-        </article>
-
-
-        <article class="feature">
-
-            <div class="feature-icon">
-                ⚔️
-            </div>
-
-            <h3>
-                مبارزه
-            </h3>
-
-            <p>
-                مبارزه با دشمنان مختلف،
-                از Mobهای معمولی تا باس‌های قدرتمند.
-            </p>
-
-        </article>
+</div>
 
 
-    </div>
+<div class="fact">
 
-</section>
+<div class="fact-icon">
+    📅
+</div>
+
+<h3>
+    انتشار
+</h3>
+
+<p>
+2011
+</p>
+
+</div>
 
 
-<!-- ================= RATING ================= -->
+<div class="fact">
 
-<section>
+<div class="fact-icon">
+    🎮
+</div>
 
-    <h2 class="section-title">
-        ⭐ امتیاز Minecraft
-    </h2>
+<h3>
+    سبک
+</h3>
 
-    <div class="rating-box">
+<p>
+Sandbox / Survival
+</p>
 
-        <div class="stars">
-            ★★★★★
-        </div>
+</div>
 
-        <div class="rating-number">
-            4.9 / 5
-        </div>
 
-        <p style="color:#777;margin-top:10px;">
-            امتیاز نمایش‌داده‌شده در AMiR GAMiNG
-        </p>
+<div class="fact">
 
-    </div>
+<div class="fact-icon">
+    🌍
+</div>
+
+<h3>
+    جهان
+</h3>
+
+<p>
+Procedurally Generated
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- ================= BACK ================= -->
+<!-- ABOUT -->
 
-<a
-    href="index.html"
-    class="game-button"
+<section
+    class="about"
+    id="about"
 >
-    🏠 بازگشت به صفحه اصلی
-</a>
+
+<h2>
+    👤 Minecraft در AMiR GAMiNG
+</h2>
+
+<p>
+
+Minecraft فقط یک بازی برای ساختن خانه نیست؛
+یک جهان بزرگ برای اکتشاف، بقا،
+مبارزه و ساختن چیزهایی است که
+تنها محدودیتشان خلاقیت بازیکن است. 🎮⛏️
+
+<br><br>
+
+در این صفحه مهم‌ترین بخش‌ها،
+سرزمین‌ها، باس‌ها و آیتم‌های Minecraft
+را معرفی کردیم.
+
+</p>
+
+</section>
 
 
 </main>
 
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-    © 2026 AMiR GAMiNG — Minecraft
+© 2026 AMiR GAMiNG
+<br>
+Minecraft Page 🎮⛏️
 
 </footer>
 
 
-<!-- ================= PARTICLES ================= -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
+
+/* ================= MENU ================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuButton.addEventListener(
+    "click",
+    function(){
+
+        navLinks.classList.toggle("active");
+
+    }
+);
+
+
+document.querySelectorAll(
+    ".nav-links a"
+).forEach(function(link){
+
+    link.addEventListener(
+        "click",
+        function(){
+
+            navLinks.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+});
+
+
+/* ================= MUSIC ================= */
+
+const music =
+    document.getElementById(
+        "minecraftMusic"
+    );
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+const musicStatus =
+    document.getElementById(
+        "musicStatus"
+    );
+
+
+music.volume = 0.7;
+
+
+musicButton.addEventListener(
+    "click",
+    function(){
+
+        if(music.paused){
+
+            music.play();
+
+            musicButton.textContent =
+                "⏸️ توقف موسیقی";
+
+            musicStatus.textContent =
+                "🎵 موسیقی در حال پخش است";
+
+        }else{
+
+            music.pause();
+
+            musicButton.textContent =
+                "🎵 پخش موسیقی Minecraft";
+
+            musicStatus.textContent =
+                "موسیقی خاموش است";
+
+        }
+
+    }
+);
+
+
+/* ================= PARTICLES ================= */
+
 const canvas =
-    document.getElementById("particles");
+    document.getElementById(
+        "particles"
+    );
 
 const ctx =
     canvas.getContext("2d");
 
 
-let particles=[];
+let particles = [];
 
 
-const mouse={
+const mouse = {
+
     x:null,
+
     y:null,
+
     radius:150
+
 };
 
 
 function resizeCanvas(){
 
-    canvas.width=
+    canvas.width =
         window.innerWidth;
 
-    canvas.height=
+    canvas.height =
         window.innerHeight;
 
 }
@@ -1245,10 +1456,10 @@ window.addEventListener(
     "mousemove",
     function(event){
 
-        mouse.x=
+        mouse.x =
             event.clientX;
 
-        mouse.y=
+        mouse.y =
             event.clientY;
 
     }
@@ -1259,17 +1470,18 @@ window.addEventListener(
     "mouseleave",
     function(){
 
-        mouse.x=null;
-        mouse.y=null;
+        mouse.x = null;
+
+        mouse.y = null;
 
     }
 );
 
 
-const particleCount=
-    window.innerWidth<700
-        ?55
-        :100;
+const particleCount =
+    window.innerWidth < 700
+        ? 55
+        : 100;
 
 
 for(
@@ -1281,22 +1493,24 @@ for(
     particles.push({
 
         x:
-            Math.random()*
-            canvas.width,
+            Math.random()
+            *canvas.width,
 
         y:
-            Math.random()*
-            canvas.height,
+            Math.random()
+            *canvas.height,
 
         size:
-            Math.random()*
-            2.4+.7,
+            Math.random()
+            *2.4+.7,
 
         speedX:
-            (Math.random()-.5)*.6,
+            (Math.random()-.5)
+            *.65,
 
         speedY:
-            (Math.random()-.5)*.6
+            (Math.random()-.5)
+            *.65
 
     });
 
@@ -1316,38 +1530,45 @@ function animateParticles(){
     particles.forEach(
         function(p){
 
-            p.x+=p.speedX;
-            p.y+=p.speedY;
+            p.x += p.speedX;
+
+            p.y += p.speedY;
 
 
             if(
-                p.x<0||
+                p.x<0 ||
                 p.x>canvas.width
             ){
-                p.speedX*=-1;
+
+                p.speedX *= -1;
+
             }
 
 
             if(
-                p.y<0||
+                p.y<0 ||
                 p.y>canvas.height
             ){
-                p.speedY*=-1;
+
+                p.speedY *= -1;
+
             }
 
 
+            /* MOUSE */
+
             if(
-                mouse.x!==null&&
+                mouse.x!==null &&
                 mouse.y!==null
             ){
 
-                const dx=
+                const dx =
                     p.x-mouse.x;
 
-                const dy=
+                const dy =
                     p.y-mouse.y;
 
-                const distance=
+                const distance =
                     Math.sqrt(
                         dx*dx+
                         dy*dy
@@ -1356,11 +1577,11 @@ function animateParticles(){
 
                 if(
                     distance<
-                    mouse.radius&&
+                    mouse.radius &&
                     distance>0
                 ){
 
-                    const force=
+                    const force =
                         (
                             mouse.radius-
                             distance
@@ -1368,18 +1589,20 @@ function animateParticles(){
                         mouse.radius;
 
 
-                    p.x+=
+                    p.x +=
                         (dx/distance)*
-                        force*2;
+                        force*1.8;
 
-                    p.y+=
+                    p.y +=
                         (dy/distance)*
-                        force*2;
+                        force*1.8;
 
                 }
 
             }
 
+
+            /* PARTICLE */
 
             ctx.beginPath();
 
@@ -1391,17 +1614,17 @@ function animateParticles(){
                 Math.PI*2
             );
 
-            ctx.fillStyle=
-                "rgba(0,220,255,.8)";
+            ctx.fillStyle =
+                "rgba(80,255,120,.8)";
 
-            ctx.shadowBlur=10;
+            ctx.shadowBlur = 10;
 
-            ctx.shadowColor=
-                "#00dcff";
+            ctx.shadowColor =
+                "#45ff70";
 
             ctx.fill();
 
-            ctx.shadowBlur=0;
+            ctx.shadowBlur = 0;
 
         }
     );
@@ -1421,15 +1644,15 @@ function animateParticles(){
             j++
         ){
 
-            const dx=
+            const dx =
                 particles[i].x-
                 particles[j].x;
 
-            const dy=
+            const dy =
                 particles[i].y-
                 particles[j].y;
 
-            const distance=
+            const distance =
                 Math.sqrt(
                     dx*dx+
                     dy*dy
@@ -1452,14 +1675,14 @@ function animateParticles(){
                     particles[j].y
                 );
 
-                ctx.strokeStyle=
-                    "rgba(114,0,255,"+
+                ctx.strokeStyle =
+                    "rgba(90,180,255,"+
                     (
                         1-distance/90
                     )+
                     ")";
 
-                ctx.lineWidth=.7;
+                ctx.lineWidth=.6;
 
                 ctx.stroke();
 
@@ -1473,20 +1696,20 @@ function animateParticles(){
     /* MOUSE LINES */
 
     if(
-        mouse.x!==null&&
+        mouse.x!==null &&
         mouse.y!==null
     ){
 
         particles.forEach(
             function(p){
 
-                const dx=
+                const dx =
                     p.x-mouse.x;
 
-                const dy=
+                const dy =
                     p.y-mouse.y;
 
-                const distance=
+                const distance =
                     Math.sqrt(
                         dx*dx+
                         dy*dy
@@ -1510,8 +1733,8 @@ function animateParticles(){
                         mouse.y
                     );
 
-                    ctx.strokeStyle=
-                        "rgba(0,220,255,"+
+                    ctx.strokeStyle =
+                        "rgba(80,255,120,"+
                         (
                             1-
                             distance/
@@ -1519,7 +1742,7 @@ function animateParticles(){
                         )+
                         ")";
 
-                    ctx.lineWidth=1;
+                    ctx.lineWidth=.8;
 
                     ctx.stroke();
 
@@ -1546,4 +1769,3 @@ animateParticles();
 </body>
 
 </html>
-```
