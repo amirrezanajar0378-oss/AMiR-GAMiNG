@@ -22,25 +22,56 @@ scroll-behavior:smooth;
 body{
 
 margin:0;
+
 font-family:Vazirmatn,sans-serif;
+
 background:#050505;
+
 color:white;
+
+overflow-x:hidden;
 
 }
 
 
-/* ===== Loading ===== */
+/* ذرات */
+
+#particles{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:0;
+
+}
+
+
+
+/* لودینگ */
 
 #loader{
 
 position:fixed;
-width:100%;
-height:100vh;
+
+inset:0;
+
 background:#050505;
 
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 flex-direction:column;
 
 z-index:9999;
@@ -51,15 +82,18 @@ z-index:9999;
 .loader-logo{
 
 font-size:70px;
+
 font-weight:900;
 
 background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
+
 background-size:300%;
 
 -webkit-background-clip:text;
+
 color:transparent;
 
-animation:logo 4s infinite;
+animation:colorMove 4s infinite;
 
 }
 
@@ -69,6 +103,7 @@ animation:logo 4s infinite;
 margin-top:40px;
 
 width:300px;
+
 height:10px;
 
 background:#222;
@@ -85,6 +120,7 @@ overflow:hidden;
 display:block;
 
 height:100%;
+
 width:0%;
 
 background:#00e5ff;
@@ -97,62 +133,200 @@ animation:load 3s forwards;
 .loading-text{
 
 margin-top:20px;
+
 color:#aaa;
 
 }
 
 
+
+/* لوگوی اصلی */
+
+.logo{
+
+position:relative;
+
+font-size:70px;
+
+font-weight:900;
+
+color:white;
+
+text-shadow:
+
+0 0 5px white,
+
+0 0 15px #00e5ff,
+
+0 0 40px #00e5ff,
+
+0 0 70px #8000ff;
+
+
+animation:
+
+glow 2s infinite alternate,
+
+shake 5s infinite;
+
+}
+
+
+.logo::before,
+
+.logo::after{
+
+content:"⚡";
+
+position:absolute;
+
+font-size:35px;
+
+opacity:0;
+
+}
+
+
+.logo::before{
+
+right:-60px;
+
+top:5px;
+
+color:#00e5ff;
+
+animation:bolt1 3s infinite;
+
+}
+
+
+.logo::after{
+
+left:-60px;
+
+bottom:5px;
+
+color:#8000ff;
+
+animation:bolt2 4s infinite;
+
+}
+
+
+
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+
+0 0 10px #00e5ff;
+
+}
+
+to{
+
+text-shadow:
+
+0 0 20px #00e5ff,
+
+0 0 60px #8000ff;
+
+}
+
+}
+
+
+@keyframes shake{
+
+0%,94%,100%{
+
+transform:translateX(0);
+
+}
+
+95%{
+
+transform:translateX(-4px);
+
+}
+
+96%{
+
+transform:translateX(4px);
+
+}
+
+}
+
+
+
+@keyframes bolt1{
+
+0%,65%,100%{
+
+opacity:0;
+
+}
+
+70%{
+
+opacity:1;
+
+transform:scale(1.4);
+
+}
+
+}
+
+
+@keyframes bolt2{
+
+0%,60%,100%{
+
+opacity:0;
+
+}
+
+65%{
+
+opacity:1;
+
+transform:scale(1.3);
+
+}
+
+}
+
+
+
 @keyframes load{
 
 to{
+
 width:100%;
-}
 
 }
-
-
-/* ===== پس زمینه ===== */
-
-
-body::before{
-
-content:"";
-position:fixed;
-
-width:500px;
-height:500px;
-
-background:#00e5ff;
-
-filter:blur(170px);
-
-opacity:.15;
-
-top:-150px;
-right:-150px;
-
-animation:move 8s infinite alternate;
 
 }
 
 
-
-@keyframes move{
+@keyframes colorMove{
 
 from{
-transform:translate(0);
+
+background-position:0;
+
 }
 
 to{
-transform:translate(-100px,150px);
-}
+
+background-position:300%;
 
 }
 
-
-
-
-/* ===== منو ===== */
+}
 
 
 nav{
@@ -186,9 +360,6 @@ font-weight:bold;
 
 
 
-/* ===== لوگو ===== */
-
-
 .hero{
 
 height:80vh;
@@ -203,39 +374,9 @@ flex-direction:column;
 
 text-align:center;
 
-}
+position:relative;
 
-
-
-.logo{
-
-font-size:70px;
-
-font-weight:900;
-
-background:linear-gradient(90deg,#fff,#00e5ff,#8000ff,#fff);
-
-background-size:300%;
-
--webkit-background-clip:text;
-
-color:transparent;
-
-animation:logo 5s infinite;
-
-}
-
-
-
-@keyframes logo{
-
-from{
-background-position:0;
-}
-
-to{
-background-position:300%;
-}
+z-index:1;
 
 }
 
@@ -251,14 +392,15 @@ color:#aaa;
 
 
 
-/* ===== کارت ها ===== */
-
-
 .games{
 
 padding:70px 20px;
 
 text-align:center;
+
+position:relative;
+
+z-index:1;
 
 }
 
@@ -318,6 +460,14 @@ border-radius:15px;
 
 
 
+.card p{
+
+color:#aaa;
+
+}
+
+
+
 .button{
 
 display:inline-block;
@@ -340,9 +490,6 @@ margin-top:10px;
 
 
 
-/* درباره */
-
-
 .about{
 
 padding:70px 20px;
@@ -351,7 +498,22 @@ background:#111;
 
 text-align:center;
 
+position:relative;
+
+z-index:1;
+
 }
+
+
+
+.about p{
+
+color:#aaa;
+
+line-height:2;
+
+}
+
 
 
 footer{
@@ -362,6 +524,10 @@ padding:30px;
 
 color:#777;
 
+position:relative;
+
+z-index:1;
+
 }
 
 
@@ -370,18 +536,16 @@ color:#777;
 </head>
 
 
-
 <body>
 
 
-<!-- لودینگ -->
+<canvas id="particles"></canvas>
+
 
 <div id="loader">
 
 <div class="loader-logo">
-
 AMiR GAMiNG
-
 </div>
 
 
@@ -398,8 +562,8 @@ AMiR GAMiNG
 
 </div>
 
-</div>
 
+</div>
 
 
 
@@ -415,7 +579,6 @@ AMiR GAMiNG
 
 
 
-
 <section class="hero" id="home">
 
 
@@ -427,9 +590,7 @@ AMiR GAMiNG
 
 
 <p>
-
-دنیای گیمینگ من 🎮🔥
-
+دنیای گیمینگ من 🎮⚡
 </p>
 
 
@@ -437,15 +598,10 @@ AMiR GAMiNG
 
 
 
-
 <section class="games" id="games">
 
 
-<h1>
-
-🔥 بازی‌ها
-
-</h1>
+<h1>🔥 بازی‌ها</h1>
 
 
 <div class="cards">
@@ -471,7 +627,7 @@ AMiR GAMiNG
 
 <h2>⛏️ Minecraft</h2>
 
-<p>ساخت و ماجراجویی بی پایان</p>
+<p>ساخت و ماجراجویی بی‌پایان</p>
 
 <a class="button" href="minecraft.html">ورود</a>
 
@@ -499,28 +655,16 @@ AMiR GAMiNG
 
 
 
-
 <section class="about" id="about">
 
-
-<h1>
-
-👤 درباره AMiR GAMiNG
-
-</h1>
-
+<h1>👤 درباره AMiR GAMiNG</h1>
 
 <p>
-
 به سایت AMiR GAMiNG خوش آمدید.
-
 اینجا دنیای بازی‌ها و گیمینگ است.
-
 </p>
 
-
 </section>
-
 
 
 
@@ -529,25 +673,3 @@ AMiR GAMiNG
 © 2026 AMiR GAMiNG
 
 </footer>
-
-
-
-
-<script>
-
-window.onload=function(){
-
-setTimeout(function(){
-
-document.getElementById("loader").style.display="none";
-
-},3000);
-
-}
-
-</script>
-
-
-</body>
-
-</html>
