@@ -10,11 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap"
-rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -30,21 +26,11 @@ html{
 
 body{
     font-family:"Vazirmatn",sans-serif;
-
     background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(0,229,255,.08),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 85% 70%,
-            rgba(128,0,255,.08),
-            transparent 28%
-        ),
+        radial-gradient(circle at 15% 20%,rgba(0,229,255,.08),transparent 28%),
+        radial-gradient(circle at 85% 70%,rgba(128,0,255,.08),transparent 28%),
         #050509;
-
-    color:white;
+    color:#fff;
     min-height:100vh;
     overflow-x:hidden;
 }
@@ -69,26 +55,19 @@ nav{
     top:0;
     left:0;
     right:0;
-
     height:70px;
 
     display:flex;
     justify-content:center;
     align-items:center;
+    gap:10px;
 
-    background:rgba(5,5,9,.78);
+    background:rgba(5,5,9,.80);
     backdrop-filter:blur(16px);
 
-    border-bottom:
-        1px solid
-        rgba(0,229,255,.12);
+    border-bottom:1px solid rgba(0,229,255,.12);
 
     z-index:100;
-}
-
-.nav-links{
-    display:flex;
-    gap:10px;
 }
 
 nav a{
@@ -96,7 +75,6 @@ nav a{
     text-decoration:none;
 
     padding:10px 18px;
-
     border-radius:12px;
 
     transition:.3s;
@@ -105,8 +83,7 @@ nav a{
 nav a:hover{
     color:white;
 
-    background:
-        rgba(0,229,255,.08);
+    background:rgba(0,229,255,.08);
 
     box-shadow:
         0 0 20px
@@ -137,11 +114,9 @@ nav a:hover{
 
     min-height:88vh;
 
-    padding:
-        130px 20px 60px;
+    padding:130px 20px 60px;
 
     display:flex;
-
     justify-content:center;
     align-items:center;
 
@@ -159,12 +134,29 @@ nav a:hover{
     letter-spacing:4px;
 
     text-shadow:
-        0 0 8px white,
+        0 0 8px #fff,
         0 0 20px #00e5ff,
         0 0 45px #8000ff;
 
-    animation:
-        logoGlow 2s infinite alternate;
+    animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+
+    from{
+        text-shadow:
+            0 0 8px #fff,
+            0 0 20px #00e5ff,
+            0 0 40px #8000ff;
+    }
+
+    to{
+        text-shadow:
+            0 0 10px #fff,
+            0 0 30px #00e5ff,
+            0 0 65px #8000ff;
+    }
+
 }
 
 .subtitle{
@@ -177,8 +169,7 @@ nav a:hover{
 }
 
 .hero-line{
-    width:
-        min(500px,80vw);
+    width:min(500px,80vw);
 
     height:2px;
 
@@ -206,23 +197,21 @@ nav a:hover{
     z-index:2;
 
     width:100%;
-
     max-width:1150px;
 
     margin:auto;
 
-    padding:
-        60px 20px;
+    padding:60px 20px;
 }
 
 .section-title{
     text-align:center;
 
     font-size:
-        clamp(28px,4vw,36px);
+        clamp(28px,5vw,38px);
 
     margin:
-        30px 0 35px;
+        0 0 35px;
 
     text-shadow:
         0 0 20px
@@ -230,7 +219,7 @@ nav a:hover{
 }
 
 
-/* ================= GAMES ================= */
+/* ================= GAME CARDS ================= */
 
 .games{
     display:grid;
@@ -260,6 +249,10 @@ nav a:hover{
         rgba(255,255,255,.09);
 
     transition:.4s;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.25);
 }
 
 .game-card:hover{
@@ -493,8 +486,7 @@ footer{
 
     margin-top:50px;
 
-    padding:
-        35px 20px;
+    padding:35px 20px;
 
     text-align:center;
 
@@ -506,33 +498,6 @@ footer{
 }
 
 
-/* ================= ANIMATION ================= */
-
-@keyframes logoGlow{
-
-    from{
-
-        text-shadow:
-            0 0 8px white,
-            0 0 20px #00e5ff,
-            0 0 40px #8000ff;
-
-    }
-
-    to{
-
-        text-shadow:
-            0 0 10px white,
-            0 0 30px #00e5ff,
-            0 0 65px #8000ff,
-            0 0 90px
-            rgba(128,0,255,.5);
-
-    }
-
-}
-
-
 /* ================= MOBILE ================= */
 
 @media(max-width:850px){
@@ -540,8 +505,7 @@ footer{
     nav{
         justify-content:flex-end;
 
-        padding:
-            0 18px;
+        padding:0 18px;
     }
 
     .menu-button{
@@ -586,9 +550,6 @@ footer{
     }
 
 }
-
-
-/* ================= END CSS ================= */
 
 </style>
 
@@ -675,24 +636,26 @@ footer{
     <div class="games">
 
 
-        <!-- GTA -->
+        <!-- GTA SAN ANDREAS -->
 
         <article class="game-card">
 
             <img
                 src="images/gta.jpg"
-                alt="GTA V"
+                alt="GTA San Andreas"
                 class="game-image"
             >
 
             <div class="game-info">
 
                 <h3>
-                    🎮 GTA V
+                    🎮 GTA San Andreas
                 </h3>
 
                 <p>
-                    دنیای بزرگ و هیجان‌انگیز GTA
+                    یکی از نوستالژیک‌ترین بازی‌های
+                    تاریخ گیم؛ داستان CJ، خیابان‌های
+                    Los Santos و گنگ‌های معروف.
                 </p>
 
                 <div class="rating">
@@ -702,7 +665,7 @@ footer{
                     </span>
 
                     <span class="rating-number">
-                        4.8/5
+                        4.9/5
                     </span>
 
                 </div>
@@ -737,6 +700,7 @@ footer{
 
                 <p>
                     ساخت و ماجراجویی بی‌پایان
+                    در دنیایی که خودت می‌سازی.
                 </p>
 
                 <div class="rating">
@@ -769,7 +733,7 @@ footer{
 
             <img
                 src="images/racing.jpg"
-                alt="Racing"
+                alt="Racing Games"
                 class="game-image"
             >
 
@@ -781,6 +745,7 @@ footer{
 
                 <p>
                     سرعت، رقابت و هیجان
+                    در بهترین بازی‌های مسابقه‌ای.
                 </p>
 
                 <div class="rating">
@@ -831,18 +796,19 @@ footer{
 
             <img
                 src="images/gta.jpg"
-                alt="GTA V"
+                alt="GTA San Andreas"
             >
 
             <div class="recommend-info">
 
                 <h3>
-                    🎮 GTA V
+                    🎮 GTA San Andreas
                 </h3>
 
                 <p>
-                    مناسب علاقه‌مندان
-                    به دنیای Open World
+                    CJ، Los Santos،
+                    گنگ‌ها و کلی خاطره
+                    از دوران طلایی GTA.
                 </p>
 
             </div>
@@ -864,7 +830,9 @@ footer{
                 </h3>
 
                 <p>
-                    ساخت، بقا و ماجراجویی
+                    ساخت، بقا،
+                    اکتشاف و ماجراجویی
+                    بی‌پایان.
                 </p>
 
             </div>
@@ -886,8 +854,8 @@ footer{
                 </h3>
 
                 <p>
-                    برای عاشقان سرعت
-                    و مسابقه
+                    برای عاشقان سرعت،
+                    ماشین و مسابقه.
                 </p>
 
             </div>
@@ -912,14 +880,9 @@ footer{
     </h2>
 
     <p>
-
         به سایت AMiR GAMiNG خوش آمدید.
-
-        اینجا دنیای بازی‌ها،
-        گیمینگ و پروژه‌های من است.
-
-        🎮⚡
-
+        اینجا دنیای بازی‌ها، گیمینگ
+        و پروژه‌های من است. 🎮⚡
     </p>
 
 </section>
@@ -940,7 +903,6 @@ footer{
 <!-- ================= JAVASCRIPT ================= -->
 
 <script>
-
 
 /* ================= MENU ================= */
 
@@ -995,18 +957,15 @@ const canvas =
     );
 
 const ctx =
-    canvas.getContext(
-        "2d"
-    );
+    canvas.getContext("2d");
 
 
-let particles=[];
+let particles = [];
 
 
-const mouse={
+const mouse = {
 
     x:null,
-
     y:null,
 
     radius:150
@@ -1053,7 +1012,6 @@ window.addEventListener(
     function(){
 
         mouse.x=null;
-
         mouse.y=null;
 
     }
@@ -1124,7 +1082,7 @@ function animateParticles(){
                 p.x>canvas.width
             ){
 
-                p.speedX*=-1;
+                p.speedX *= -1;
 
             }
 
@@ -1134,12 +1092,12 @@ function animateParticles(){
                 p.y>canvas.height
             ){
 
-                p.speedY*=-1;
+                p.speedY *= -1;
 
             }
 
 
-            /* MOUSE REACTION */
+            /* MOUSE */
 
             if(
                 mouse.x!==null &&
@@ -1174,19 +1132,19 @@ function animateParticles(){
 
 
                     p.x +=
-                        (dx/distance)
-                        *force*2;
+                        dx/distance*
+                        force*2;
 
                     p.y +=
-                        (dy/distance)
-                        *force*2;
+                        dy/distance*
+                        force*2;
 
                 }
 
             }
 
 
-            /* DRAW PARTICLE */
+            /* PARTICLE */
 
             ctx.beginPath();
 
@@ -1214,7 +1172,7 @@ function animateParticles(){
     );
 
 
-    /* LINES BETWEEN PARTICLES */
+    /* PARTICLE LINES */
 
     for(
         let i=0;
@@ -1262,7 +1220,8 @@ function animateParticles(){
                 ctx.strokeStyle =
                     "rgba(128,0,255,"+
                     (
-                        1-distance/90
+                        1-
+                        distance/90
                     )+
                     ")";
 
@@ -1277,7 +1236,7 @@ function animateParticles(){
     }
 
 
-    /* LINES TO MOUSE */
+    /* MOUSE LINES */
 
     if(
         mouse.x!==null &&
@@ -1347,9 +1306,7 @@ function animateParticles(){
 
 animateParticles();
 
-
 </script>
-
 
 </body>
 
