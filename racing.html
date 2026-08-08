@@ -8,39 +8,106 @@
 
 <title>Racing | AMiR GAMiNG</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+
 <style>
 
-body {
-    margin:0;
-    font-family:Arial;
-    background:#080808;
-    color:white;
-    text-align:center;
+*{
+box-sizing:border-box;
 }
 
-.container {
-    padding:80px 20px;
+body{
+margin:0;
+font-family:Vazirmatn,sans-serif;
+background:#050505;
+color:white;
+text-align:center;
 }
 
-h1 {
-    font-size:50px;
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
 }
 
-p {
-    color:#aaa;
-    font-size:20px;
-    line-height:2;
+
+.hero img{
+width:90%;
+max-width:900px;
+height:400px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:0 0 40px rgba(255,0,80,.5);
 }
 
-.button {
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:white;
-    color:black;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:bold;
+
+h1{
+font-size:55px;
+margin-top:30px;
+}
+
+
+h2{
+color:#ff0055;
+}
+
+
+p{
+max-width:800px;
+color:#aaa;
+font-size:20px;
+line-height:2;
+}
+
+
+.features{
+margin-top:30px;
+}
+
+
+.features div{
+
+background:#151515;
+margin:15px auto;
+padding:15px;
+border-radius:15px;
+max-width:500px;
+transition:.3s;
+
+}
+
+
+.features div:hover{
+
+transform:scale(1.05);
+box-shadow:0 0 20px #ff0055;
+
+}
+
+
+.button{
+
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:white;
+color:black;
+text-decoration:none;
+border-radius:12px;
+font-weight:bold;
+transition:.3s;
+
+}
+
+
+.button:hover{
+
+transform:scale(1.1);
+
 }
 
 </style>
@@ -50,25 +117,60 @@ p {
 
 <body>
 
-<div class="container">
 
-<h1>🏎️ Racing</h1>
+<section class="hero">
 
-<h2>AMiR GAMiNG</h2>
+
+<img src="images/racing.jpg">
+
+
+<h1>
+🏎️ Racing
+</h1>
+
+
+<h2>
+AMiR GAMiNG
+</h2>
+
 
 <p>
-به بخش بازی‌های ماشینی خوش آمدید!
+
+بازی‌های مسابقه‌ای دنیایی از سرعت، رقابت و هیجان هستند.
+ماشین‌های قدرتمند را کنترل کن و در مسیرهای مختلف
+برای رسیدن به مقام اول تلاش کن.
+
 </p>
 
-<p>
-سرعت، ماشین‌ها و مسابقات هیجان‌انگیز اینجا قرار می‌گیرند.
-</p>
+
+<div class="features">
+
+<div>
+🏁 مسابقات سرعتی
+</div>
+
+<div>
+🚘 ماشین‌های قدرتمند
+</div>
+
+<div>
+🔥 هیجان و رقابت
+</div>
+
+<div>
+🌍 مسیرهای مختلف
+</div>
+
+</div>
+
 
 <a class="button" href="index.html">
 🏠 برگشت به خانه
 </a>
 
-</div>
+
+</section>
+
 
 </body>
 
